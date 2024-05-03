@@ -307,12 +307,92 @@ namespace FinalProject
 
         private void btn_signin_Click(object sender, EventArgs e)
         {
-            if(txt_email.Text == "general_kenobi@jedi.com" && txt_password.Text == "enter your password")
+            string email = txt_email.Text;
+            string password = txt_password.Text;
+
+            User existing_user = new User
+            {
+                Email = email,
+                Password = password
+            };
+
+            CsvRepository csv = new CsvRepository();
+            SignInService sign_in = new SignInService(csv);
+
+            bool success = sign_in.SignIn(existing_user);
+
+
+            if(success)
             {
                 this.Hide();
                 Form landing = new Form_LandingPage();
                 landing.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Wrong email or password", "Unsuccessful Sign In", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void btn_signup_Click(object sender, EventArgs e)
+        {
+            string name = txt_name_register.Text;
+            string last_name = txt_lastname_register.Text;
+            string email = txt_email_register.Text;
+            string password = txt_password_register.Text;
+            string password_confirmation = txt_confirm_password.Text;
+            
+            /*
+             * Confirmation password doesn't match
+             */
+            if(password != password_confirmation)
+            {
+                MessageBox.Show("Passwords don't match. Please re-enter your password carefully.", "Password Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_password_register.Text = "enter your password";
+                txt_password_register.PasswordChar = '\0';
+                txt_password_register.ForeColor = Color.LightGray;
+
+                txt_confirm_password.Text = "confirm your password";
+                txt_confirm_password.PasswordChar = '\0';
+                txt_confirm_password.ForeColor = Color.LightGray;
+            }
+            else
+            {
+                if(name != "Name" && last_name != "Last Name" && email != "your_email@domain.com") 
+                {
+                    CsvRepository csv = new CsvRepository();
+                    SignUpService sign_up_service = new SignUpService(csv);
+
+                    User new_user = new User()
+                    {
+                        Name = name,
+                        LastName = last_name,
+                        Email = email,
+                        Password = password,
+                        Authorisation = Authority.User
+                    };
+
+                    bool success = sign_up_service.SignUp(new_user);
+
+                    if (success)
+                    {
+                        MessageBox.Show("Signed up successfully. You can now sign in!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        pnl_signup.Visible = false;
+                        pnl_signin.Visible = true;
+                        txt_email.Text = email;
+                        txt_password.Text = password;
+
+                        txt_email.ForeColor = Color.Black;
+                        txt_password.PasswordChar = '*';
+
+                    } else
+                    {
+                        MessageBox.Show("This email is already in use. If you forgot your password, you can reset it!", "Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+
+    
+
         }
     }
 }
