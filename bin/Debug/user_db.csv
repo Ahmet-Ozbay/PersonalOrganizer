@@ -1,0 +1,10 @@
+ID,EMAIL,PASSWORD,NAME,LASTNAME,AUTHORITY
+1,ahmetozbayy26@gmail.com,test,Ahmet,Ozbay,Admin
+2,john_doe@mail.com,test,John,Doe,User
+3,ahmet_ozbayy@hotmail.com,test,Ahmet,Ozbay,User
+4,janedoe@mail.com,test,Jane,Doe,User
+5,hetfield@metallica.com,test,James,Hetfield,User
+6,ulrich@metallica.com,test,Lars,Ulrich,User
+7,hammett@metallica.com,test,Kirk,Hammett,User
+8,trujillo@metallica.com,test,Robert,Trujillo,User
+9,general_kenobi@jedi.com,enter your password,General,Kenobi,Admin
