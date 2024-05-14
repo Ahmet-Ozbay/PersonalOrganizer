@@ -6,8 +6,10 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.SqlServer.Server;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace FinalProject
@@ -32,6 +34,27 @@ namespace FinalProject
         public Form_LandingPage()
         {
             InitializeComponent();
+        }
+
+        private void Form_LandingPage_Load(object sender, EventArgs e)
+        {
+            Read_user_data();
+        }
+
+        private void Read_user_data()
+        {
+            CsvRepository reader = new CsvRepository();
+            string email = Form_SignIn_SignUp.e_mail;
+            List<User> users = reader.List();
+            User current_user = users.FirstOrDefault(u => u.Email == email);
+            if (current_user != null)
+            {
+                txt_name.Text = current_user.Name;
+                txt_lastname.Text = current_user.LastName;
+                txt_email.Text = current_user.Email;
+                txt_phone_number.Text = current_user.PhoneNumber;
+                txt_adress.Text = current_user.Address;
+            }
         }
 
         // Color Palette
@@ -366,6 +389,118 @@ namespace FinalProject
             pnl_reminder.Visible = false;
             pnl_salary.Visible = false;
             pnl_admin.Visible = true;
+        }
+
+
+        private void btn_save_profile_Click(object sender, EventArgs e)
+        {
+            if (txt_email.Text.Length == 0 || txt_adress.Text.Length == 0 || txt_phone_number.Text.Length == 0)
+            {
+                string title = "Error";
+                string message = "Please fill in all the fields.";
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            CsvRepository writer = new CsvRepository();
+            CsvRepository reader = new CsvRepository();
+
+            string name = txt_name.Text;
+            string lastname = txt_lastname.Text;
+            string email = txt_email.Text;
+            string phone = txt_phone_number.Text;
+            string address = txt_adress.Text;
+            
+            List<User> users = reader.List();
+            User current_user = users.FirstOrDefault(u => u.Email == email);
+            if (current_user != null)
+            {
+                current_user.Name = name;
+                current_user.LastName = lastname;
+                current_user.Email = email;
+                current_user.PhoneNumber = phone;
+                current_user.Address = address;
+                writer.Update(current_user);
+                Read_user_data();
+                string title = "Success";
+                string message = "Your profile has been updated successfully.";
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void btn_change_password_Click(object sender, EventArgs e)
+        {
+            if (txt_current_password.Text.Length == 0 || txt_new_password.Text.Length == 0 ||
+                txt_confirm_new_password.Text.Length == 0)
+            {
+                string title = "Error";
+                string message = "Please fill in all the fields.";
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            CsvRepository writer = new CsvRepository();
+            CsvRepository reader = new CsvRepository();
+
+            string current_password = txt_current_password.Text;
+            string new_password = txt_new_password.Text;
+            string confirm_new_password = txt_confirm_new_password.Text;
+
+            if (new_password != confirm_new_password)
+            {
+                string title = "Error";
+                string message = "Passwords do not match.";
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            List<User> users = reader.List();
+            User current_user = users.FirstOrDefault(u => u.Email == txt_email.Text);
+
+            if (current_user != null)
+            {
+                if (current_user.Password == current_password)
+                {
+                    if (IsValidString(new_password))
+                    {
+                        current_user.Password = new_password;
+                        writer.Update(current_user);
+                        string title = "Success";
+                        string message = "Your password has been changed successfully.";
+                        MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string title = "Error";
+                        string message = "Password must contain at least 8 characters, one uppercase letter and one special character.";
+                        MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
+                }
+                else
+                {
+                    string title = "Error";
+                    string message = "Current password is incorrect.";
+                    MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
+        public static bool IsValidString(string input)
+        {
+            // Regex pattern to check the string
+            // ^ asserts position at start of the string
+            // (?=.[A-Z]) ensures at least one uppercase letter
+            // (?=.[!@#$%^&(),.?":{}|<>]) ensures at least one special character
+            // .{8,} ensures at least 8 characters
+            // $ asserts position at the end of the string
+            string pattern = "^(?=.*[A-Z])(?=.*[!@#$*%^&(),.?\":{}|<>]).{8,}$";
+
+
+            // Check if the input matches the pattern
+            return Regex.IsMatch(input, pattern);
         }
     }
 }

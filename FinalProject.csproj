@@ -74,6 +74,9 @@
     <Compile Include="SignUpService.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserStrategy.cs" />
+    <EmbeddedResource Include="Landing.en-US.resx">
+      <DependentUpon>Landing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Landing.resx">
       <DependentUpon>Landing.cs</DependentUpon>
     </EmbeddedResource>

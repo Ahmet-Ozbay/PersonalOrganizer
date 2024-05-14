@@ -27,6 +27,9 @@ namespace FinalProject
                 user.Authorisation = Authority.User;
             }
 
+            user.PhoneNumber = null;
+            user.Address = null;
+
             // Make sure there's only one user using the same email
             if (users.Any(u => u.Email == user.Email))
             {

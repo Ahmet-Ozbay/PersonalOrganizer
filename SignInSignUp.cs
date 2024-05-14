@@ -31,6 +31,11 @@ namespace FinalProject
             }
         }
 
+        // Veri transferi
+        
+        public static string e_mail;
+
+
         public Form_SignIn_SignUp()
         {
             InitializeComponent();
@@ -326,6 +331,7 @@ namespace FinalProject
             {
                 this.Hide();
                 Form landing = new Form_LandingPage();
+                e_mail = email;
                 landing.ShowDialog();
             } else
             {
@@ -387,12 +393,8 @@ namespace FinalProject
                     {
                         MessageBox.Show("This email is already in use. If you forgot your password, you can reset it!", "Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
             }
-
-    
-
         }
     }
 }

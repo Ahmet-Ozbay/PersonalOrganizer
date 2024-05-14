@@ -9,3 +9,17 @@ C:\Users\ahmet\OneDrive\Belgeler\Visual Studio 2022\Projects\OOP2\FinalProject\o
 C:\Users\ahmet\OneDrive\Belgeler\Visual Studio 2022\Projects\OOP2\FinalProject\obj\Debug\FinalProject.pdb
 C:\Users\ahmet\OneDrive\Belgeler\Visual Studio 2022\Projects\OOP2\FinalProject\obj\Debug\FinalProject.Form_LandingPage.resources
 C:\Users\ahmet\OneDrive\Belgeler\Visual Studio 2022\Projects\OOP2\FinalProject\obj\Debug\FinalProject.Form_SignIn_SignUp.resources
+D:\Projects\C# Projects\OOP II Lab\Project\bin\Debug\FinalProject.exe.config
+D:\Projects\C# Projects\OOP II Lab\Project\bin\Debug\FinalProject.exe
+D:\Projects\C# Projects\OOP II Lab\Project\bin\Debug\FinalProject.pdb
+D:\Projects\C# Projects\OOP II Lab\Project\obj\Debug\FinalProject.csproj.AssemblyReference.cache
+D:\Projects\C# Projects\OOP II Lab\Project\obj\Debug\FinalProject.Form_LandingPage.resources
+D:\Projects\C# Projects\OOP II Lab\Project\obj\Debug\FinalProject.Form_SignIn_SignUp.resources
+D:\Projects\C# Projects\OOP II Lab\Project\obj\Debug\FinalProject.Properties.Resources.resources
+D:\Projects\C# Projects\OOP II Lab\Project\obj\Debug\FinalProject.csproj.GenerateResource.cache
+D:\Projects\C# Projects\OOP II Lab\Project\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
+D:\Projects\C# Projects\OOP II Lab\Project\obj\Debug\FinalProject.exe
+D:\Projects\C# Projects\OOP II Lab\Project\obj\Debug\FinalProject.pdb
+D:\Projects\C# Projects\OOP II Lab\Project\bin\Debug\en-US\FinalProject.resources.dll
+D:\Projects\C# Projects\OOP II Lab\Project\obj\Debug\FinalProject.Form_LandingPage.en-US.resources
+D:\Projects\C# Projects\OOP II Lab\Project\obj\Debug\en-US\FinalProject.resources.dll

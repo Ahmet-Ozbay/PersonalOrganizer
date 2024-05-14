@@ -107,30 +107,30 @@ namespace FinalProject
             // 
             // pnl_header
             // 
+            resources.ApplyResources(this.pnl_header, "pnl_header");
             this.pnl_header.BackColor = System.Drawing.Color.Transparent;
             this.pnl_header.Controls.Add(this.lbl_header);
             this.pnl_header.Controls.Add(this.btn_close);
             this.pnl_header.Controls.Add(this.btn_minimize);
-            resources.ApplyResources(this.pnl_header, "pnl_header");
             this.pnl_header.Name = "pnl_header";
             this.pnl_header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_header_MouseDown);
             this.pnl_header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_header_MouseMove);
             // 
             // lbl_header
             // 
-            this.lbl_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             resources.ApplyResources(this.lbl_header, "lbl_header");
+            this.lbl_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.lbl_header.ForeColor = System.Drawing.Color.White;
             this.lbl_header.Name = "lbl_header";
             // 
             // btn_close
             // 
+            resources.ApplyResources(this.btn_close, "btn_close");
             this.btn_close.BackColor = System.Drawing.Color.Transparent;
             this.btn_close.BackgroundImage = global::FinalProject.Properties.Resources.btn_close;
             this.btn_close.FlatAppearance.BorderSize = 0;
             this.btn_close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btn_close, "btn_close");
             this.btn_close.ForeColor = System.Drawing.Color.White;
             this.btn_close.Name = "btn_close";
             this.btn_close.UseVisualStyleBackColor = false;
@@ -157,6 +157,7 @@ namespace FinalProject
             // 
             // pnl_menu
             // 
+            resources.ApplyResources(this.pnl_menu, "pnl_menu");
             this.pnl_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.pnl_menu.Controls.Add(this.label1);
             this.pnl_menu.Controls.Add(this.btn_admin);
@@ -167,23 +168,22 @@ namespace FinalProject
             this.pnl_menu.Controls.Add(this.btn_profile);
             this.pnl_menu.Controls.Add(this.pic_profile);
             this.pnl_menu.Controls.Add(this.pnl_picture);
-            resources.ApplyResources(this.pnl_menu, "pnl_menu");
             this.pnl_menu.ForeColor = System.Drawing.Color.White;
             this.pnl_menu.Name = "pnl_menu";
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Name = "label1";
             // 
             // btn_admin
             // 
+            resources.ApplyResources(this.btn_admin, "btn_admin");
             this.btn_admin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.btn_admin.FlatAppearance.BorderSize = 0;
             this.btn_admin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_admin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btn_admin, "btn_admin");
             this.btn_admin.Image = global::FinalProject.Properties.Resources.icon_admin;
             this.btn_admin.Name = "btn_admin";
             this.btn_admin.UseVisualStyleBackColor = false;
@@ -193,11 +193,11 @@ namespace FinalProject
             // 
             // btn_salary
             // 
+            resources.ApplyResources(this.btn_salary, "btn_salary");
             this.btn_salary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.btn_salary.FlatAppearance.BorderSize = 0;
             this.btn_salary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_salary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btn_salary, "btn_salary");
             this.btn_salary.Image = global::FinalProject.Properties.Resources.icon_calculator;
             this.btn_salary.Name = "btn_salary";
             this.btn_salary.UseVisualStyleBackColor = false;
@@ -207,11 +207,11 @@ namespace FinalProject
             // 
             // btn_reminder
             // 
+            resources.ApplyResources(this.btn_reminder, "btn_reminder");
             this.btn_reminder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.btn_reminder.FlatAppearance.BorderSize = 0;
             this.btn_reminder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_reminder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btn_reminder, "btn_reminder");
             this.btn_reminder.Image = global::FinalProject.Properties.Resources.icon_reminder;
             this.btn_reminder.Name = "btn_reminder";
             this.btn_reminder.UseVisualStyleBackColor = false;
@@ -221,11 +221,11 @@ namespace FinalProject
             // 
             // btn_notebook
             // 
+            resources.ApplyResources(this.btn_notebook, "btn_notebook");
             this.btn_notebook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.btn_notebook.FlatAppearance.BorderSize = 0;
             this.btn_notebook.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_notebook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btn_notebook, "btn_notebook");
             this.btn_notebook.Image = global::FinalProject.Properties.Resources.icon_notebook;
             this.btn_notebook.Name = "btn_notebook";
             this.btn_notebook.UseVisualStyleBackColor = false;
@@ -235,11 +235,11 @@ namespace FinalProject
             // 
             // btn_phonebook
             // 
+            resources.ApplyResources(this.btn_phonebook, "btn_phonebook");
             this.btn_phonebook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.btn_phonebook.FlatAppearance.BorderSize = 0;
             this.btn_phonebook.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_phonebook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btn_phonebook, "btn_phonebook");
             this.btn_phonebook.Image = global::FinalProject.Properties.Resources.icon_phonebook;
             this.btn_phonebook.Name = "btn_phonebook";
             this.btn_phonebook.UseVisualStyleBackColor = false;
@@ -249,11 +249,11 @@ namespace FinalProject
             // 
             // btn_profile
             // 
+            resources.ApplyResources(this.btn_profile, "btn_profile");
             this.btn_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.btn_profile.FlatAppearance.BorderSize = 0;
             this.btn_profile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_profile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btn_profile, "btn_profile");
             this.btn_profile.Image = global::FinalProject.Properties.Resources.icon_profile;
             this.btn_profile.Name = "btn_profile";
             this.btn_profile.UseVisualStyleBackColor = false;
@@ -274,8 +274,8 @@ namespace FinalProject
             // 
             // pnl_picture
             // 
-            this.pnl_picture.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.pnl_picture, "pnl_picture");
+            this.pnl_picture.BackColor = System.Drawing.Color.White;
             this.pnl_picture.Name = "pnl_picture";
             // 
             // timer
@@ -285,24 +285,25 @@ namespace FinalProject
             // 
             // pnl_profile
             // 
+            resources.ApplyResources(this.pnl_profile, "pnl_profile");
             this.pnl_profile.BackColor = System.Drawing.Color.Transparent;
             this.pnl_profile.Controls.Add(this.pnl_profile_content);
             this.pnl_profile.Controls.Add(this.lbl_title_profile);
-            resources.ApplyResources(this.pnl_profile, "pnl_profile");
             this.pnl_profile.Name = "pnl_profile";
             this.pnl_profile.VisibleChanged += new System.EventHandler(this.pnl_profile_VisibleChanged);
             // 
             // pnl_profile_content
             // 
+            resources.ApplyResources(this.pnl_profile_content, "pnl_profile_content");
             this.pnl_profile_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.pnl_profile_content.Controls.Add(this.grp_password);
             this.pnl_profile_content.Controls.Add(this.grp_personal_info);
-            resources.ApplyResources(this.pnl_profile_content, "pnl_profile_content");
             this.pnl_profile_content.ForeColor = System.Drawing.Color.White;
             this.pnl_profile_content.Name = "pnl_profile_content";
             // 
             // grp_password
             // 
+            resources.ApplyResources(this.grp_password, "grp_password");
             this.grp_password.Controls.Add(this.btn_see_password_new_confirm);
             this.grp_password.Controls.Add(this.btn_see_password_new);
             this.grp_password.Controls.Add(this.btn_see_password_current);
@@ -315,15 +316,14 @@ namespace FinalProject
             this.grp_password.Controls.Add(this.txt_current_password);
             this.grp_password.Controls.Add(this.lbl_change_password);
             this.grp_password.Controls.Add(this.btn_change_password);
-            resources.ApplyResources(this.grp_password, "grp_password");
             this.grp_password.Name = "grp_password";
             this.grp_password.TabStop = false;
             // 
             // btn_see_password_new_confirm
             // 
+            resources.ApplyResources(this.btn_see_password_new_confirm, "btn_see_password_new_confirm");
             this.btn_see_password_new_confirm.BackColor = System.Drawing.Color.White;
             this.btn_see_password_new_confirm.BackgroundImage = global::FinalProject.Properties.Resources.btn_show_password;
-            resources.ApplyResources(this.btn_see_password_new_confirm, "btn_see_password_new_confirm");
             this.btn_see_password_new_confirm.FlatAppearance.BorderSize = 0;
             this.btn_see_password_new_confirm.Name = "btn_see_password_new_confirm";
             this.btn_see_password_new_confirm.TabStop = false;
@@ -333,9 +333,9 @@ namespace FinalProject
             // 
             // btn_see_password_new
             // 
+            resources.ApplyResources(this.btn_see_password_new, "btn_see_password_new");
             this.btn_see_password_new.BackColor = System.Drawing.Color.White;
             this.btn_see_password_new.BackgroundImage = global::FinalProject.Properties.Resources.btn_show_password;
-            resources.ApplyResources(this.btn_see_password_new, "btn_see_password_new");
             this.btn_see_password_new.FlatAppearance.BorderSize = 0;
             this.btn_see_password_new.Name = "btn_see_password_new";
             this.btn_see_password_new.TabStop = false;
@@ -345,9 +345,9 @@ namespace FinalProject
             // 
             // btn_see_password_current
             // 
+            resources.ApplyResources(this.btn_see_password_current, "btn_see_password_current");
             this.btn_see_password_current.BackColor = System.Drawing.Color.White;
             this.btn_see_password_current.BackgroundImage = global::FinalProject.Properties.Resources.btn_show_password;
-            resources.ApplyResources(this.btn_see_password_current, "btn_see_password_current");
             this.btn_see_password_current.FlatAppearance.BorderSize = 0;
             this.btn_see_password_current.Name = "btn_see_password_current";
             this.btn_see_password_current.TabStop = false;
@@ -392,24 +392,26 @@ namespace FinalProject
             // 
             // lbl_change_password
             // 
+            resources.ApplyResources(this.lbl_change_password, "lbl_change_password");
             this.lbl_change_password.BackColor = System.Drawing.Color.Transparent;
             this.lbl_change_password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            resources.ApplyResources(this.lbl_change_password, "lbl_change_password");
             this.lbl_change_password.Name = "lbl_change_password";
             // 
             // btn_change_password
             // 
+            resources.ApplyResources(this.btn_change_password, "btn_change_password");
             this.btn_change_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
             this.btn_change_password.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_change_password.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btn_change_password, "btn_change_password");
             this.btn_change_password.Name = "btn_change_password";
             this.btn_change_password.UseVisualStyleBackColor = false;
+            this.btn_change_password.Click += new System.EventHandler(this.btn_change_password_Click);
             this.btn_change_password.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_change_password_MouseDown);
             this.btn_change_password.MouseEnter += new System.EventHandler(this.btn_change_password_MouseEnter);
             // 
             // grp_personal_info
             // 
+            resources.ApplyResources(this.grp_personal_info, "grp_personal_info");
             this.grp_personal_info.Controls.Add(this.lbl_personal_info);
             this.grp_personal_info.Controls.Add(this.lbl_name);
             this.grp_personal_info.Controls.Add(this.txt_name);
@@ -422,15 +424,14 @@ namespace FinalProject
             this.grp_personal_info.Controls.Add(this.lbl_adress);
             this.grp_personal_info.Controls.Add(this.txt_adress);
             this.grp_personal_info.Controls.Add(this.btn_save_profile);
-            resources.ApplyResources(this.grp_personal_info, "grp_personal_info");
             this.grp_personal_info.Name = "grp_personal_info";
             this.grp_personal_info.TabStop = false;
             // 
             // lbl_personal_info
             // 
+            resources.ApplyResources(this.lbl_personal_info, "lbl_personal_info");
             this.lbl_personal_info.BackColor = System.Drawing.Color.Transparent;
             this.lbl_personal_info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            resources.ApplyResources(this.lbl_personal_info, "lbl_personal_info");
             this.lbl_personal_info.Name = "lbl_personal_info";
             // 
             // lbl_name
@@ -480,18 +481,19 @@ namespace FinalProject
             // 
             // txt_adress
             // 
-            this.txt_adress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_adress, "txt_adress");
+            this.txt_adress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_adress.Name = "txt_adress";
             // 
             // btn_save_profile
             // 
+            resources.ApplyResources(this.btn_save_profile, "btn_save_profile");
             this.btn_save_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
             this.btn_save_profile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_save_profile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btn_save_profile, "btn_save_profile");
             this.btn_save_profile.Name = "btn_save_profile";
             this.btn_save_profile.UseVisualStyleBackColor = false;
+            this.btn_save_profile.Click += new System.EventHandler(this.btn_save_profile_Click);
             this.btn_save_profile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_save_profile_MouseDown);
             this.btn_save_profile.MouseEnter += new System.EventHandler(this.btn_save_profile_MouseEnter);
             // 
@@ -504,17 +506,17 @@ namespace FinalProject
             // 
             // pnl_contacts
             // 
+            resources.ApplyResources(this.pnl_contacts, "pnl_contacts");
             this.pnl_contacts.BackColor = System.Drawing.Color.Transparent;
             this.pnl_contacts.Controls.Add(this.pnl_contacts_content);
             this.pnl_contacts.Controls.Add(this.lbl_title_contacts);
-            resources.ApplyResources(this.pnl_contacts, "pnl_contacts");
             this.pnl_contacts.Name = "pnl_contacts";
             this.pnl_contacts.VisibleChanged += new System.EventHandler(this.pnl_contacts_VisibleChanged);
             // 
             // pnl_contacts_content
             // 
-            this.pnl_contacts_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             resources.ApplyResources(this.pnl_contacts_content, "pnl_contacts_content");
+            this.pnl_contacts_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.pnl_contacts_content.ForeColor = System.Drawing.Color.White;
             this.pnl_contacts_content.Name = "pnl_contacts_content";
             // 
@@ -527,17 +529,17 @@ namespace FinalProject
             // 
             // pnl_notebook
             // 
+            resources.ApplyResources(this.pnl_notebook, "pnl_notebook");
             this.pnl_notebook.BackColor = System.Drawing.Color.Transparent;
             this.pnl_notebook.Controls.Add(this.pnl_notebook_content);
             this.pnl_notebook.Controls.Add(this.lbl_title_notebook);
-            resources.ApplyResources(this.pnl_notebook, "pnl_notebook");
             this.pnl_notebook.Name = "pnl_notebook";
             this.pnl_notebook.VisibleChanged += new System.EventHandler(this.pnl_notebook_VisibleChanged);
             // 
             // pnl_notebook_content
             // 
-            this.pnl_notebook_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             resources.ApplyResources(this.pnl_notebook_content, "pnl_notebook_content");
+            this.pnl_notebook_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.pnl_notebook_content.ForeColor = System.Drawing.Color.White;
             this.pnl_notebook_content.Name = "pnl_notebook_content";
             // 
@@ -550,17 +552,17 @@ namespace FinalProject
             // 
             // pnl_reminder
             // 
+            resources.ApplyResources(this.pnl_reminder, "pnl_reminder");
             this.pnl_reminder.BackColor = System.Drawing.Color.Transparent;
             this.pnl_reminder.Controls.Add(this.pnl_reminder_content);
             this.pnl_reminder.Controls.Add(this.lbl_title_reminder);
-            resources.ApplyResources(this.pnl_reminder, "pnl_reminder");
             this.pnl_reminder.Name = "pnl_reminder";
             this.pnl_reminder.VisibleChanged += new System.EventHandler(this.pnl_reminder_VisibleChanged);
             // 
             // pnl_reminder_content
             // 
-            this.pnl_reminder_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             resources.ApplyResources(this.pnl_reminder_content, "pnl_reminder_content");
+            this.pnl_reminder_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.pnl_reminder_content.ForeColor = System.Drawing.Color.White;
             this.pnl_reminder_content.Name = "pnl_reminder_content";
             // 
@@ -573,17 +575,17 @@ namespace FinalProject
             // 
             // pnl_salary
             // 
+            resources.ApplyResources(this.pnl_salary, "pnl_salary");
             this.pnl_salary.BackColor = System.Drawing.Color.Transparent;
             this.pnl_salary.Controls.Add(this.pnl_salary_content);
             this.pnl_salary.Controls.Add(this.lbl_title_salary);
-            resources.ApplyResources(this.pnl_salary, "pnl_salary");
             this.pnl_salary.Name = "pnl_salary";
             this.pnl_salary.VisibleChanged += new System.EventHandler(this.pnl_salary_VisibleChanged);
             // 
             // pnl_salary_content
             // 
-            this.pnl_salary_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             resources.ApplyResources(this.pnl_salary_content, "pnl_salary_content");
+            this.pnl_salary_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.pnl_salary_content.ForeColor = System.Drawing.Color.White;
             this.pnl_salary_content.Name = "pnl_salary_content";
             // 
@@ -596,17 +598,17 @@ namespace FinalProject
             // 
             // pnl_admin
             // 
+            resources.ApplyResources(this.pnl_admin, "pnl_admin");
             this.pnl_admin.BackColor = System.Drawing.Color.Transparent;
             this.pnl_admin.Controls.Add(this.pnl_admin_content);
             this.pnl_admin.Controls.Add(this.lbl_title_admin);
-            resources.ApplyResources(this.pnl_admin, "pnl_admin");
             this.pnl_admin.Name = "pnl_admin";
             this.pnl_admin.VisibleChanged += new System.EventHandler(this.pnl_admin_VisibleChanged);
             // 
             // pnl_admin_content
             // 
-            this.pnl_admin_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             resources.ApplyResources(this.pnl_admin_content, "pnl_admin_content");
+            this.pnl_admin_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.pnl_admin_content.ForeColor = System.Drawing.Color.White;
             this.pnl_admin_content.Name = "pnl_admin_content";
             // 
@@ -622,17 +624,18 @@ namespace FinalProject
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FinalProject.Properties.Resources.bg_gradient_main;
+            this.Controls.Add(this.pnl_contacts);
+            this.Controls.Add(this.pnl_profile);
             this.Controls.Add(this.pnl_admin);
             this.Controls.Add(this.pnl_salary);
             this.Controls.Add(this.pnl_reminder);
             this.Controls.Add(this.pnl_notebook);
-            this.Controls.Add(this.pnl_contacts);
-            this.Controls.Add(this.pnl_profile);
             this.Controls.Add(this.pnl_menu);
             this.Controls.Add(this.pnl_header);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_LandingPage";
+            this.Load += new System.EventHandler(this.Form_LandingPage_Load);
             this.pnl_header.ResumeLayout(false);
             this.pnl_menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).EndInit();
