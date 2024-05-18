@@ -37,7 +37,7 @@ namespace FinalProject
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_minimize = new System.Windows.Forms.Button();
             this.pnl_menu = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.btn_admin = new System.Windows.Forms.Button();
             this.btn_salary = new System.Windows.Forms.Button();
             this.btn_reminder = new System.Windows.Forms.Button();
@@ -159,7 +159,7 @@ namespace FinalProject
             // 
             resources.ApplyResources(this.pnl_menu, "pnl_menu");
             this.pnl_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
-            this.pnl_menu.Controls.Add(this.label1);
+            this.pnl_menu.Controls.Add(this.lblName);
             this.pnl_menu.Controls.Add(this.btn_admin);
             this.pnl_menu.Controls.Add(this.btn_salary);
             this.pnl_menu.Controls.Add(this.btn_reminder);
@@ -171,11 +171,11 @@ namespace FinalProject
             this.pnl_menu.ForeColor = System.Drawing.Color.White;
             this.pnl_menu.Name = "pnl_menu";
             // 
-            // label1
+            // lblName
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lblName, "lblName");
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Name = "lblName";
             // 
             // btn_admin
             // 
@@ -624,8 +624,8 @@ namespace FinalProject
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FinalProject.Properties.Resources.bg_gradient_main;
-            this.Controls.Add(this.pnl_contacts);
             this.Controls.Add(this.pnl_profile);
+            this.Controls.Add(this.pnl_contacts);
             this.Controls.Add(this.pnl_admin);
             this.Controls.Add(this.pnl_salary);
             this.Controls.Add(this.pnl_reminder);
@@ -670,7 +670,7 @@ namespace FinalProject
         private System.Windows.Forms.Button btn_reminder;
         private System.Windows.Forms.Button btn_salary;
         private System.Windows.Forms.Button btn_admin;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel pnl_profile;
         private System.Windows.Forms.Label lbl_title_profile;
         private System.Windows.Forms.Panel pnl_profile_content;

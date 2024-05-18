@@ -159,9 +159,6 @@
   <data name="&gt;&gt;btn_change_password.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;pnl_notebook.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="lbl_lastname.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 31</value>
   </data>
@@ -222,23 +219,17 @@
   <data name="&gt;&gt;lbl_title_admin.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pnl_salary_content.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 57</value>
+  <data name="&gt;&gt;btn_salary.Parent" xml:space="preserve">
+    <value>pnl_menu</value>
   </data>
   <data name="&gt;&gt;pnl_contacts.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lbl_title_admin.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;lbl_title_admin.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="btn_phonebook.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;txt_name.Name" xml:space="preserve">
-    <value>txt_name</value>
   </data>
   <data name="lbl_title_reminder.Text" xml:space="preserve">
     <value>REMINDER</value>
@@ -282,8 +273,8 @@
   <data name="&gt;&gt;btn_notebook.Name" xml:space="preserve">
     <value>btn_notebook</value>
   </data>
-  <data name="&gt;&gt;lbl_personal_info.Name" xml:space="preserve">
-    <value>lbl_personal_info</value>
+  <data name="&gt;&gt;btn_minimize.Parent" xml:space="preserve">
+    <value>pnl_header</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -302,6 +293,9 @@
   </data>
   <data name="&gt;&gt;pic_profile.Parent" xml:space="preserve">
     <value>pnl_menu</value>
+  </data>
+  <data name="&gt;&gt;txt_name.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lbl_adress.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans ExtraBold, 15.75pt, style=Bold</value>
@@ -332,6 +326,9 @@
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="&gt;&gt;lbl_title_profile.Name" xml:space="preserve">
+    <value>lbl_title_profile</value>
   </data>
   <data name="pnl_profile_content.Size" type="System.Drawing.Size, System.Drawing">
     <value>1057, 626</value>
@@ -375,8 +372,11 @@
   <data name="pic_profile.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="&gt;&gt;grp_password.Name" xml:space="preserve">
-    <value>grp_password</value>
+  <data name="&gt;&gt;btn_minimize.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbl_change_password.Text" xml:space="preserve">
+    <value>Change Password</value>
   </data>
   <data name="&gt;&gt;lbl_name.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -417,8 +417,8 @@
   <data name="&gt;&gt;txt_adress.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btn_reminder.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="lblName.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="btn_salary.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -426,8 +426,8 @@
   <data name="pnl_contacts.Location" type="System.Drawing.Point, System.Drawing">
     <value>286, 50</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="txt_new_password.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 33</value>
   </data>
   <data name="lbl_title_salary.Size" type="System.Drawing.Size, System.Drawing">
     <value>417, 45</value>
@@ -446,6 +446,9 @@
   </data>
   <data name="&gt;&gt;btn_see_password_new_confirm.Parent" xml:space="preserve">
     <value>grp_password</value>
+  </data>
+  <data name="&gt;&gt;timer.Name" xml:space="preserve">
+    <value>timer</value>
   </data>
   <data name="btn_salary.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -492,9 +495,6 @@
   <data name="txt_lastname.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="grp_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 592</value>
-  </data>
   <data name="&gt;&gt;btn_save_profile.Parent" xml:space="preserve">
     <value>grp_personal_info</value>
   </data>
@@ -512,6 +512,9 @@
   </data>
   <data name="lbl_header.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;pnl_picture.Name" xml:space="preserve">
     <value>pnl_picture</value>
@@ -573,9 +576,6 @@
   <data name="pnl_salary_content.Size" type="System.Drawing.Size, System.Drawing">
     <value>1057, 626</value>
   </data>
-  <data name="lbl_change_password.Text" xml:space="preserve">
-    <value>Change Password</value>
-  </data>
   <data name="btn_see_password_current.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -630,6 +630,9 @@
   <data name="pnl_notebook_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
   </data>
+  <data name="lbl_personal_info.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
   <data name="&gt;&gt;lbl_lastname.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -654,8 +657,8 @@
   <data name="&gt;&gt;txt_email.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;lbl_lastname.Parent" xml:space="preserve">
-    <value>grp_personal_info</value>
+  <data name="&gt;&gt;txt_current_password.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 269</value>
@@ -678,20 +681,20 @@
   <data name="&gt;&gt;btn_see_password_new_confirm.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;btn_admin.Parent" xml:space="preserve">
+    <value>pnl_menu</value>
+  </data>
   <data name="&gt;&gt;txt_new_password.Parent" xml:space="preserve">
     <value>grp_password</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
   </data>
   <data name="pnl_reminder_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
   </data>
-  <data name="txt_new_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 33</value>
+  <data name="lbl_header.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;lbl_password_rules.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;lbl_personal_info.Name" xml:space="preserve">
+    <value>lbl_personal_info</value>
   </data>
   <data name="&gt;&gt;btn_see_password_new.Parent" xml:space="preserve">
     <value>grp_password</value>
@@ -714,8 +717,8 @@
   <data name="&gt;&gt;lbl_title_admin.Name" xml:space="preserve">
     <value>lbl_title_admin</value>
   </data>
-  <data name="pnl_menu.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="lbl_personal_info.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 20</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -723,8 +726,8 @@
   <data name="&gt;&gt;txt_current_password.Parent" xml:space="preserve">
     <value>grp_password</value>
   </data>
-  <data name="&gt;&gt;timer.Name" xml:space="preserve">
-    <value>timer</value>
+  <data name="&gt;&gt;btn_reminder.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;btn_phonebook.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -747,23 +750,29 @@
   <data name="lbl_title_admin.Size" type="System.Drawing.Size, System.Drawing">
     <value>299, 45</value>
   </data>
-  <data name="&gt;&gt;btn_close.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 81</value>
   </data>
   <data name="pnl_notebook_content.Size" type="System.Drawing.Size, System.Drawing">
     <value>1057, 626</value>
   </data>
-  <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 32</value>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="lbl_title_salary.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 3</value>
   </data>
+  <data name="pnl_notebook_content.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 57</value>
+  </data>
+  <data name="&gt;&gt;btn_salary.Name" xml:space="preserve">
+    <value>btn_salary</value>
+  </data>
   <data name="&gt;&gt;lbl_personal_info.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="lbl_change_password.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 20</value>
   </data>
   <data name="&gt;&gt;lbl_change_password.Parent" xml:space="preserve">
     <value>grp_password</value>
@@ -789,8 +798,8 @@
   <data name="pnl_salary.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="lbl_personal_info.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="grp_password.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 592</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 40</value>
@@ -807,20 +816,20 @@
   <data name="lbl_title_profile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="btn_see_password_new.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
   <data name="&gt;&gt;btn_admin.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="btn_profile.Location" type="System.Drawing.Point, System.Drawing">
     <value>30, 268</value>
   </data>
-  <data name="lbl_change_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 20</value>
+  <data name="&gt;&gt;lbl_lastname.Parent" xml:space="preserve">
+    <value>grp_personal_info</value>
   </data>
   <data name="&gt;&gt;pnl_reminder_content.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
   </data>
   <data name="&gt;&gt;lbl_header.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -831,8 +840,8 @@
   <data name="btn_change_password.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 50</value>
   </data>
-  <data name="&gt;&gt;pnl_contacts_content.Parent" xml:space="preserve">
-    <value>pnl_contacts</value>
+  <data name="&gt;&gt;grp_personal_info.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;btn_see_password_new.Name" xml:space="preserve">
     <value>btn_see_password_new</value>
@@ -858,6 +867,9 @@
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 175</value>
   </data>
+  <data name="pnl_menu.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="pnl_admin.Location" type="System.Drawing.Point, System.Drawing">
     <value>286, 50</value>
   </data>
@@ -879,8 +891,8 @@
   <data name="pnl_picture.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 24</value>
   </data>
-  <data name="&gt;&gt;btn_salary.Name" xml:space="preserve">
-    <value>btn_salary</value>
+  <data name="&gt;&gt;pnl_contacts_content.Parent" xml:space="preserve">
+    <value>pnl_contacts</value>
   </data>
   <data name="txt_email.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 33</value>
@@ -890,9 +902,6 @@
   </data>
   <data name="&gt;&gt;pnl_contacts_content.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;btn_save_profile.ZOrder" xml:space="preserve">
-    <value>11</value>
   </data>
   <data name="&gt;&gt;pnl_admin_content.Parent" xml:space="preserve">
     <value>pnl_admin</value>
@@ -942,9 +951,6 @@
   <data name="btn_change_password.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="btn_see_password_new_confirm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 32</value>
-  </data>
   <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -957,8 +963,11 @@
   <data name="btn_salary.Text" xml:space="preserve">
     <value>        SALARY</value>
   </data>
-  <data name="lbl_title_profile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans ExtraBold, 24pt, style=Bold</value>
+  <data name="&gt;&gt;txt_new_password.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txt_new_password.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
   </data>
   <data name="pnl_admin.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -993,8 +1002,8 @@
   <data name="lbl_title_reminder.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans ExtraBold, 24pt, style=Bold</value>
   </data>
-  <data name="btn_profile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="&gt;&gt;lbl_header.Parent" xml:space="preserve">
+    <value>pnl_header</value>
   </data>
   <data name="&gt;&gt;grp_personal_info.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1026,6 +1035,9 @@
   <data name="lbl_name.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans ExtraBold, 15.75pt, style=Bold</value>
   </data>
+  <data name="pnl_salary_content.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 57</value>
+  </data>
   <data name="pnl_admin_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
   </data>
@@ -1047,11 +1059,11 @@
   <data name="lbl_adress.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;lbl_header.Parent" xml:space="preserve">
-    <value>pnl_header</value>
+  <data name="btn_see_password_new_confirm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
   </data>
-  <data name="&gt;&gt;lbl_title_profile.Name" xml:space="preserve">
-    <value>lbl_title_profile</value>
+  <data name="&gt;&gt;lblName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txt_email.Name" xml:space="preserve">
     <value>txt_email</value>
@@ -1063,13 +1075,13 @@
     <value>True</value>
   </data>
   <data name="&gt;&gt;pnl_profile.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="lbl_title_admin.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 3</value>
   </data>
-  <data name="&gt;&gt;txt_new_password.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbl_title_profile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans ExtraBold, 24pt, style=Bold</value>
   </data>
   <data name="btn_change_password.Location" type="System.Drawing.Point, System.Drawing">
     <value>158, 522</value>
@@ -1095,8 +1107,8 @@
   <data name="btn_reminder.Location" type="System.Drawing.Point, System.Drawing">
     <value>30, 472</value>
   </data>
-  <data name="&gt;&gt;btn_salary.Parent" xml:space="preserve">
-    <value>pnl_menu</value>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
   <data name="&gt;&gt;pic_profile.Name" xml:space="preserve">
     <value>pic_profile</value>
@@ -1110,11 +1122,11 @@
   <data name="pnl_contacts_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
   </data>
-  <data name="lbl_title_contacts.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
   <data name="lbl_name.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="pnl_reminder.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="pnl_contacts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1149,8 +1161,8 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Current Password: </value>
   </data>
-  <data name="&gt;&gt;btn_minimize.Parent" xml:space="preserve">
-    <value>pnl_header</value>
+  <data name="btn_phonebook.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lbl_title_profile.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1179,8 +1191,8 @@
   <data name="btn_profile.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="pnl_reminder.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;grp_password.Name" xml:space="preserve">
+    <value>grp_password</value>
   </data>
   <data name="pnl_menu.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans ExtraBold, 18pt, style=Bold</value>
@@ -1221,8 +1233,8 @@
   <data name="lbl_personal_info.Size" type="System.Drawing.Size, System.Drawing">
     <value>600, 50</value>
   </data>
-  <data name="txt_new_password.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="&gt;&gt;txt_name.Name" xml:space="preserve">
+    <value>txt_name</value>
   </data>
   <data name="lbl_personal_info.Text" xml:space="preserve">
     <value>Personal Information</value>
@@ -1242,17 +1254,20 @@
   <data name="btn_save_profile.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 50</value>
   </data>
-  <data name="&gt;&gt;grp_personal_info.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;btn_save_profile.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
-  <data name="&gt;&gt;pnl_admin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbl_title_contacts.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="btn_reminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 50</value>
   </data>
   <data name="grp_personal_info.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 9</value>
+  </data>
+  <data name="btn_phonebook.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;pnl_picture.Parent" xml:space="preserve">
     <value>pnl_menu</value>
@@ -1275,14 +1290,17 @@
   <data name="&gt;&gt;lbl_title_reminder.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;pnl_admin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="txt_email.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="&gt;&gt;txt_lastname.Name" xml:space="preserve">
     <value>txt_lastname</value>
   </data>
-  <data name="lbl_personal_info.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 20</value>
+  <data name="&gt;&gt;lbl_password_rules.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lbl_phone_number.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1311,9 +1329,6 @@
   <data name="&gt;&gt;grp_password.Parent" xml:space="preserve">
     <value>pnl_profile_content</value>
   </data>
-  <data name="&gt;&gt;lbl_phone_number.Name" xml:space="preserve">
-    <value>lbl_phone_number</value>
-  </data>
   <data name="&gt;&gt;pnl_admin_content.Name" xml:space="preserve">
     <value>pnl_admin_content</value>
   </data>
@@ -1332,8 +1347,8 @@
   <data name="lbl_password_rules.Size" type="System.Drawing.Size, System.Drawing">
     <value>340, 130</value>
   </data>
-  <data name="lbl_adress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 31</value>
+  <data name="btn_profile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btn_see_password_new_confirm.Name" xml:space="preserve">
     <value>btn_see_password_new_confirm</value>
@@ -1353,8 +1368,11 @@
   <data name="btn_phonebook.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 50</value>
   </data>
-  <data name="&gt;&gt;btn_minimize.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txt_new_password.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
   <data name="lbl_phone_number.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -1401,17 +1419,14 @@
   <data name="&gt;&gt;btn_minimize.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txt_current_password.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="txt_lastname.Location" type="System.Drawing.Point, System.Drawing">
     <value>220, 135</value>
   </data>
   <data name="&gt;&gt;pnl_salary_content.Name" xml:space="preserve">
     <value>pnl_salary_content</value>
   </data>
-  <data name="txt_new_password.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
-    <value>*</value>
+  <data name="lbl_title_profile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1419,8 +1434,8 @@
   <data name="&gt;&gt;btn_admin.Name" xml:space="preserve">
     <value>btn_admin</value>
   </data>
-  <data name="pnl_notebook_content.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 57</value>
+  <data name="&gt;&gt;lblName.Name" xml:space="preserve">
+    <value>lblName</value>
   </data>
   <data name="&gt;&gt;btn_minimize.Name" xml:space="preserve">
     <value>btn_minimize</value>
@@ -1428,8 +1443,8 @@
   <data name="lbl_title_notebook.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="lbl_title_profile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="&gt;&gt;btn_close.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pnl_reminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>1080, 718</value>
@@ -1455,8 +1470,8 @@
   <data name="lbl_password_rules.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans Light, 12pt</value>
   </data>
-  <data name="&gt;&gt;txt_name.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_see_password_new.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="lbl_password_rules.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 370</value>
@@ -1479,8 +1494,8 @@
   <data name="&gt;&gt;txt_current_password.Name" xml:space="preserve">
     <value>txt_current_password</value>
   </data>
-  <data name="lbl_header.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="&gt;&gt;lbl_phone_number.Name" xml:space="preserve">
+    <value>lbl_phone_number</value>
   </data>
   <data name="lbl_password_rules.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -1581,8 +1596,8 @@
   <data name="btn_notebook.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;btn_admin.Parent" xml:space="preserve">
-    <value>pnl_menu</value>
+  <data name="lblName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 185</value>
   </data>
   <data name="lbl_email.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -1686,6 +1701,9 @@
   <data name="pnl_salary.Size" type="System.Drawing.Size, System.Drawing">
     <value>1080, 718</value>
   </data>
+  <data name="&gt;&gt;lblName.Parent" xml:space="preserve">
+    <value>pnl_menu</value>
+  </data>
   <data name="btn_profile.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 50</value>
   </data>
@@ -1698,8 +1716,8 @@
   <data name="txt_confirm_new_password.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="btn_phonebook.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;pnl_notebook.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_title_admin.Parent" xml:space="preserve">
     <value>pnl_admin</value>
@@ -1746,8 +1764,8 @@
   <data name="&gt;&gt;txt_confirm_new_password.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbl_adress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 31</value>
   </data>
   <data name="&gt;&gt;pnl_reminder.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

@@ -31,6 +31,7 @@ namespace FinalProject
             }
         }
 
+
         public Form_LandingPage()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace FinalProject
         private void Form_LandingPage_Load(object sender, EventArgs e)
         {
             Read_user_data();
+            lblName.Text = txt_name.Text + " " + txt_lastname.Text;
         }
 
         private void Read_user_data()
@@ -69,6 +71,7 @@ namespace FinalProject
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
+            Form_SignIn_SignUp.form_signIn_signUp.Close();
         }
         private void btn_close_MouseEnter(object sender, EventArgs e)
         {
@@ -490,16 +493,7 @@ namespace FinalProject
 
         public static bool IsValidString(string input)
         {
-            // Regex pattern to check the string
-            // ^ asserts position at start of the string
-            // (?=.[A-Z]) ensures at least one uppercase letter
-            // (?=.[!@#$%^&(),.?":{}|<>]) ensures at least one special character
-            // .{8,} ensures at least 8 characters
-            // $ asserts position at the end of the string
             string pattern = "^(?=.*[A-Z])(?=.*[!@#$*%^&(),.?\":{}|<>]).{8,}$";
-
-
-            // Check if the input matches the pattern
             return Regex.IsMatch(input, pattern);
         }
     }

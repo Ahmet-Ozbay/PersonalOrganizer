@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,11 +35,13 @@ namespace FinalProject
         // Veri transferi
         
         public static string e_mail;
+        public static Form_SignIn_SignUp form_signIn_signUp;
 
 
         public Form_SignIn_SignUp()
         {
             InitializeComponent();
+            form_signIn_signUp = this;
         }
         
         //
