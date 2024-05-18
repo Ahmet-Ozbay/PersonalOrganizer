@@ -1,2 +1,2 @@
-ID,EMAIL,PASSWORD,NAME,LASTNAME,AUTHORITY,PHONENUMBER,ADDRESS
-1,general_kenobi@jedi.com,enter your password,G,kenobi,Admin,as,asdasd
+ID,EMAIL,PASSWORD,NAME,LASTNAME,AUTHORITY,PHONENUMBER,ADDRESS,SALARY
+1,general_kenobi@jedi.com,enter your password,G,Kenobi,Admin,,,0

@@ -134,14 +134,77 @@
   <data name="lblName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
+  <data name="lbl_name.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 81</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txt_name.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="lbl_lastname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 142</value>
+  </data>
   <data name="txt_lastname.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="txt_lastname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 141</value>
+  </data>
+  <data name="lbl_email.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 264</value>
+  </data>
+  <data name="txt_email.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 263</value>
+  </data>
+  <data name="lbl_phone_number.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 325</value>
+  </data>
+  <data name="txt_phone_number.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 324</value>
+  </data>
+  <data name="lbl_adress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 427</value>
+  </data>
+  <data name="txt_adress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 385</value>
+  </data>
+  <data name="txt_adress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 115</value>
+  </data>
   <data name="pnl_contacts_content.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="lbl_salary.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_salary.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans ExtraBold, 15.75pt, style=Bold</value>
+  </data>
+  <data name="lbl_salary.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_salary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 203</value>
+  </data>
+  <data name="lbl_salary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 31</value>
+  </data>
+  <data name="lbl_salary.Text" xml:space="preserve">
+    <value>Salary:</value>
+  </data>
+  <data name="lbl_salary.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="txt_salary.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txt_salary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 202</value>
+  </data>
+  <data name="txt_salary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 33</value>
+  </data>
+  <data name="txt_salary.Text" xml:space="preserve">
+    <value>Not Calculated Yet</value>
   </data>
 </root>

@@ -31,6 +31,67 @@ namespace FinalProject
             }
         }
 
+        private Dictionary<string, double> experience = new Dictionary<string, double>
+        {
+            {"2-4",0.60},
+            {"5-9",0.80},
+            {"10-14",1.20},
+            {"15-20",1.35},
+            {"20+",1.50}
+        };
+
+        private Dictionary<string, double> city = new Dictionary<string, double>
+        {
+            {"TR10: Istanbul", 0.30},
+            {"TR51: Ankara", 0.20},
+            {"TR31: Izmir", 0.20},
+            {"TR42: Kocaeli, Sakarya, Düzce, Bolu, Yalova", 0.10},
+            {"TR21: Edirne, Kırklareli, Tekirdağ", 0.10},
+            {"TR90: Trabzon, Ordu, Giresun, Rize, Artvin", 0.5},
+            {"TR41: Bursa, Eskişehir, Bilecik", 0.5},
+            {"TR32: Aydın, Denizli, Muğla", 0.5},
+            {"TR62: Adana, Mersin", 0.5},
+            {"TR22: Balıkesir, Çanakkale", 0.5},
+            {"TR61: Antalya, Isparta, Burdur", 0.5},
+            {"Other", 0}
+        };
+
+        private Dictionary<string, double> education = new Dictionary<string, double>
+        {
+            {"Field Related Master's Degree",0.10},
+            {"Field Related Doctorate Degree",0.30},
+            {"Field Related Assoc. Doc. Degree",0.35},
+            {"Field Unrelated Master's Degree",0.05},
+            {"Field Unrelated Doctorate Degree",0.15}
+        };
+
+        private Dictionary<string, double> language = new Dictionary<string, double>
+        {
+            {"No Secondary Language", 0},
+            {"English Certificate",0.20},
+            {"English School Graduation",0.20},
+            {"Other Language Certificate(s)",0.05}
+            
+        };
+
+        private Dictionary<string, double> duties = new Dictionary<string, double>
+        {
+            {"Team Leader/Technical Manager",0.50},
+            {"Project Manager",0.75},
+            {"Director",0.85},
+            {"CTO",1.00},
+            {"IT Officer/Manager (Employee <= 5)",0.40},
+            {"IT Officer/Manager (Employee > 5)",0.60}
+        };
+
+        private Dictionary<string, double> family = new Dictionary<string, double>
+        {
+            { "Single", 0 },
+            { "Married and Spouse not working", 0.20 },
+            { "Children of age 0-6", 0.20 },
+            { "Children of age 7-18", 0.30 },
+            { "Children of age 18+ (Student)", 0.40 }
+        };
 
         public Form_LandingPage()
         {
@@ -41,6 +102,13 @@ namespace FinalProject
         {
             Read_user_data();
             lblName.Text = txt_name.Text + " " + txt_lastname.Text;
+
+            cmb_experience.DataSource = experience.Keys.ToList();
+            cmb_city.DataSource = city.Keys.ToList();
+            cmb_education.DataSource = education.Keys.ToList();
+            cmb_language.DataSource = language.Keys.ToList();
+            cmb_duties.DataSource = duties.Keys.ToList();
+            cmb_family.DataSource = family.Keys.ToList();
         }
 
         private void Read_user_data()
@@ -495,6 +563,31 @@ namespace FinalProject
         {
             string pattern = "^(?=.*[A-Z])(?=.*[!@#$*%^&(),.?\":{}|<>]).{8,}$";
             return Regex.IsMatch(input, pattern);
+        }
+
+        private void cmb_language_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbl_language_count.Visible = nud_langauge_count.Visible = (cmb_language.SelectedIndex == 3);
+        }
+
+        private double CalculateSalary()
+        {
+            double coefficient = 0;
+            double base_salary = 26828;
+
+            coefficient += experience[cmb_experience.SelectedItem.ToString()];
+            coefficient += city[cmb_city.SelectedItem.ToString()];
+            coefficient += education[cmb_education.SelectedItem.ToString()];
+            coefficient += language[cmb_language.SelectedItem.ToString()];
+            coefficient += duties[cmb_duties.SelectedItem.ToString()];
+            coefficient += family[cmb_family.SelectedItem.ToString()];
+
+            return base_salary * (coefficient + 1);
+        }
+
+        private void btn_calculate_Click(object sender, EventArgs e)
+        {
+            txt_calculated_salary.Text = "₺" + CalculateSalary().ToString();
         }
     }
 }

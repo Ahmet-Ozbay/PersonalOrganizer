@@ -26,6 +26,7 @@ namespace FinalProject
         public string Photo {  get; set; }
         public string PhoneNumber { get; set; } = null;
         public string Address { get; set; } = null;
+        public double Salary { get; set; } = 0;
         public Authority Authorisation {  get; set; }
         public IAuthorityStrategy _strategy {  get; set; }
         public PhoneBook Phonebook {  get; set; }
