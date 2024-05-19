@@ -565,7 +565,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_signin.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lbl_confirm_password.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1174,7 +1174,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_signup.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="bg_flowers.Location" type="System.Drawing.Point, System.Drawing">
     <value>-12, 25</value>
@@ -1196,6 +1196,45 @@
   </data>
   <data name="&gt;&gt;bg_flowers.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="lbl_reset_pass_title.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_reset_pass_title.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans Condensed, 36pt, style=Bold</value>
+  </data>
+  <data name="lbl_reset_pass_title.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="lbl_reset_pass_title.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_reset_pass_title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 12</value>
+  </data>
+  <data name="lbl_reset_pass_title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>515, 69</value>
+  </data>
+  <data name="lbl_reset_pass_title.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lbl_reset_pass_title.Text" xml:space="preserve">
+    <value>       Forgot Your Password?</value>
+  </data>
+  <data name="lbl_reset_pass_title.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lbl_reset_pass_title.Name" xml:space="preserve">
+    <value>lbl_reset_pass_title</value>
+  </data>
+  <data name="&gt;&gt;lbl_reset_pass_title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_reset_pass_title.Parent" xml:space="preserve">
+    <value>pnl_reset_password</value>
+  </data>
+  <data name="&gt;&gt;lbl_reset_pass_title.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btn_reset_password.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1228,7 +1267,7 @@
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;btn_reset_password.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lbl_sign_in_reset.Location" type="System.Drawing.Point, System.Drawing">
     <value>186, 375</value>
@@ -1255,7 +1294,7 @@
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;lbl_sign_in_reset.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lbl_reset_pass_info.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans Light, 14.25pt</value>
@@ -1283,7 +1322,7 @@ the email matches with your account.</value>
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;lbl_reset_pass_info.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txt_email_reset_pass.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1340,7 +1379,7 @@ the email matches with your account.</value>
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;pnl_email_bg_reset_pass.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lbl_email_reset_pass.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1373,45 +1412,6 @@ the email matches with your account.</value>
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;lbl_email_reset_pass.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lbl_reset_pass_title.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_reset_pass_title.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans Condensed, 36pt, style=Bold</value>
-  </data>
-  <data name="lbl_reset_pass_title.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="lbl_reset_pass_title.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbl_reset_pass_title.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 12</value>
-  </data>
-  <data name="lbl_reset_pass_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>515, 69</value>
-  </data>
-  <data name="lbl_reset_pass_title.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="lbl_reset_pass_title.Text" xml:space="preserve">
-    <value>       Forgot Your Password?</value>
-  </data>
-  <data name="lbl_reset_pass_title.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;lbl_reset_pass_title.Name" xml:space="preserve">
-    <value>lbl_reset_pass_title</value>
-  </data>
-  <data name="&gt;&gt;lbl_reset_pass_title.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_reset_pass_title.Parent" xml:space="preserve">
-    <value>pnl_reset_password</value>
-  </data>
-  <data name="&gt;&gt;lbl_reset_pass_title.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="pnl_reset_password.Location" type="System.Drawing.Point, System.Drawing">
@@ -1436,7 +1436,7 @@ the email matches with your account.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_reset_password.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
