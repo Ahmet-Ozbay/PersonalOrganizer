@@ -598,7 +598,6 @@ namespace FinalProject
                 string Base64UrlEncode(string input)
                 {
                     var inputBytes = Encoding.UTF8.GetBytes(input);
-                    // Base64Url encode the input
                     return Convert.ToBase64String(inputBytes)
                         .Replace('+', '-')
                         .Replace('/', '_')
@@ -614,6 +613,8 @@ namespace FinalProject
                 // Send the email.
                 service.Users.Messages.Send(message, "me").Execute();
                 MessageBox.Show("A new password has been sent to your email address.", "Password Reset", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt_email.Text = user.Email;
+                txt_email.ForeColor = Color.Black;
             }
             catch (Exception ex)
             {

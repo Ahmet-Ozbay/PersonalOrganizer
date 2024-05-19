@@ -71,13 +71,13 @@ namespace FinalProject
             this.lbl_signup = new System.Windows.Forms.Label();
             this.bg_flowers = new System.Windows.Forms.Label();
             this.pnl_reset_password = new System.Windows.Forms.Panel();
+            this.lbl_reset_pass_title = new System.Windows.Forms.Label();
             this.btn_reset_password = new System.Windows.Forms.Button();
             this.lbl_sign_in_reset = new System.Windows.Forms.LinkLabel();
             this.lbl_reset_pass_info = new System.Windows.Forms.Label();
             this.pnl_email_bg_reset_pass = new System.Windows.Forms.Panel();
             this.txt_email_reset_pass = new System.Windows.Forms.TextBox();
             this.lbl_email_reset_pass = new System.Windows.Forms.Label();
-            this.lbl_reset_pass_title = new System.Windows.Forms.Label();
             this.pnl_header.SuspendLayout();
             this.pnl_signin.SuspendLayout();
             this.panel_password.SuspendLayout();
@@ -459,6 +459,13 @@ namespace FinalProject
             resources.ApplyResources(this.pnl_reset_password, "pnl_reset_password");
             this.pnl_reset_password.Name = "pnl_reset_password";
             // 
+            // lbl_reset_pass_title
+            // 
+            resources.ApplyResources(this.lbl_reset_pass_title, "lbl_reset_pass_title");
+            this.lbl_reset_pass_title.ForeColor = System.Drawing.Color.White;
+            this.lbl_reset_pass_title.Image = global::FinalProject.Properties.Resources.icon_forgot_password;
+            this.lbl_reset_pass_title.Name = "lbl_reset_pass_title";
+            // 
             // btn_reset_password
             // 
             this.btn_reset_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
@@ -509,13 +516,6 @@ namespace FinalProject
             resources.ApplyResources(this.lbl_email_reset_pass, "lbl_email_reset_pass");
             this.lbl_email_reset_pass.ForeColor = System.Drawing.Color.White;
             this.lbl_email_reset_pass.Name = "lbl_email_reset_pass";
-            // 
-            // lbl_reset_pass_title
-            // 
-            resources.ApplyResources(this.lbl_reset_pass_title, "lbl_reset_pass_title");
-            this.lbl_reset_pass_title.ForeColor = System.Drawing.Color.White;
-            this.lbl_reset_pass_title.Image = global::FinalProject.Properties.Resources.icon_forgot_password;
-            this.lbl_reset_pass_title.Name = "lbl_reset_pass_title";
             // 
             // Form_SignIn_SignUp
             // 
