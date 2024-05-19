@@ -27,9 +27,9 @@ namespace FinalProject
 {
     public partial class Form_SignIn_SignUp : Form
     {
-#pragma warning disable S1104 // Fields should not have public accessibility
+#       pragma warning disable S1104 // Fields should not have public accessibility
         public Point mouse_location; // Necessary for dragging the window around
-#pragma warning restore S1104 // Fields should not have public accessibility
+        #pragma warning restore S1104 // Fields should not have public accessibility
 
 
         // This reduces flickering

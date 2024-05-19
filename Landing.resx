@@ -1393,7 +1393,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_profile.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pnl_contacts_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
@@ -1638,23 +1638,581 @@
   <data name="&gt;&gt;pnl_reminder.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="lbl_18_plus_clause.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 9.75pt</value>
+  </data>
+  <data name="lbl_18_plus_clause.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 221</value>
+  </data>
+  <data name="lbl_18_plus_clause.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 26</value>
+  </data>
+  <data name="lbl_18_plus_clause.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lbl_18_plus_clause.Text" xml:space="preserve">
+    <value>*18+ children must be student</value>
+  </data>
+  <data name="lbl_18_plus_clause.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lbl_18_plus_clause.Name" xml:space="preserve">
+    <value>lbl_18_plus_clause</value>
+  </data>
+  <data name="&gt;&gt;lbl_18_plus_clause.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_18_plus_clause.Parent" xml:space="preserve">
+    <value>grp_family</value>
+  </data>
+  <data name="&gt;&gt;lbl_18_plus_clause.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbl_family_info.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_family_info.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans SemiBold, 14.25pt, style=Bold</value>
+  </data>
+  <data name="lbl_family_info.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_family_info.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 29</value>
+  </data>
+  <data name="lbl_family_info.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 27</value>
+  </data>
+  <data name="lbl_family_info.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lbl_family_info.Text" xml:space="preserve">
+    <value>Family Information</value>
+  </data>
+  <data name="&gt;&gt;lbl_family_info.Name" xml:space="preserve">
+    <value>lbl_family_info</value>
+  </data>
+  <data name="&gt;&gt;lbl_family_info.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_family_info.Parent" xml:space="preserve">
+    <value>grp_family</value>
+  </data>
+  <data name="&gt;&gt;lbl_family_info.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cb_children.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_children.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 221</value>
+  </data>
+  <data name="cb_children.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 31</value>
+  </data>
+  <data name="cb_children.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cb_children.Text" xml:space="preserve">
+    <value>Children?</value>
+  </data>
+  <data name="&gt;&gt;cb_children.Name" xml:space="preserve">
+    <value>cb_children</value>
+  </data>
+  <data name="&gt;&gt;cb_children.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_children.Parent" xml:space="preserve">
+    <value>grp_family</value>
+  </data>
+  <data name="&gt;&gt;cb_children.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="grp_children.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="nud_18_plus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 108</value>
+  </data>
+  <data name="nud_18_plus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 33</value>
+  </data>
+  <data name="nud_18_plus.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="nud_18_plus.UpDownAlign" type="System.Windows.Forms.LeftRightAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;nud_18_plus.Name" xml:space="preserve">
+    <value>nud_18_plus</value>
+  </data>
+  <data name="&gt;&gt;nud_18_plus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nud_18_plus.Parent" xml:space="preserve">
+    <value>grp_children</value>
+  </data>
+  <data name="&gt;&gt;nud_18_plus.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbl_18plus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_18plus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_18plus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 110</value>
+  </data>
+  <data name="lbl_18plus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 27</value>
+  </data>
+  <data name="lbl_18plus.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lbl_18plus.Text" xml:space="preserve">
+    <value>#*Children of age 18+:</value>
+  </data>
+  <data name="&gt;&gt;lbl_18plus.Name" xml:space="preserve">
+    <value>lbl_18plus</value>
+  </data>
+  <data name="&gt;&gt;lbl_18plus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_18plus.Parent" xml:space="preserve">
+    <value>grp_children</value>
+  </data>
+  <data name="&gt;&gt;lbl_18plus.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nud_7_18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 69</value>
+  </data>
+  <data name="nud_7_18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 33</value>
+  </data>
+  <data name="nud_7_18.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="nud_7_18.UpDownAlign" type="System.Windows.Forms.LeftRightAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;nud_7_18.Name" xml:space="preserve">
+    <value>nud_7_18</value>
+  </data>
+  <data name="&gt;&gt;nud_7_18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nud_7_18.Parent" xml:space="preserve">
+    <value>grp_children</value>
+  </data>
+  <data name="&gt;&gt;nud_7_18.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbl_7_18.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_7_18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_7_18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 71</value>
+  </data>
+  <data name="lbl_7_18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 27</value>
+  </data>
+  <data name="lbl_7_18.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lbl_7_18.Text" xml:space="preserve">
+    <value>#Children of age 7-18 :</value>
+  </data>
+  <data name="&gt;&gt;lbl_7_18.Name" xml:space="preserve">
+    <value>lbl_7_18</value>
+  </data>
+  <data name="&gt;&gt;lbl_7_18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_7_18.Parent" xml:space="preserve">
+    <value>grp_children</value>
+  </data>
+  <data name="&gt;&gt;lbl_7_18.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="nud_0_6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 30</value>
+  </data>
+  <data name="nud_0_6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 33</value>
+  </data>
+  <data name="nud_0_6.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="nud_0_6.UpDownAlign" type="System.Windows.Forms.LeftRightAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;nud_0_6.Name" xml:space="preserve">
+    <value>nud_0_6</value>
+  </data>
+  <data name="&gt;&gt;nud_0_6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nud_0_6.Parent" xml:space="preserve">
+    <value>grp_children</value>
+  </data>
+  <data name="&gt;&gt;nud_0_6.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lbl_0_6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_0_6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_0_6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="lbl_0_6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 27</value>
+  </data>
+  <data name="lbl_0_6.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lbl_0_6.Text" xml:space="preserve">
+    <value>#Children of age 0-6   :</value>
+  </data>
+  <data name="&gt;&gt;lbl_0_6.Name" xml:space="preserve">
+    <value>lbl_0_6</value>
+  </data>
+  <data name="&gt;&gt;lbl_0_6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_0_6.Parent" xml:space="preserve">
+    <value>grp_children</value>
+  </data>
+  <data name="&gt;&gt;lbl_0_6.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="grp_children.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="grp_children.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 239</value>
+  </data>
+  <data name="grp_children.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 154</value>
+  </data>
+  <data name="grp_children.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;grp_children.Name" xml:space="preserve">
+    <value>grp_children</value>
+  </data>
+  <data name="&gt;&gt;grp_children.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grp_children.Parent" xml:space="preserve">
+    <value>grp_family</value>
+  </data>
+  <data name="&gt;&gt;grp_children.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbl_spouse_status.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_spouse_status.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_spouse_status.Location" type="System.Drawing.Point, System.Drawing">
+    <value>274, 79</value>
+  </data>
+  <data name="lbl_spouse_status.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 27</value>
+  </data>
+  <data name="lbl_spouse_status.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbl_spouse_status.Text" xml:space="preserve">
+    <value>Spouse Status:</value>
+  </data>
+  <data name="&gt;&gt;lbl_spouse_status.Name" xml:space="preserve">
+    <value>lbl_spouse_status</value>
+  </data>
+  <data name="&gt;&gt;lbl_spouse_status.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_spouse_status.Parent" xml:space="preserve">
+    <value>grp_family</value>
+  </data>
+  <data name="&gt;&gt;lbl_spouse_status.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="grp_spouse.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="rb_working.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rb_working.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rb_working.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 53</value>
+  </data>
+  <data name="rb_working.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 31</value>
+  </data>
+  <data name="rb_working.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rb_working.Text" xml:space="preserve">
+    <value>Working</value>
+  </data>
+  <data name="&gt;&gt;rb_working.Name" xml:space="preserve">
+    <value>rb_working</value>
+  </data>
+  <data name="&gt;&gt;rb_working.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rb_working.Parent" xml:space="preserve">
+    <value>grp_spouse</value>
+  </data>
+  <data name="&gt;&gt;rb_working.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rb_not_working.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rb_not_working.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rb_not_working.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="rb_not_working.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 31</value>
+  </data>
+  <data name="rb_not_working.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rb_not_working.Text" xml:space="preserve">
+    <value>Not Working</value>
+  </data>
+  <data name="&gt;&gt;rb_not_working.Name" xml:space="preserve">
+    <value>rb_not_working</value>
+  </data>
+  <data name="&gt;&gt;rb_not_working.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rb_not_working.Parent" xml:space="preserve">
+    <value>grp_spouse</value>
+  </data>
+  <data name="&gt;&gt;rb_not_working.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grp_spouse.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="grp_spouse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 102</value>
+  </data>
+  <data name="grp_spouse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 87</value>
+  </data>
+  <data name="grp_spouse.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grp_spouse.Name" xml:space="preserve">
+    <value>grp_spouse</value>
+  </data>
+  <data name="&gt;&gt;grp_spouse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grp_spouse.Parent" xml:space="preserve">
+    <value>grp_family</value>
+  </data>
+  <data name="&gt;&gt;grp_spouse.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lbl_marital_status.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_marital_status.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_marital_status.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 79</value>
+  </data>
+  <data name="lbl_marital_status.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 27</value>
+  </data>
+  <data name="lbl_marital_status.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbl_marital_status.Text" xml:space="preserve">
+    <value>Marital Status:</value>
+  </data>
+  <data name="&gt;&gt;lbl_marital_status.Name" xml:space="preserve">
+    <value>lbl_marital_status</value>
+  </data>
+  <data name="&gt;&gt;lbl_marital_status.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_marital_status.Parent" xml:space="preserve">
+    <value>grp_family</value>
+  </data>
+  <data name="&gt;&gt;lbl_marital_status.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="grp_marital_status.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="rb_married.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rb_married.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rb_married.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 53</value>
+  </data>
+  <data name="rb_married.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 31</value>
+  </data>
+  <data name="rb_married.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rb_married.Text" xml:space="preserve">
+    <value>Married</value>
+  </data>
+  <data name="&gt;&gt;rb_married.Name" xml:space="preserve">
+    <value>rb_married</value>
+  </data>
+  <data name="&gt;&gt;rb_married.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rb_married.Parent" xml:space="preserve">
+    <value>grp_marital_status</value>
+  </data>
+  <data name="&gt;&gt;rb_married.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rb_single.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rb_single.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="rb_single.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 31</value>
+  </data>
+  <data name="rb_single.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rb_single.Text" xml:space="preserve">
+    <value>Single</value>
+  </data>
+  <data name="&gt;&gt;rb_single.Name" xml:space="preserve">
+    <value>rb_single</value>
+  </data>
+  <data name="&gt;&gt;rb_single.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rb_single.Parent" xml:space="preserve">
+    <value>grp_marital_status</value>
+  </data>
+  <data name="&gt;&gt;rb_single.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grp_marital_status.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 102</value>
+  </data>
+  <data name="grp_marital_status.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 87</value>
+  </data>
+  <data name="grp_marital_status.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grp_marital_status.Name" xml:space="preserve">
+    <value>grp_marital_status</value>
+  </data>
+  <data name="&gt;&gt;grp_marital_status.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grp_marital_status.Parent" xml:space="preserve">
+    <value>grp_family</value>
+  </data>
+  <data name="&gt;&gt;grp_marital_status.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="grp_family.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 22</value>
+  </data>
+  <data name="grp_family.Size" type="System.Drawing.Size, System.Drawing">
+    <value>468, 411</value>
+  </data>
+  <data name="grp_family.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;grp_family.Name" xml:space="preserve">
+    <value>grp_family</value>
+  </data>
+  <data name="&gt;&gt;grp_family.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grp_family.Parent" xml:space="preserve">
+    <value>pnl_salary_content</value>
+  </data>
+  <data name="&gt;&gt;grp_family.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 15.75pt, style=Bold</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 10</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 31</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Calculated Salary:</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>pnl_screen</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="txt_calculated_salary.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="txt_calculated_salary.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 12</value>
+    <value>233, 12</value>
   </data>
   <data name="txt_calculated_salary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>580, 26</value>
+    <value>719, 26</value>
   </data>
   <data name="txt_calculated_salary.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="txt_calculated_salary.Text" xml:space="preserve">
     <value>₺0</value>
-  </data>
-  <data name="txt_calculated_salary.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
   </data>
   <data name="&gt;&gt;txt_calculated_salary.Name" xml:space="preserve">
     <value>txt_calculated_salary</value>
@@ -1666,13 +2224,13 @@
     <value>pnl_screen</value>
   </data>
   <data name="&gt;&gt;txt_calculated_salary.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pnl_screen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 512</value>
+    <value>38, 545</value>
   </data>
   <data name="pnl_screen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>597, 50</value>
+    <value>981, 50</value>
   </data>
   <data name="pnl_screen.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -1687,7 +2245,7 @@
     <value>pnl_salary_content</value>
   </data>
   <data name="&gt;&gt;pnl_screen.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btn_calculate.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1696,16 +2254,16 @@
     <value>NoControl</value>
   </data>
   <data name="btn_calculate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>751, 512</value>
+    <value>551, 454</value>
   </data>
   <data name="btn_calculate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 50</value>
+    <value>468, 50</value>
   </data>
   <data name="btn_calculate.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
   <data name="btn_calculate.Text" xml:space="preserve">
-    <value>Calculate</value>
+    <value>Calculate Salary</value>
   </data>
   <data name="&gt;&gt;btn_calculate.Name" xml:space="preserve">
     <value>btn_calculate</value>
@@ -1717,10 +2275,10 @@
     <value>pnl_salary_content</value>
   </data>
   <data name="&gt;&gt;btn_calculate.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="nud_langauge_count.Location" type="System.Drawing.Point, System.Drawing">
-    <value>797, 121</value>
+    <value>284, 464</value>
   </data>
   <data name="nud_langauge_count.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 33</value>
@@ -1744,13 +2302,13 @@
     <value>pnl_salary_content</value>
   </data>
   <data name="&gt;&gt;nud_langauge_count.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lbl_language_count.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbl_language_count.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 124</value>
+    <value>38, 466</value>
   </data>
   <data name="lbl_language_count.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 27</value>
@@ -1774,31 +2332,10 @@
     <value>pnl_salary_content</value>
   </data>
   <data name="&gt;&gt;lbl_language_count.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cmb_family.Location" type="System.Drawing.Point, System.Drawing">
-    <value>551, 394</value>
-  </data>
-  <data name="cmb_family.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 35</value>
-  </data>
-  <data name="cmb_family.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;cmb_family.Name" xml:space="preserve">
-    <value>cmb_family</value>
-  </data>
-  <data name="&gt;&gt;cmb_family.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmb_family.Parent" xml:space="preserve">
-    <value>pnl_salary_content</value>
-  </data>
-  <data name="&gt;&gt;cmb_family.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="cmb_duties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>551, 228</value>
+    <value>38, 310</value>
   </data>
   <data name="cmb_duties.Size" type="System.Drawing.Size, System.Drawing">
     <value>400, 35</value>
@@ -1819,7 +2356,7 @@
     <value>5</value>
   </data>
   <data name="cmb_language.Location" type="System.Drawing.Point, System.Drawing">
-    <value>551, 52</value>
+    <value>38, 398</value>
   </data>
   <data name="cmb_language.Size" type="System.Drawing.Size, System.Drawing">
     <value>400, 35</value>
@@ -1840,7 +2377,7 @@
     <value>6</value>
   </data>
   <data name="cmb_education.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 390</value>
+    <value>38, 224</value>
   </data>
   <data name="cmb_education.Size" type="System.Drawing.Size, System.Drawing">
     <value>400, 35</value>
@@ -1861,7 +2398,7 @@
     <value>7</value>
   </data>
   <data name="cmb_city.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 222</value>
+    <value>38, 138</value>
   </data>
   <data name="cmb_city.Size" type="System.Drawing.Size, System.Drawing">
     <value>400, 35</value>
@@ -1902,36 +2439,6 @@
   <data name="&gt;&gt;cmb_experience.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="lbl_family.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_family.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbl_family.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 360</value>
-  </data>
-  <data name="lbl_family.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 27</value>
-  </data>
-  <data name="lbl_family.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lbl_family.Text" xml:space="preserve">
-    <value>Family:</value>
-  </data>
-  <data name="&gt;&gt;lbl_family.Name" xml:space="preserve">
-    <value>lbl_family</value>
-  </data>
-  <data name="&gt;&gt;lbl_family.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_family.Parent" xml:space="preserve">
-    <value>pnl_salary_content</value>
-  </data>
-  <data name="&gt;&gt;lbl_family.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <data name="lbl_duties.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1939,7 +2446,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_duties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 190</value>
+    <value>36, 282</value>
   </data>
   <data name="lbl_duties.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 27</value>
@@ -1960,7 +2467,7 @@
     <value>pnl_salary_content</value>
   </data>
   <data name="&gt;&gt;lbl_duties.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="lbl_language.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1969,7 +2476,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_language.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 20</value>
+    <value>38, 368</value>
   </data>
   <data name="lbl_language.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 27</value>
@@ -1990,7 +2497,7 @@
     <value>pnl_salary_content</value>
   </data>
   <data name="&gt;&gt;lbl_language.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="lbl_education.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1999,7 +2506,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_education.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 360</value>
+    <value>36, 194</value>
   </data>
   <data name="lbl_education.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 27</value>
@@ -2020,7 +2527,7 @@
     <value>pnl_salary_content</value>
   </data>
   <data name="&gt;&gt;lbl_education.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="lbl_city.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2029,7 +2536,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_city.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 190</value>
+    <value>36, 108</value>
   </data>
   <data name="lbl_city.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 27</value>
@@ -2050,13 +2557,13 @@
     <value>pnl_salary_content</value>
   </data>
   <data name="&gt;&gt;lbl_city.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="lbl_experience.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbl_experience.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 20</value>
+    <value>36, 22</value>
   </data>
   <data name="lbl_experience.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 27</value>
@@ -2077,7 +2584,7 @@
     <value>pnl_salary_content</value>
   </data>
   <data name="&gt;&gt;lbl_experience.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="pnl_salary_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
@@ -2158,7 +2665,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_salary.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="pnl_admin_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>

@@ -41,9 +41,11 @@ namespace FinalProject
         }
 
         private string default_mail_extension = "@gmail.com";
+        private User current_user;
 
         private Dictionary<string, double> experience = new Dictionary<string, double>
         {
+            {"Less than 2 years", 0.0 },
             {"2-4",0.60},
             {"5-9",0.80},
             {"10-14",1.20},
@@ -69,6 +71,7 @@ namespace FinalProject
 
         private Dictionary<string, double> education = new Dictionary<string, double>
         {
+            {"Only CENG Bachelor's Degree", 0.0},
             {"Field Related Master's Degree",0.10},
             {"Field Related Doctorate Degree",0.30},
             {"Field Related Assoc. Doc. Degree",0.35},
@@ -87,6 +90,7 @@ namespace FinalProject
 
         private Dictionary<string, double> duties = new Dictionary<string, double>
         {
+            {"No Administrative Duties", 0.0 },
             {"Team Leader/Technical Manager",0.50},
             {"Project Manager",0.75},
             {"Director",0.85},
@@ -94,16 +98,6 @@ namespace FinalProject
             {"IT Officer/Manager (Employee <= 5)",0.40},
             {"IT Officer/Manager (Employee > 5)",0.60}
         };
-
-        private Dictionary<string, double> family = new Dictionary<string, double>
-        {
-            { "Single", 0 },
-            { "Married and Spouse not working", 0.20 },
-            { "Children of age 0-6", 0.20 },
-            { "Children of age 7-18", 0.30 },
-            { "Children of age 18+ (Student)", 0.40 }
-        };
-
         public Form_LandingPage()
         {
             InitializeComponent();
@@ -119,7 +113,6 @@ namespace FinalProject
             cmb_education.DataSource = education.Keys.ToList();
             cmb_language.DataSource = language.Keys.ToList();
             cmb_duties.DataSource = duties.Keys.ToList();
-            cmb_family.DataSource = family.Keys.ToList();
         }
 
         private void Read_user_data()
@@ -135,6 +128,8 @@ namespace FinalProject
                 txt_email.Text = current_user.Email;
                 txt_phone_number.Text = current_user.PhoneNumber;
                 txt_adress.Text = current_user.Address;
+                txt_salary.Text = current_user.Salary.ToString();
+                this.current_user = current_user;
             }
         }
 
@@ -599,14 +594,74 @@ namespace FinalProject
             coefficient += education[cmb_education.SelectedItem.ToString()];
             coefficient += language[cmb_language.SelectedItem.ToString()];
             coefficient += duties[cmb_duties.SelectedItem.ToString()];
-            coefficient += family[cmb_family.SelectedItem.ToString()];
+
+            double family_coefficient = 0;
+            if(rb_married.Checked)
+            {
+                if(rb_not_working.Checked)
+                {
+                    family_coefficient += 0.20;
+                }
+            }
+
+            if (cb_children.Checked)
+            {
+                coefficient += CalculateSalaryCoefficient(Convert.ToInt32(nud_0_6.Value), 
+                                                          Convert.ToInt32(nud_7_18.Value), 
+                                                          Convert.ToInt32(nud_18_plus.Value));
+            }
+
 
             return base_salary * (coefficient + 1);
+        }
+
+        // 
+        // Calculates coefficient for the children
+        //
+        public double CalculateSalaryCoefficient(int nud_0_6, int nud_7_18, int nud_18_plus)
+        {
+            // Initialize coefficients
+            double coefficient_0_6 = 0.20;
+            double coefficient_7_18 = 0.30;
+            double coefficient_18_plus = 0.40;
+
+            // Initialize the total coefficient
+            double totalCoefficient = 0;
+
+            // Check for children 18+ first since they have the highest priority
+            if (nud_18_plus > 0)
+            {
+                int count = Math.Min(nud_18_plus, 2); // Can only offer money up to 2 children
+                totalCoefficient += count * coefficient_18_plus;
+            }
+
+            // If less than 2 children 18+ were counted, check for children 7-18
+            if (nud_18_plus < 2 && nud_7_18 > 0)
+            {
+                int remainingSlots = 2 - nud_18_plus; // Remaining slots after counting children 18+
+                int count = Math.Min(nud_7_18, remainingSlots);
+                totalCoefficient += count * coefficient_7_18;
+            }
+
+            // If there are still slots available after counting older children, count children 0-6
+            if (nud_18_plus + nud_7_18 < 2 && nud_0_6 > 0)
+            {
+                int remainingSlots = 2 - (nud_18_plus + nud_7_18); // Remaining slots after counting older children
+                int count = Math.Min(nud_0_6, remainingSlots);
+                totalCoefficient += count * coefficient_0_6;
+            }
+
+            return totalCoefficient;
         }
 
         private void btn_calculate_Click(object sender, EventArgs e)
         {
             txt_calculated_salary.Text = "₺" + CalculateSalary().ToString();
+            this.current_user.Salary = CalculateSalary();
+
+            CsvRepository updater = new CsvRepository();
+            updater.Update(this.current_user);
+            Read_user_data();
         }
 
         private void txt_email_KeyPress(object sender, KeyPressEventArgs e)
@@ -622,6 +677,32 @@ namespace FinalProject
 
                 // Prevent further processing of the '@' key press
                 e.Handled = true;
+            }
+        }
+
+        private void rb_single_CheckedChanged(object sender, EventArgs e)
+        {
+            if(!rb_single.Checked) {
+                grp_spouse.Enabled = true;
+            } else
+            {
+                grp_spouse.Enabled = false;
+            }
+            
+        }
+
+        private void cb_children_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cb_children.Checked)
+            {
+                grp_children.Enabled = true;
+            }
+            else
+            {
+                grp_children.Enabled = false;
+                nud_0_6.Value = 0;
+                nud_7_18.Value = 0;
+                nud_18_plus.Value = 0;
             }
         }
     }
