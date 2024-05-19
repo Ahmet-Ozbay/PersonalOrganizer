@@ -31,13 +31,25 @@ namespace FinalProject
             }
         }
 
-        /*
-         * Checks if the input is an actual email adress.
-         */
-        private bool IsValidEmail(string email)
+        // Constructor
+        public Form_LandingPage()
         {
-            string pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
-            return Regex.IsMatch(email, pattern);
+            InitializeComponent();
+        }
+
+        /*
+         * Load event for the form
+         */
+        private void Form_LandingPage_Load(object sender, EventArgs e)
+        {
+            Read_user_data();
+            lblName.Text = txt_name.Text + " " + txt_lastname.Text;
+
+            cmb_experience.DataSource = experience.Keys.ToList();
+            cmb_city.DataSource = city.Keys.ToList();
+            cmb_education.DataSource = education.Keys.ToList();
+            cmb_language.DataSource = language.Keys.ToList();
+            cmb_duties.DataSource = duties.Keys.ToList();
         }
 
         private string default_mail_extension = "@gmail.com";
@@ -98,22 +110,7 @@ namespace FinalProject
             {"IT Officer/Manager (Employee <= 5)",0.40},
             {"IT Officer/Manager (Employee > 5)",0.60}
         };
-        public Form_LandingPage()
-        {
-            InitializeComponent();
-        }
 
-        private void Form_LandingPage_Load(object sender, EventArgs e)
-        {
-            Read_user_data();
-            lblName.Text = txt_name.Text + " " + txt_lastname.Text;
-
-            cmb_experience.DataSource = experience.Keys.ToList();
-            cmb_city.DataSource = city.Keys.ToList();
-            cmb_education.DataSource = education.Keys.ToList();
-            cmb_language.DataSource = language.Keys.ToList();
-            cmb_duties.DataSource = duties.Keys.ToList();
-        }
 
         private void Read_user_data()
         {
@@ -431,7 +428,6 @@ namespace FinalProject
                 btn_salary.BackColor = navy;
             }
         }
-
         private void btn_salary_Click(object sender, EventArgs e)
         {
             pnl_profile.Visible = false;
@@ -440,6 +436,32 @@ namespace FinalProject
             pnl_reminder.Visible = false;
             pnl_salary.Visible = true;
             pnl_admin.Visible = false;
+        }
+        private void rb_single_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!rb_single.Checked)
+            {
+                grp_spouse.Enabled = true;
+            }
+            else
+            {
+                grp_spouse.Enabled = false;
+            }
+
+        }
+        private void cb_children_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_children.Checked)
+            {
+                grp_children.Enabled = true;
+            }
+            else
+            {
+                grp_children.Enabled = false;
+                nud_0_6.Value = 0;
+                nud_7_18.Value = 0;
+                nud_18_plus.Value = 0;
+            }
         }
 
         //
@@ -469,6 +491,26 @@ namespace FinalProject
         }
 
 
+        /*
+         * Checks if the input is an actual email adress.
+         */
+        private bool IsValidEmail(string email)
+        {
+            string pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+            return Regex.IsMatch(email, pattern);
+        }
+        /*
+         * Checks if the new password matches requirements.
+         */
+        public static bool IsValidString(string input)
+        {
+            string pattern = "^(?=.*[A-Z])(?=.*[!@#$*%^&(),.?\":{}|<>]).{8,}$";
+            return Regex.IsMatch(input, pattern);
+        }
+
+        //
+        // Save profile button click event
+        //
         private void btn_save_profile_Click(object sender, EventArgs e)
         {
             if (!IsValidEmail(txt_email.Text))
@@ -514,6 +556,9 @@ namespace FinalProject
 
         }
 
+        //
+        // Change password button click event
+        //
         private void btn_change_password_Click(object sender, EventArgs e)
         {
             if (txt_current_password.Text.Length == 0 || txt_new_password.Text.Length == 0 ||
@@ -573,17 +618,18 @@ namespace FinalProject
 
         }
 
-        public static bool IsValidString(string input)
-        {
-            string pattern = "^(?=.*[A-Z])(?=.*[!@#$*%^&(),.?\":{}|<>]).{8,}$";
-            return Regex.IsMatch(input, pattern);
-        }
 
+        //
+        // Salary Calculation
+        //
         private void cmb_language_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbl_language_count.Visible = nud_langauge_count.Visible = (cmb_language.SelectedIndex == 3);
         }
 
+        //
+        // Calculates salary according to the coefficients
+        //
         private double CalculateSalary()
         {
             double coefficient = 0;
@@ -654,6 +700,9 @@ namespace FinalProject
             return totalCoefficient;
         }
 
+        //
+        // Calculate salary button click event
+        //
         private void btn_calculate_Click(object sender, EventArgs e)
         {
             txt_calculated_salary.Text = "₺" + CalculateSalary().ToString();
@@ -664,6 +713,9 @@ namespace FinalProject
             Read_user_data();
         }
 
+        //
+        // Automatically fill @gmail.com in the email field
+        //
         private void txt_email_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if the '@' sign is not already present in the TextBox
@@ -677,32 +729,6 @@ namespace FinalProject
 
                 // Prevent further processing of the '@' key press
                 e.Handled = true;
-            }
-        }
-
-        private void rb_single_CheckedChanged(object sender, EventArgs e)
-        {
-            if(!rb_single.Checked) {
-                grp_spouse.Enabled = true;
-            } else
-            {
-                grp_spouse.Enabled = false;
-            }
-            
-        }
-
-        private void cb_children_CheckedChanged(object sender, EventArgs e)
-        {
-            if(cb_children.Checked)
-            {
-                grp_children.Enabled = true;
-            }
-            else
-            {
-                grp_children.Enabled = false;
-                nud_0_6.Value = 0;
-                nud_7_18.Value = 0;
-                nud_18_plus.Value = 0;
             }
         }
     }
