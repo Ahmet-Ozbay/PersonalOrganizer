@@ -169,5 +169,8 @@
   <ItemGroup>
     <None Include="ui\icon_admin.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ui\icon_forgot_password.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

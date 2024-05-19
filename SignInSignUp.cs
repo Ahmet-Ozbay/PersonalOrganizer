@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -16,9 +17,9 @@ namespace FinalProject
 {
     public partial class Form_SignIn_SignUp : Form
     {
-        #pragma warning disable S1104 // Fields should not have public accessibility
+#pragma warning disable S1104 // Fields should not have public accessibility
         public Point mouse_location; // Necessary for dragging the window around
-        #pragma warning restore S1104 // Fields should not have public accessibility
+#pragma warning restore S1104 // Fields should not have public accessibility
 
 
         // This reduces flickering
@@ -32,8 +33,10 @@ namespace FinalProject
             }
         }
 
+        private string default_mail_extension = "@gmail.com";
+
+
         // Veri transferi
-        
         public static string e_mail;
         public static Form_SignIn_SignUp form_signIn_signUp;
 
@@ -43,7 +46,16 @@ namespace FinalProject
             InitializeComponent();
             form_signIn_signUp = this;
         }
-        
+
+        //
+        // Checks if the input is a valid email adress.
+        //
+        private bool IsValidEmail(string email)
+        {
+            string pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+            return Regex.IsMatch(email, pattern);
+        }
+
         //
         // Close Button
         //
@@ -146,6 +158,7 @@ namespace FinalProject
         private void link_signup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             pnl_signin.Visible = false;
+            pnl_reset_password.Visible = false;
             pnl_signup.Visible = true;
             pnl_signup.BringToFront();
         } // end - SignUp
@@ -156,16 +169,28 @@ namespace FinalProject
         private void link_signin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             pnl_signup.Visible = false;
+            pnl_reset_password.Visible = false;
             pnl_signin.Visible = true;
             pnl_signin.BringToFront();
         } // end - SignIn
+
+        //
+        // Forgot your password link
+        //
+        private void link_forgot_password_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnl_signin.Visible = false;
+            pnl_signup.Visible = false;
+            pnl_reset_password.Visible = true;
+            pnl_reset_password.BringToFront();
+        }
 
         //
         // Text-field Place Holders
         //
         private void txt_email_Enter(object sender, EventArgs e)
         {
-            if(txt_email.Text == "general_kenobi@jedi.com")
+            if (txt_email.Text == "general_kenobi@jedi.com")
             {
                 txt_email.Text = "";
                 txt_email.ForeColor = Color.Black;
@@ -173,27 +198,43 @@ namespace FinalProject
         }
         private void txt_email_Leave(object sender, EventArgs e)
         {
-            if(txt_email.Text == "")
+            if (txt_email.Text == "")
             {
                 txt_email.Text = "general_kenobi@jedi.com";
                 txt_email.ForeColor = Color.LightGray;
             }
         }
+        private void txt_email_reset_pass_Enter(object sender, EventArgs e)
+        {
+            if (txt_email_reset_pass.Text == "your_mail@example.com")
+            {
+                txt_email_reset_pass.Text = "";
+                txt_email_reset_pass.ForeColor = Color.Black;
+            }
+        }
+        private void txt_email_reset_pass_Leave(object sender, EventArgs e)
+        {
+            if (txt_email_reset_pass.Text == "")
+            {
+                txt_email_reset_pass.Text = "your_mail@example.com";
+                txt_email_reset_pass.ForeColor = Color.LightGray;
+            }
+        }
         private void txt_password_Enter(object sender, EventArgs e)
         {
-            if( txt_password.Text == "enter your password")
+            if (txt_password.Text == "enter your password")
             {
                 txt_password.Text = "";
                 txt_password.ForeColor = Color.Black;
-                txt_password.PasswordChar= '*';
+                txt_password.PasswordChar = '*';
             }
         }
         private void txt_password_Leave(object sender, EventArgs e)
         {
-            if(txt_password.Text == "")
+            if (txt_password.Text == "")
             {
                 txt_password.Text = "enter your password";
-                txt_password.ForeColor= Color.LightGray;
+                txt_password.ForeColor = Color.LightGray;
                 txt_password.PasswordChar = '*';
             }
         }
@@ -330,13 +371,14 @@ namespace FinalProject
             bool success = sign_in.SignIn(existing_user);
 
 
-            if(success)
+            if (success)
             {
                 this.Hide();
                 Form landing = new Form_LandingPage();
                 e_mail = email;
                 landing.ShowDialog();
-            } else
+            }
+            else
             {
                 MessageBox.Show("Wrong email or password", "Unsuccessful Sign In", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -348,11 +390,19 @@ namespace FinalProject
             string email = txt_email_register.Text;
             string password = txt_password_register.Text;
             string password_confirmation = txt_confirm_password.Text;
-            
+
+            if (!IsValidEmail(email))
+            {
+                string title = "Invalid Email";
+                string message = "Please make sure that you enter a correct email adress.";
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             /*
              * Confirmation password doesn't match
              */
-            if(password != password_confirmation)
+            if (password != password_confirmation)
             {
                 MessageBox.Show("Passwords don't match. Please re-enter your password carefully.", "Password Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txt_password_register.Text = "enter your password";
@@ -365,7 +415,7 @@ namespace FinalProject
             }
             else
             {
-                if(name != "Name" && last_name != "Last Name" && email != "your_email@domain.com") 
+                if (name != "Name" && last_name != "Last Name" && email != "your_email@domain.com")
                 {
                     CsvRepository csv = new CsvRepository();
                     SignUpService sign_up_service = new SignUpService(csv);
@@ -392,12 +442,47 @@ namespace FinalProject
                         txt_email.ForeColor = Color.Black;
                         txt_password.PasswordChar = '*';
 
-                    } else
+                    }
+                    else
                     {
                         MessageBox.Show("This email is already in use. If you forgot your password, you can reset it!", "Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
         }
+
+        private void txt_email_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the '@' sign is not already present in the TextBox
+            if (!txt_email.Text.Contains("@") && e.KeyChar == '@')
+            {
+                // Insert the '@' sign and a default domain
+                txt_email.Text += default_mail_extension;
+
+                // Move the cursor before the domain for user convenience
+                txt_email.SelectionStart = txt_email.Text.IndexOf("@");
+
+                // Prevent further processing of the '@' key press
+                e.Handled = true;
+            }
+        }
+
+        private void txt_email_register_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the '@' sign is not already present in the TextBox
+            if (!txt_email_register.Text.Contains("@") && e.KeyChar == '@')
+            {
+                // Insert the '@' sign and a default domain
+                txt_email_register.Text += default_mail_extension;
+
+                // Move the cursor before the domain for user convenience
+                txt_email_register.SelectionStart = txt_email.Text.IndexOf("@");
+
+                // Prevent further processing of the '@' key press
+                e.Handled = true;
+            }
+        }
+
+
     }
 }

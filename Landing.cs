@@ -31,6 +31,17 @@ namespace FinalProject
             }
         }
 
+        /*
+         * Checks if the input is an actual email adress.
+         */
+        private bool IsValidEmail(string email)
+        {
+            string pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+            return Regex.IsMatch(email, pattern);
+        }
+
+        private string default_mail_extension = "@gmail.com";
+
         private Dictionary<string, double> experience = new Dictionary<string, double>
         {
             {"2-4",0.60},
@@ -465,7 +476,15 @@ namespace FinalProject
 
         private void btn_save_profile_Click(object sender, EventArgs e)
         {
-            if (txt_email.Text.Length == 0 || txt_adress.Text.Length == 0 || txt_phone_number.Text.Length == 0)
+            if (!IsValidEmail(txt_email.Text))
+            {
+                string title = "Invalid Email";
+                string message = "Please make sure that you enter a correct email adress.";
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (txt_email.Text.Length == 0 || txt_adress.Text.Length == 0 || !txt_phone_number.MaskCompleted)
             {
                 string title = "Error";
                 string message = "Please fill in all the fields.";
@@ -588,6 +607,22 @@ namespace FinalProject
         private void btn_calculate_Click(object sender, EventArgs e)
         {
             txt_calculated_salary.Text = "₺" + CalculateSalary().ToString();
+        }
+
+        private void txt_email_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the '@' sign is not already present in the TextBox
+            if (!txt_email.Text.Contains("@") && e.KeyChar == '@')
+            {
+                // Insert the '@' sign and a default domain
+                txt_email.Text += default_mail_extension;
+
+                // Move the cursor before the domain for user convenience
+                txt_email.SelectionStart = txt_email.Text.IndexOf("@");
+
+                // Prevent further processing of the '@' key press
+                e.Handled = true;
+            }
         }
     }
 }
