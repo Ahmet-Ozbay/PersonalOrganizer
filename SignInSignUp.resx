@@ -879,8 +879,8 @@
   <data name="&gt;&gt;pnl_signup.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;pnl_signup.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;pnl_signin.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lbl_confirm_password.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1554,6 +1554,30 @@
   <data name="&gt;&gt;lbl_signup.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="pnl_signup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>459, 67</value>
+  </data>
+  <data name="pnl_signup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>450, 600</value>
+  </data>
+  <data name="pnl_signup.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="pnl_signup.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pnl_signup.Name" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;pnl_signup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_signup.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnl_signup.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="bg_flowers.Location" type="System.Drawing.Point, System.Drawing">
     <value>-12, 25</value>
   </data>
@@ -1585,7 +1609,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_sign_in_reset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 366</value>
+    <value>151, 366</value>
   </data>
   <data name="lbl_sign_in_reset.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 19</value>
@@ -1621,7 +1645,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_reset_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 292</value>
+    <value>124, 292</value>
   </data>
   <data name="btn_reset_password.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 50</value>
@@ -1677,6 +1701,27 @@ the mail adress matches with yours.</value>
   </data>
   <data name="&gt;&gt;lbl_reset_pass_info.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="txt_email_reset_pass.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txt_email_reset_pass.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 14.25pt</value>
+  </data>
+  <data name="txt_email_reset_pass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="txt_email_reset_pass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 26</value>
+  </data>
+  <data name="txt_email_reset_pass.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="txt_email_reset_pass.Text" xml:space="preserve">
+    <value>your_mail@example.com</value>
+  </data>
+  <data name="txt_email_reset_pass.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txt_email_reset_pass.Name" xml:space="preserve">
     <value>txt_email_reset_pass</value>
@@ -1808,39 +1853,6 @@ the mail adress matches with yours.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_reset_password.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txt_email_reset_pass.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txt_email_reset_pass.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 14.25pt</value>
-  </data>
-  <data name="txt_email_reset_pass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="txt_email_reset_pass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>448, 26</value>
-  </data>
-  <data name="txt_email_reset_pass.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="txt_email_reset_pass.Text" xml:space="preserve">
-    <value>your_mail@example.com</value>
-  </data>
-  <data name="txt_email_reset_pass.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;txt_email_reset_pass.Name" xml:space="preserve">
-    <value>txt_email_reset_pass</value>
-  </data>
-  <data name="&gt;&gt;txt_email_reset_pass.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_email_reset_pass.Parent" xml:space="preserve">
-    <value>pnl_email_bg_reset_pass</value>
-  </data>
-  <data name="&gt;&gt;txt_email_reset_pass.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
