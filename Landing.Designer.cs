@@ -63,17 +63,17 @@ namespace FinalProject
             this.lbl_change_password = new System.Windows.Forms.Label();
             this.btn_change_password = new System.Windows.Forms.Button();
             this.grp_personal_info = new System.Windows.Forms.GroupBox();
-            this.lbl_salary = new System.Windows.Forms.Label();
-            this.txt_salary = new System.Windows.Forms.TextBox();
+            this.txt_phone_number = new System.Windows.Forms.MaskedTextBox();
             this.lbl_personal_info = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
+            this.lbl_salary = new System.Windows.Forms.Label();
             this.lbl_lastname = new System.Windows.Forms.Label();
+            this.txt_salary = new System.Windows.Forms.TextBox();
             this.txt_lastname = new System.Windows.Forms.TextBox();
             this.lbl_email = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.lbl_phone_number = new System.Windows.Forms.Label();
-            this.txt_phone_number = new System.Windows.Forms.TextBox();
             this.lbl_adress = new System.Windows.Forms.Label();
             this.txt_adress = new System.Windows.Forms.TextBox();
             this.btn_save_profile = new System.Windows.Forms.Button();
@@ -433,17 +433,17 @@ namespace FinalProject
             // 
             // grp_personal_info
             // 
-            this.grp_personal_info.Controls.Add(this.lbl_salary);
-            this.grp_personal_info.Controls.Add(this.txt_salary);
+            this.grp_personal_info.Controls.Add(this.txt_phone_number);
             this.grp_personal_info.Controls.Add(this.lbl_personal_info);
             this.grp_personal_info.Controls.Add(this.lbl_name);
             this.grp_personal_info.Controls.Add(this.txt_name);
+            this.grp_personal_info.Controls.Add(this.lbl_salary);
             this.grp_personal_info.Controls.Add(this.lbl_lastname);
+            this.grp_personal_info.Controls.Add(this.txt_salary);
             this.grp_personal_info.Controls.Add(this.txt_lastname);
             this.grp_personal_info.Controls.Add(this.lbl_email);
             this.grp_personal_info.Controls.Add(this.txt_email);
             this.grp_personal_info.Controls.Add(this.lbl_phone_number);
-            this.grp_personal_info.Controls.Add(this.txt_phone_number);
             this.grp_personal_info.Controls.Add(this.lbl_adress);
             this.grp_personal_info.Controls.Add(this.txt_adress);
             this.grp_personal_info.Controls.Add(this.btn_save_profile);
@@ -451,15 +451,10 @@ namespace FinalProject
             this.grp_personal_info.Name = "grp_personal_info";
             this.grp_personal_info.TabStop = false;
             // 
-            // lbl_salary
+            // txt_phone_number
             // 
-            resources.ApplyResources(this.lbl_salary, "lbl_salary");
-            this.lbl_salary.Name = "lbl_salary";
-            // 
-            // txt_salary
-            // 
-            resources.ApplyResources(this.txt_salary, "txt_salary");
-            this.txt_salary.Name = "txt_salary";
+            resources.ApplyResources(this.txt_phone_number, "txt_phone_number");
+            this.txt_phone_number.Name = "txt_phone_number";
             // 
             // lbl_personal_info
             // 
@@ -478,10 +473,21 @@ namespace FinalProject
             resources.ApplyResources(this.txt_name, "txt_name");
             this.txt_name.Name = "txt_name";
             // 
+            // lbl_salary
+            // 
+            resources.ApplyResources(this.lbl_salary, "lbl_salary");
+            this.lbl_salary.Name = "lbl_salary";
+            // 
             // lbl_lastname
             // 
             resources.ApplyResources(this.lbl_lastname, "lbl_lastname");
             this.lbl_lastname.Name = "lbl_lastname";
+            // 
+            // txt_salary
+            // 
+            this.txt_salary.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.txt_salary, "txt_salary");
+            this.txt_salary.Name = "txt_salary";
             // 
             // txt_lastname
             // 
@@ -497,16 +503,12 @@ namespace FinalProject
             // 
             resources.ApplyResources(this.txt_email, "txt_email");
             this.txt_email.Name = "txt_email";
+            this.txt_email.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_email_KeyPress);
             // 
             // lbl_phone_number
             // 
             resources.ApplyResources(this.lbl_phone_number, "lbl_phone_number");
             this.lbl_phone_number.Name = "lbl_phone_number";
-            // 
-            // txt_phone_number
-            // 
-            resources.ApplyResources(this.txt_phone_number, "txt_phone_number");
-            this.txt_phone_number.Name = "txt_phone_number";
             // 
             // lbl_adress
             // 
@@ -796,8 +798,8 @@ namespace FinalProject
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FinalProject.Properties.Resources.bg_gradient_main;
-            this.Controls.Add(this.pnl_salary);
             this.Controls.Add(this.pnl_profile);
+            this.Controls.Add(this.pnl_salary);
             this.Controls.Add(this.pnl_contacts);
             this.Controls.Add(this.pnl_admin);
             this.Controls.Add(this.pnl_reminder);
@@ -858,7 +860,6 @@ namespace FinalProject
         private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label lbl_phone_number;
-        private System.Windows.Forms.TextBox txt_phone_number;
         private System.Windows.Forms.Label lbl_adress;
         private System.Windows.Forms.TextBox txt_adress;
         private System.Windows.Forms.Button btn_save_profile;
@@ -892,8 +893,6 @@ namespace FinalProject
         private System.Windows.Forms.Panel pnl_admin;
         private System.Windows.Forms.Panel pnl_admin_content;
         private System.Windows.Forms.Label lbl_title_admin;
-        private System.Windows.Forms.Label lbl_salary;
-        private System.Windows.Forms.TextBox txt_salary;
         private System.Windows.Forms.Label lbl_experience;
         private System.Windows.Forms.Label lbl_family;
         private System.Windows.Forms.Label lbl_duties;
@@ -911,5 +910,8 @@ namespace FinalProject
         private System.Windows.Forms.Panel pnl_screen;
         private System.Windows.Forms.TextBox txt_calculated_salary;
         private System.Windows.Forms.Button btn_calculate;
+        private System.Windows.Forms.Label lbl_salary;
+        private System.Windows.Forms.TextBox txt_salary;
+        private System.Windows.Forms.MaskedTextBox txt_phone_number;
     }
 }

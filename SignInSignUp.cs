@@ -1,24 +1,35 @@
 ﻿using System;
+using System.IO;
+using System.Text;
+using System.Threading;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
+using System.Security.Cryptography;
+using Google.Apis.Gmail.v1;
+using Google.Apis.Gmail.v1.Data;
+using Google.Apis.Services;
+using Google.Apis.Util.Store;
+using Google.Apis.Auth.OAuth2;
 
 namespace FinalProject
 {
     public partial class Form_SignIn_SignUp : Form
     {
-        #pragma warning disable S1104 // Fields should not have public accessibility
+#pragma warning disable S1104 // Fields should not have public accessibility
         public Point mouse_location; // Necessary for dragging the window around
-        #pragma warning restore S1104 // Fields should not have public accessibility
+#pragma warning restore S1104 // Fields should not have public accessibility
 
 
         // This reduces flickering
@@ -32,8 +43,9 @@ namespace FinalProject
             }
         }
 
+        private string default_mail_extension = "@gmail.com";
+
         // Veri transferi
-        
         public static string e_mail;
         public static Form_SignIn_SignUp form_signIn_signUp;
 
@@ -43,7 +55,16 @@ namespace FinalProject
             InitializeComponent();
             form_signIn_signUp = this;
         }
-        
+
+        //
+        // Checks if the input is a valid email adress.
+        //
+        private bool IsValidEmail(string email)
+        {
+            string pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+            return Regex.IsMatch(email, pattern);
+        }
+
         //
         // Close Button
         //
@@ -146,6 +167,7 @@ namespace FinalProject
         private void link_signup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             pnl_signin.Visible = false;
+            pnl_reset_password.Visible = false;
             pnl_signup.Visible = true;
             pnl_signup.BringToFront();
         } // end - SignUp
@@ -156,16 +178,28 @@ namespace FinalProject
         private void link_signin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             pnl_signup.Visible = false;
+            pnl_reset_password.Visible = false;
             pnl_signin.Visible = true;
             pnl_signin.BringToFront();
         } // end - SignIn
+
+        //
+        // Forgot your password link
+        //
+        private void link_forgot_password_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnl_signin.Visible = false;
+            pnl_signup.Visible = false;
+            pnl_reset_password.Visible = true;
+            pnl_reset_password.BringToFront();
+        }
 
         //
         // Text-field Place Holders
         //
         private void txt_email_Enter(object sender, EventArgs e)
         {
-            if(txt_email.Text == "general_kenobi@jedi.com")
+            if (txt_email.Text == "general_kenobi@jedi.com")
             {
                 txt_email.Text = "";
                 txt_email.ForeColor = Color.Black;
@@ -173,27 +207,43 @@ namespace FinalProject
         }
         private void txt_email_Leave(object sender, EventArgs e)
         {
-            if(txt_email.Text == "")
+            if (txt_email.Text == "")
             {
                 txt_email.Text = "general_kenobi@jedi.com";
                 txt_email.ForeColor = Color.LightGray;
             }
         }
+        private void txt_email_reset_pass_Enter(object sender, EventArgs e)
+        {
+            if (txt_email_reset_pass.Text == "your_mail@example.com")
+            {
+                txt_email_reset_pass.Text = "";
+                txt_email_reset_pass.ForeColor = Color.Black;
+            }
+        }
+        private void txt_email_reset_pass_Leave(object sender, EventArgs e)
+        {
+            if (txt_email_reset_pass.Text == "")
+            {
+                txt_email_reset_pass.Text = "your_mail@example.com";
+                txt_email_reset_pass.ForeColor = Color.LightGray;
+            }
+        }
         private void txt_password_Enter(object sender, EventArgs e)
         {
-            if( txt_password.Text == "enter your password")
+            if (txt_password.Text == "enter your password")
             {
                 txt_password.Text = "";
                 txt_password.ForeColor = Color.Black;
-                txt_password.PasswordChar= '*';
+                txt_password.PasswordChar = '*';
             }
         }
         private void txt_password_Leave(object sender, EventArgs e)
         {
-            if(txt_password.Text == "")
+            if (txt_password.Text == "")
             {
                 txt_password.Text = "enter your password";
-                txt_password.ForeColor= Color.LightGray;
+                txt_password.ForeColor = Color.LightGray;
                 txt_password.PasswordChar = '*';
             }
         }
@@ -330,13 +380,14 @@ namespace FinalProject
             bool success = sign_in.SignIn(existing_user);
 
 
-            if(success)
+            if (success)
             {
                 this.Hide();
                 Form landing = new Form_LandingPage();
                 e_mail = email;
                 landing.ShowDialog();
-            } else
+            }
+            else
             {
                 MessageBox.Show("Wrong email or password", "Unsuccessful Sign In", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -348,11 +399,19 @@ namespace FinalProject
             string email = txt_email_register.Text;
             string password = txt_password_register.Text;
             string password_confirmation = txt_confirm_password.Text;
-            
+
+            if (!IsValidEmail(email))
+            {
+                string title = "Invalid Email";
+                string message = "Please make sure that you enter a correct email adress.";
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             /*
              * Confirmation password doesn't match
              */
-            if(password != password_confirmation)
+            if (password != password_confirmation)
             {
                 MessageBox.Show("Passwords don't match. Please re-enter your password carefully.", "Password Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txt_password_register.Text = "enter your password";
@@ -365,7 +424,7 @@ namespace FinalProject
             }
             else
             {
-                if(name != "Name" && last_name != "Last Name" && email != "your_email@domain.com") 
+                if (name != "Name" && last_name != "Last Name" && email != "your_email@domain.com")
                 {
                     CsvRepository csv = new CsvRepository();
                     SignUpService sign_up_service = new SignUpService(csv);
@@ -392,12 +451,175 @@ namespace FinalProject
                         txt_email.ForeColor = Color.Black;
                         txt_password.PasswordChar = '*';
 
-                    } else
+                    }
+                    else
                     {
                         MessageBox.Show("This email is already in use. If you forgot your password, you can reset it!", "Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
+        }
+
+        private void txt_email_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the '@' sign is not already present in the TextBox
+            if (!txt_email.Text.Contains("@") && e.KeyChar == '@')
+            {
+                // Insert the '@' sign and a default domain
+                txt_email.Text += default_mail_extension;
+
+                // Move the cursor before the domain for user convenience
+                txt_email.SelectionStart = txt_email.Text.IndexOf("@");
+
+                // Prevent further processing of the '@' key press
+                e.Handled = true;
+            }
+        }
+
+        private void txt_email_register_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the '@' sign is not already present in the TextBox
+            if (!txt_email_register.Text.Contains("@") && e.KeyChar == '@')
+            {
+                // Insert the '@' sign and a default domain
+                txt_email_register.Text += default_mail_extension;
+
+                // Move the cursor before the domain for user convenience
+                txt_email_register.SelectionStart = txt_email_register.Text.IndexOf("@");
+
+                // Prevent further processing of the '@' key press
+                e.Handled = true;
+            }
+        }
+
+        private void txt_email_reset_pass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the '@' sign is not already present in the TextBox
+            if (!txt_email_reset_pass.Text.Contains("@") && e.KeyChar == '@')
+            {
+                // Insert the '@' sign and a default domain
+                txt_email_reset_pass.Text += default_mail_extension;
+
+                // Move the cursor before the domain for user convenience
+                txt_email_reset_pass.SelectionStart = txt_email_reset_pass.Text.IndexOf("@");
+
+                // Prevent further processing of the '@' key press
+                e.Handled = true;
+            }
+        }
+        
+        //
+        // Generates random password for the user
+        //
+        public static string GenerateRandomPassword(int length)
+        {
+            const string validChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*?_-";
+            using (var rng = new RNGCryptoServiceProvider())
+            {
+                var bytes = new byte[length];
+                rng.GetBytes(bytes);
+                var chars = new char[length];
+                for (int i = 0; i < length; i++)
+                {
+                    chars[i] = validChars[bytes[i] % validChars.Length];
+                }
+                return new string(chars);
+            }
+        }
+
+        private void btn_reset_password_Click(object sender, EventArgs e)
+        {
+            if(txt_email_reset_pass.Text == "your_mail@example.com" || txt_email_reset_pass.Text.Length == 0)
+            {
+                string title = "Email field empty.";
+                string message = "Please enter your email adress.";
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!IsValidEmail(txt_email_reset_pass.Text))
+            {
+                string title = "Invalid Email";
+                string message = "Please enter a valid email adress";
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            // Step 1: Check if the email exists
+            CsvRepository repository = new CsvRepository();
+            var users = repository.List();
+            var user = users.FirstOrDefault(u => u.Email == txt_email_reset_pass.Text);
+
+            if (user == null)
+            {
+                MessageBox.Show("Email address not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Step 2: Generate a random password
+            string newPassword = GenerateRandomPassword(12);
+
+            // Step 3: Update the user's password in the database
+            user.Password = newPassword;
+            repository.Update(user);
+
+            // Step 4: Send the new password to the user's email using Gmail API
+            try
+            {
+                UserCredential credential;
+
+                using (var stream = new FileStream("gmailapi.json", FileMode.Open, FileAccess.Read))
+                {
+                    string credPath = "token.json";
+                    credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                        GoogleClientSecrets.Load(stream).Secrets,
+                        new[] { GmailService.Scope.GmailSend },
+                        "user",
+                        CancellationToken.None,
+                        new FileDataStore(credPath, true)).Result;
+                }
+
+                // Create the service.
+                var service = new GmailService(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = "OOP2_Project",
+                });
+
+                // Create the email content.
+                var emailText = $"To: {user.Email}\r\n" +
+                                $"Subject: Password Reset\r\n" +
+                                $"Content-Type: text/plain; charset=utf-8\r\n\r\n" +
+                                $"Your new password is: {newPassword}\r\n" +
+                                $"If you didn't request a new password you can ignore this mail.";
+
+                // Encode the email.
+                string Base64UrlEncode(string input)
+                {
+                    var inputBytes = Encoding.UTF8.GetBytes(input);
+                    // Base64Url encode the input
+                    return Convert.ToBase64String(inputBytes)
+                        .Replace('+', '-')
+                        .Replace('/', '_')
+                        .Replace("=", "");
+                }
+
+                // Create the message.
+                var message = new Google.Apis.Gmail.v1.Data.Message
+                {
+                    Raw = Base64UrlEncode(emailText)
+                };
+
+                // Send the email.
+                service.Users.Messages.Send(message, "me").Execute();
+                MessageBox.Show("A new password has been sent to your email address.", "Password Reset", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to send email. Error: {ex.Message}", "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

@@ -124,6 +124,9 @@
   <data name="bg_flowers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ui\bg_flowers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ui\icon_calculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_notebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ui\icon_notebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,6 +142,9 @@
   <data name="icon_phonebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ui\icon_phonebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ui\icon_admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btn_close_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ui\btn_close_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,9 +153,6 @@
   </data>
   <data name="pp_test" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ui\pp_test.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ui\icon_calculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg_gradient_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ui\bg_gradient_main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,7 +187,7 @@
   <data name="icon_key" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ui\icon_key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ui\icon_admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_forgot_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ui\icon_forgot_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
