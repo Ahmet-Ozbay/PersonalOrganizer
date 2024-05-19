@@ -246,6 +246,9 @@
   <data name="lblName.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Name Lastname</value>
+  </data>
   <data name="lblName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>

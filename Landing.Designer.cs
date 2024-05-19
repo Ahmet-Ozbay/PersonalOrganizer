@@ -89,7 +89,27 @@ namespace FinalProject
             this.lbl_title_reminder = new System.Windows.Forms.Label();
             this.pnl_salary = new System.Windows.Forms.Panel();
             this.pnl_salary_content = new System.Windows.Forms.Panel();
+            this.grp_family = new System.Windows.Forms.GroupBox();
+            this.lbl_18_plus_clause = new System.Windows.Forms.Label();
+            this.lbl_family_info = new System.Windows.Forms.Label();
+            this.cb_children = new System.Windows.Forms.CheckBox();
+            this.grp_children = new System.Windows.Forms.GroupBox();
+            this.nud_18_plus = new System.Windows.Forms.NumericUpDown();
+            this.lbl_18plus = new System.Windows.Forms.Label();
+            this.nud_7_18 = new System.Windows.Forms.NumericUpDown();
+            this.lbl_7_18 = new System.Windows.Forms.Label();
+            this.nud_0_6 = new System.Windows.Forms.NumericUpDown();
+            this.lbl_0_6 = new System.Windows.Forms.Label();
+            this.lbl_spouse_status = new System.Windows.Forms.Label();
+            this.grp_spouse = new System.Windows.Forms.GroupBox();
+            this.rb_working = new System.Windows.Forms.RadioButton();
+            this.rb_not_working = new System.Windows.Forms.RadioButton();
+            this.lbl_marital_status = new System.Windows.Forms.Label();
+            this.grp_marital_status = new System.Windows.Forms.GroupBox();
+            this.rb_married = new System.Windows.Forms.RadioButton();
+            this.rb_single = new System.Windows.Forms.RadioButton();
             this.pnl_screen = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.txt_calculated_salary = new System.Windows.Forms.TextBox();
             this.btn_calculate = new System.Windows.Forms.Button();
             this.nud_langauge_count = new System.Windows.Forms.NumericUpDown();
@@ -108,26 +128,6 @@ namespace FinalProject
             this.pnl_admin = new System.Windows.Forms.Panel();
             this.pnl_admin_content = new System.Windows.Forms.Panel();
             this.lbl_title_admin = new System.Windows.Forms.Label();
-            this.grp_family = new System.Windows.Forms.GroupBox();
-            this.grp_marital_status = new System.Windows.Forms.GroupBox();
-            this.lbl_marital_status = new System.Windows.Forms.Label();
-            this.rb_single = new System.Windows.Forms.RadioButton();
-            this.rb_married = new System.Windows.Forms.RadioButton();
-            this.grp_spouse = new System.Windows.Forms.GroupBox();
-            this.rb_working = new System.Windows.Forms.RadioButton();
-            this.rb_not_working = new System.Windows.Forms.RadioButton();
-            this.lbl_spouse_status = new System.Windows.Forms.Label();
-            this.cb_children = new System.Windows.Forms.CheckBox();
-            this.grp_children = new System.Windows.Forms.GroupBox();
-            this.lbl_family_info = new System.Windows.Forms.Label();
-            this.nud_0_6 = new System.Windows.Forms.NumericUpDown();
-            this.lbl_0_6 = new System.Windows.Forms.Label();
-            this.nud_7_18 = new System.Windows.Forms.NumericUpDown();
-            this.lbl_7_18 = new System.Windows.Forms.Label();
-            this.nud_18_plus = new System.Windows.Forms.NumericUpDown();
-            this.lbl_18plus = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl_18_plus_clause = new System.Windows.Forms.Label();
             this.pnl_header.SuspendLayout();
             this.pnl_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).BeginInit();
@@ -140,16 +140,16 @@ namespace FinalProject
             this.pnl_reminder.SuspendLayout();
             this.pnl_salary.SuspendLayout();
             this.pnl_salary_content.SuspendLayout();
+            this.grp_family.SuspendLayout();
+            this.grp_children.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_18_plus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_7_18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_0_6)).BeginInit();
+            this.grp_spouse.SuspendLayout();
+            this.grp_marital_status.SuspendLayout();
             this.pnl_screen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_langauge_count)).BeginInit();
             this.pnl_admin.SuspendLayout();
-            this.grp_family.SuspendLayout();
-            this.grp_marital_status.SuspendLayout();
-            this.grp_spouse.SuspendLayout();
-            this.grp_children.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_0_6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_7_18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_18_plus)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_header
@@ -665,6 +665,156 @@ namespace FinalProject
             this.pnl_salary_content.ForeColor = System.Drawing.Color.White;
             this.pnl_salary_content.Name = "pnl_salary_content";
             // 
+            // grp_family
+            // 
+            this.grp_family.BackColor = System.Drawing.Color.Transparent;
+            this.grp_family.Controls.Add(this.lbl_18_plus_clause);
+            this.grp_family.Controls.Add(this.lbl_family_info);
+            this.grp_family.Controls.Add(this.cb_children);
+            this.grp_family.Controls.Add(this.grp_children);
+            this.grp_family.Controls.Add(this.lbl_spouse_status);
+            this.grp_family.Controls.Add(this.grp_spouse);
+            this.grp_family.Controls.Add(this.lbl_marital_status);
+            this.grp_family.Controls.Add(this.grp_marital_status);
+            resources.ApplyResources(this.grp_family, "grp_family");
+            this.grp_family.Name = "grp_family";
+            this.grp_family.TabStop = false;
+            // 
+            // lbl_18_plus_clause
+            // 
+            resources.ApplyResources(this.lbl_18_plus_clause, "lbl_18_plus_clause");
+            this.lbl_18_plus_clause.Name = "lbl_18_plus_clause";
+            // 
+            // lbl_family_info
+            // 
+            resources.ApplyResources(this.lbl_family_info, "lbl_family_info");
+            this.lbl_family_info.Name = "lbl_family_info";
+            // 
+            // cb_children
+            // 
+            resources.ApplyResources(this.cb_children, "cb_children");
+            this.cb_children.Name = "cb_children";
+            this.cb_children.UseVisualStyleBackColor = true;
+            this.cb_children.CheckedChanged += new System.EventHandler(this.cb_children_CheckedChanged);
+            // 
+            // grp_children
+            // 
+            resources.ApplyResources(this.grp_children, "grp_children");
+            this.grp_children.Controls.Add(this.nud_18_plus);
+            this.grp_children.Controls.Add(this.lbl_18plus);
+            this.grp_children.Controls.Add(this.nud_7_18);
+            this.grp_children.Controls.Add(this.lbl_7_18);
+            this.grp_children.Controls.Add(this.nud_0_6);
+            this.grp_children.Controls.Add(this.lbl_0_6);
+            this.grp_children.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grp_children.Name = "grp_children";
+            this.grp_children.TabStop = false;
+            // 
+            // nud_18_plus
+            // 
+            resources.ApplyResources(this.nud_18_plus, "nud_18_plus");
+            this.nud_18_plus.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nud_18_plus.Name = "nud_18_plus";
+            this.nud_18_plus.ReadOnly = true;
+            // 
+            // lbl_18plus
+            // 
+            resources.ApplyResources(this.lbl_18plus, "lbl_18plus");
+            this.lbl_18plus.Name = "lbl_18plus";
+            // 
+            // nud_7_18
+            // 
+            resources.ApplyResources(this.nud_7_18, "nud_7_18");
+            this.nud_7_18.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nud_7_18.Name = "nud_7_18";
+            this.nud_7_18.ReadOnly = true;
+            // 
+            // lbl_7_18
+            // 
+            resources.ApplyResources(this.lbl_7_18, "lbl_7_18");
+            this.lbl_7_18.Name = "lbl_7_18";
+            // 
+            // nud_0_6
+            // 
+            resources.ApplyResources(this.nud_0_6, "nud_0_6");
+            this.nud_0_6.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nud_0_6.Name = "nud_0_6";
+            this.nud_0_6.ReadOnly = true;
+            // 
+            // lbl_0_6
+            // 
+            resources.ApplyResources(this.lbl_0_6, "lbl_0_6");
+            this.lbl_0_6.Name = "lbl_0_6";
+            // 
+            // lbl_spouse_status
+            // 
+            resources.ApplyResources(this.lbl_spouse_status, "lbl_spouse_status");
+            this.lbl_spouse_status.Name = "lbl_spouse_status";
+            // 
+            // grp_spouse
+            // 
+            resources.ApplyResources(this.grp_spouse, "grp_spouse");
+            this.grp_spouse.Controls.Add(this.rb_working);
+            this.grp_spouse.Controls.Add(this.rb_not_working);
+            this.grp_spouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grp_spouse.Name = "grp_spouse";
+            this.grp_spouse.TabStop = false;
+            // 
+            // rb_working
+            // 
+            resources.ApplyResources(this.rb_working, "rb_working");
+            this.rb_working.Name = "rb_working";
+            this.rb_working.UseVisualStyleBackColor = true;
+            // 
+            // rb_not_working
+            // 
+            resources.ApplyResources(this.rb_not_working, "rb_not_working");
+            this.rb_not_working.Checked = true;
+            this.rb_not_working.Name = "rb_not_working";
+            this.rb_not_working.TabStop = true;
+            this.rb_not_working.UseVisualStyleBackColor = true;
+            // 
+            // lbl_marital_status
+            // 
+            resources.ApplyResources(this.lbl_marital_status, "lbl_marital_status");
+            this.lbl_marital_status.Name = "lbl_marital_status";
+            // 
+            // grp_marital_status
+            // 
+            resources.ApplyResources(this.grp_marital_status, "grp_marital_status");
+            this.grp_marital_status.Controls.Add(this.rb_married);
+            this.grp_marital_status.Controls.Add(this.rb_single);
+            this.grp_marital_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grp_marital_status.Name = "grp_marital_status";
+            this.grp_marital_status.TabStop = false;
+            // 
+            // rb_married
+            // 
+            resources.ApplyResources(this.rb_married, "rb_married");
+            this.rb_married.Name = "rb_married";
+            this.rb_married.UseVisualStyleBackColor = true;
+            // 
+            // rb_single
+            // 
+            resources.ApplyResources(this.rb_single, "rb_single");
+            this.rb_single.Checked = true;
+            this.rb_single.Name = "rb_single";
+            this.rb_single.TabStop = true;
+            this.rb_single.UseVisualStyleBackColor = true;
+            this.rb_single.CheckedChanged += new System.EventHandler(this.rb_single_CheckedChanged);
+            // 
             // pnl_screen
             // 
             this.pnl_screen.BackColor = System.Drawing.Color.White;
@@ -672,6 +822,12 @@ namespace FinalProject
             this.pnl_screen.Controls.Add(this.txt_calculated_salary);
             resources.ApplyResources(this.pnl_screen, "pnl_screen");
             this.pnl_screen.Name = "pnl_screen";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Name = "label1";
             // 
             // txt_calculated_salary
             // 
@@ -704,6 +860,7 @@ namespace FinalProject
             0,
             0});
             this.nud_langauge_count.Name = "nud_langauge_count";
+            this.nud_langauge_count.ReadOnly = true;
             this.nud_langauge_count.Value = new decimal(new int[] {
             1,
             0,
@@ -806,157 +963,6 @@ namespace FinalProject
             this.lbl_title_admin.Image = global::FinalProject.Properties.Resources.icon_admin;
             this.lbl_title_admin.Name = "lbl_title_admin";
             // 
-            // grp_family
-            // 
-            this.grp_family.BackColor = System.Drawing.Color.Transparent;
-            this.grp_family.Controls.Add(this.lbl_18_plus_clause);
-            this.grp_family.Controls.Add(this.lbl_family_info);
-            this.grp_family.Controls.Add(this.cb_children);
-            this.grp_family.Controls.Add(this.grp_children);
-            this.grp_family.Controls.Add(this.lbl_spouse_status);
-            this.grp_family.Controls.Add(this.grp_spouse);
-            this.grp_family.Controls.Add(this.lbl_marital_status);
-            this.grp_family.Controls.Add(this.grp_marital_status);
-            resources.ApplyResources(this.grp_family, "grp_family");
-            this.grp_family.Name = "grp_family";
-            this.grp_family.TabStop = false;
-            // 
-            // grp_marital_status
-            // 
-            resources.ApplyResources(this.grp_marital_status, "grp_marital_status");
-            this.grp_marital_status.Controls.Add(this.rb_married);
-            this.grp_marital_status.Controls.Add(this.rb_single);
-            this.grp_marital_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grp_marital_status.Name = "grp_marital_status";
-            this.grp_marital_status.TabStop = false;
-            // 
-            // lbl_marital_status
-            // 
-            resources.ApplyResources(this.lbl_marital_status, "lbl_marital_status");
-            this.lbl_marital_status.Name = "lbl_marital_status";
-            // 
-            // rb_single
-            // 
-            resources.ApplyResources(this.rb_single, "rb_single");
-            this.rb_single.Checked = true;
-            this.rb_single.Name = "rb_single";
-            this.rb_single.UseVisualStyleBackColor = true;
-            this.rb_single.CheckedChanged += new System.EventHandler(this.rb_single_CheckedChanged);
-            // 
-            // rb_married
-            // 
-            resources.ApplyResources(this.rb_married, "rb_married");
-            this.rb_married.Name = "rb_married";
-            this.rb_married.UseVisualStyleBackColor = true;
-            // 
-            // grp_spouse
-            // 
-            resources.ApplyResources(this.grp_spouse, "grp_spouse");
-            this.grp_spouse.Controls.Add(this.rb_working);
-            this.grp_spouse.Controls.Add(this.rb_not_working);
-            this.grp_spouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grp_spouse.Name = "grp_spouse";
-            this.grp_spouse.TabStop = false;
-            // 
-            // rb_working
-            // 
-            resources.ApplyResources(this.rb_working, "rb_working");
-            this.rb_working.Name = "rb_working";
-            this.rb_working.UseVisualStyleBackColor = true;
-            // 
-            // rb_not_working
-            // 
-            resources.ApplyResources(this.rb_not_working, "rb_not_working");
-            this.rb_not_working.Checked = true;
-            this.rb_not_working.Name = "rb_not_working";
-            this.rb_not_working.UseVisualStyleBackColor = true;
-            // 
-            // lbl_spouse_status
-            // 
-            resources.ApplyResources(this.lbl_spouse_status, "lbl_spouse_status");
-            this.lbl_spouse_status.Name = "lbl_spouse_status";
-            // 
-            // cb_children
-            // 
-            resources.ApplyResources(this.cb_children, "cb_children");
-            this.cb_children.Name = "cb_children";
-            this.cb_children.UseVisualStyleBackColor = true;
-            this.cb_children.CheckedChanged += new System.EventHandler(this.cb_children_CheckedChanged);
-            // 
-            // grp_children
-            // 
-            resources.ApplyResources(this.grp_children, "grp_children");
-            this.grp_children.Controls.Add(this.nud_18_plus);
-            this.grp_children.Controls.Add(this.lbl_18plus);
-            this.grp_children.Controls.Add(this.nud_7_18);
-            this.grp_children.Controls.Add(this.lbl_7_18);
-            this.grp_children.Controls.Add(this.nud_0_6);
-            this.grp_children.Controls.Add(this.lbl_0_6);
-            this.grp_children.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grp_children.Name = "grp_children";
-            this.grp_children.TabStop = false;
-            // 
-            // lbl_family_info
-            // 
-            resources.ApplyResources(this.lbl_family_info, "lbl_family_info");
-            this.lbl_family_info.Name = "lbl_family_info";
-            // 
-            // nud_0_6
-            // 
-            resources.ApplyResources(this.nud_0_6, "nud_0_6");
-            this.nud_0_6.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.nud_0_6.Name = "nud_0_6";
-            // 
-            // lbl_0_6
-            // 
-            resources.ApplyResources(this.lbl_0_6, "lbl_0_6");
-            this.lbl_0_6.Name = "lbl_0_6";
-            // 
-            // nud_7_18
-            // 
-            resources.ApplyResources(this.nud_7_18, "nud_7_18");
-            this.nud_7_18.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.nud_7_18.Name = "nud_7_18";
-            // 
-            // lbl_7_18
-            // 
-            resources.ApplyResources(this.lbl_7_18, "lbl_7_18");
-            this.lbl_7_18.Name = "lbl_7_18";
-            // 
-            // nud_18_plus
-            // 
-            resources.ApplyResources(this.nud_18_plus, "nud_18_plus");
-            this.nud_18_plus.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.nud_18_plus.Name = "nud_18_plus";
-            // 
-            // lbl_18plus
-            // 
-            resources.ApplyResources(this.lbl_18plus, "lbl_18plus");
-            this.lbl_18plus.Name = "lbl_18plus";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Name = "label1";
-            // 
-            // lbl_18_plus_clause
-            // 
-            resources.ApplyResources(this.lbl_18_plus_clause, "lbl_18_plus_clause");
-            this.lbl_18_plus_clause.Name = "lbl_18_plus_clause";
-            // 
             // Form_LandingPage
             // 
             resources.ApplyResources(this, "$this");
@@ -989,21 +995,21 @@ namespace FinalProject
             this.pnl_salary.ResumeLayout(false);
             this.pnl_salary_content.ResumeLayout(false);
             this.pnl_salary_content.PerformLayout();
+            this.grp_family.ResumeLayout(false);
+            this.grp_family.PerformLayout();
+            this.grp_children.ResumeLayout(false);
+            this.grp_children.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_18_plus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_7_18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_0_6)).EndInit();
+            this.grp_spouse.ResumeLayout(false);
+            this.grp_spouse.PerformLayout();
+            this.grp_marital_status.ResumeLayout(false);
+            this.grp_marital_status.PerformLayout();
             this.pnl_screen.ResumeLayout(false);
             this.pnl_screen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_langauge_count)).EndInit();
             this.pnl_admin.ResumeLayout(false);
-            this.grp_family.ResumeLayout(false);
-            this.grp_family.PerformLayout();
-            this.grp_marital_status.ResumeLayout(false);
-            this.grp_marital_status.PerformLayout();
-            this.grp_spouse.ResumeLayout(false);
-            this.grp_spouse.PerformLayout();
-            this.grp_children.ResumeLayout(false);
-            this.grp_children.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_0_6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_7_18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_18_plus)).EndInit();
             this.ResumeLayout(false);
 
         }

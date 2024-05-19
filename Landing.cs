@@ -43,7 +43,7 @@ namespace FinalProject
         private void Form_LandingPage_Load(object sender, EventArgs e)
         {
             Read_user_data();
-            lblName.Text = txt_name.Text + " " + txt_lastname.Text;
+            lblName.Text = this.current_user.Name + ' ' + this.current_user.LastName;
 
             cmb_experience.DataSource = experience.Keys.ToList();
             cmb_city.DataSource = city.Keys.ToList();
