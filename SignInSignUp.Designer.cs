@@ -72,12 +72,12 @@ namespace FinalProject
             this.bg_flowers = new System.Windows.Forms.Label();
             this.pnl_reset_password = new System.Windows.Forms.Panel();
             this.lbl_sign_in_reset = new System.Windows.Forms.LinkLabel();
-            this.btn_reset_password = new System.Windows.Forms.Button();
             this.lbl_reset_pass_info = new System.Windows.Forms.Label();
             this.pnl_email_bg_reset_pass = new System.Windows.Forms.Panel();
             this.txt_email_reset_pass = new System.Windows.Forms.TextBox();
             this.lbl_email_reset_pass = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_reset_pass_title = new System.Windows.Forms.Label();
+            this.btn_reset_password = new System.Windows.Forms.Button();
             this.pnl_header.SuspendLayout();
             this.pnl_signin.SuspendLayout();
             this.panel_password.SuspendLayout();
@@ -450,34 +450,23 @@ namespace FinalProject
             // pnl_reset_password
             // 
             this.pnl_reset_password.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_reset_password.Controls.Add(this.lbl_sign_in_reset);
             this.pnl_reset_password.Controls.Add(this.btn_reset_password);
+            this.pnl_reset_password.Controls.Add(this.lbl_sign_in_reset);
             this.pnl_reset_password.Controls.Add(this.lbl_reset_pass_info);
             this.pnl_reset_password.Controls.Add(this.pnl_email_bg_reset_pass);
             this.pnl_reset_password.Controls.Add(this.lbl_email_reset_pass);
-            this.pnl_reset_password.Controls.Add(this.label1);
+            this.pnl_reset_password.Controls.Add(this.lbl_reset_pass_title);
             resources.ApplyResources(this.pnl_reset_password, "pnl_reset_password");
             this.pnl_reset_password.Name = "pnl_reset_password";
             // 
             // lbl_sign_in_reset
             // 
             this.lbl_sign_in_reset.ActiveLinkColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.lbl_sign_in_reset, "lbl_sign_in_reset");
             this.lbl_sign_in_reset.LinkColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.lbl_sign_in_reset, "lbl_sign_in_reset");
             this.lbl_sign_in_reset.Name = "lbl_sign_in_reset";
             this.lbl_sign_in_reset.TabStop = true;
             this.lbl_sign_in_reset.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_signin_LinkClicked);
-            // 
-            // btn_reset_password
-            // 
-            this.btn_reset_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
-            this.btn_reset_password.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_reset_password.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btn_reset_password, "btn_reset_password");
-            this.btn_reset_password.ForeColor = System.Drawing.Color.White;
-            this.btn_reset_password.Name = "btn_reset_password";
-            this.btn_reset_password.UseVisualStyleBackColor = true;
-            this.btn_reset_password.Click += new System.EventHandler(this.btn_reset_password_Click);
             // 
             // lbl_reset_pass_info
             // 
@@ -510,21 +499,32 @@ namespace FinalProject
             this.lbl_email_reset_pass.ForeColor = System.Drawing.Color.White;
             this.lbl_email_reset_pass.Name = "lbl_email_reset_pass";
             // 
-            // label1
+            // lbl_reset_pass_title
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Image = global::FinalProject.Properties.Resources.icon_forgot_password;
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lbl_reset_pass_title, "lbl_reset_pass_title");
+            this.lbl_reset_pass_title.ForeColor = System.Drawing.Color.White;
+            this.lbl_reset_pass_title.Image = global::FinalProject.Properties.Resources.icon_forgot_password;
+            this.lbl_reset_pass_title.Name = "lbl_reset_pass_title";
+            // 
+            // btn_reset_password
+            // 
+            this.btn_reset_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
+            this.btn_reset_password.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_reset_password.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btn_reset_password, "btn_reset_password");
+            this.btn_reset_password.ForeColor = System.Drawing.Color.White;
+            this.btn_reset_password.Name = "btn_reset_password";
+            this.btn_reset_password.UseVisualStyleBackColor = true;
+            this.btn_reset_password.Click += new System.EventHandler(this.btn_reset_password_Click);
             // 
             // Form_SignIn_SignUp
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::FinalProject.Properties.Resources.bg_gradient;
-            this.Controls.Add(this.pnl_reset_password);
             this.Controls.Add(this.pnl_signin);
             this.Controls.Add(this.pnl_signup);
+            this.Controls.Add(this.pnl_reset_password);
             this.Controls.Add(this.pnl_header);
             this.Controls.Add(this.bg_flowers);
             this.DoubleBuffered = true;
@@ -598,7 +598,7 @@ namespace FinalProject
         private System.Windows.Forms.Button btn_signup;
         private System.Windows.Forms.Label bg_flowers;
         private System.Windows.Forms.Panel pnl_reset_password;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_reset_pass_title;
         private System.Windows.Forms.Label lbl_reset_pass_info;
         private System.Windows.Forms.Panel pnl_email_bg_reset_pass;
         private System.Windows.Forms.TextBox txt_email_reset_pass;
