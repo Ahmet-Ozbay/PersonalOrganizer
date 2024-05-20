@@ -12,11 +12,15 @@ namespace FinalProject
     {
         bool Add(User user);
         bool Add(Note note);
+        bool Add(Contact contact);
         bool Update(User user);
         bool Update (Note note);
+        bool Update(Contact contact);
         bool Delete(User user);
         bool Delete(Note note);
+        bool Delete(Contact contact);
         List<User> List();
         List<Note> ListNotes();
+        List<Contact> ListContacts(string userEmail);
     }
 }

@@ -56,6 +56,10 @@ namespace FinalProject
             notebook = new NoteBook(new CsvRepository());
             LoadNotes();
 
+            // Phonebook
+            phonebook = new PhoneBook(new CsvRepository(), current_user);
+            LoadContacts();
+
             // Salary Calculator
             cmb_experience.DataSource = experience.Keys.ToList();
             cmb_city.DataSource = city.Keys.ToList();
@@ -67,6 +71,7 @@ namespace FinalProject
         private string default_mail_extension = "@gmail.com";
         private User current_user;
         private NoteBook notebook;
+        private PhoneBook phonebook;
 
         private Dictionary<string, double> experience = new Dictionary<string, double>
         {
@@ -155,6 +160,14 @@ namespace FinalProject
             dgv_notes.DataSource = notes;
         }
 
+        /*
+         * Loads contacts of the current user
+         */
+        private void LoadContacts()
+        {
+            var contacts = phonebook.List(current_user.Email); // Assuming List method accepts a user email parameter
+            dgv_phonebook.DataSource = contacts;
+        }
 
         //
         // Close Button
@@ -815,6 +828,17 @@ namespace FinalProject
             txt_note_content.Clear();
         }
 
+        //
+        // Auxillary function to clear contact fields
+        //
+        private void ClearContactFields()
+        {
+            txt_contact_name.Clear();
+            txt_contact_lastname.Clear();
+            txt_contact_phone.Clear();
+            txt_contact_email.Clear();
+            txt_contact_address.Clear();
+        }
         private void dgv_notes_SelectionChanged(object sender, EventArgs e)
         {
             if (dgv_notes.SelectedRows.Count > 0)
@@ -885,6 +909,128 @@ namespace FinalProject
             {
                 return input;
             }
+        }
+
+        private void btn_save_contact_Click(object sender, EventArgs e)
+        {
+            // Check if we're updating an existing contact or adding a new one
+            if (dgv_phonebook.SelectedRows.Count == 1)
+            {
+                // Update existing contact
+                var selectedContact = (Contact)dgv_phonebook.SelectedRows[0].DataBoundItem;
+                selectedContact.Name = txt_contact_name.Text;
+                selectedContact.LastName = txt_contact_lastname.Text;
+                selectedContact.PhoneNumber = ExtractDigits(txt_contact_phone.Text);
+                selectedContact.Email = txt_contact_email.Text;
+                selectedContact.Address = txt_contact_address.Text;
+
+                if (phonebook.Update(selectedContact))
+                {
+                    LoadContacts(); // Refresh the DataGridView
+                    MessageBox.Show("Contact updated successfully.");
+                    dgv_phonebook.ClearSelection();
+                    ClearContactFields();
+                }
+                else
+                {
+                    MessageBox.Show("There was an error updating the contact.");
+                }
+            }
+            else
+            {
+                // Add new contact
+                var newContact = new Contact
+                {
+                    Name = txt_contact_name.Text,
+                    LastName = txt_contact_lastname.Text,
+                    PhoneNumber = ExtractDigits(txt_contact_phone.Text),
+                    Email = txt_contact_email.Text,
+                    Address = txt_contact_address.Text,
+                    UserEmail = current_user.Email // Set the UserEmail to the current user's email
+                };
+
+                if (phonebook.Add(newContact, current_user.Email))
+                {
+                    LoadContacts(); // Refresh the DataGridView
+                    MessageBox.Show("Contact added successfully.");
+                    dgv_phonebook.ClearSelection();
+                    ClearContactFields();
+                }
+                else
+                {
+                    MessageBox.Show("There was an error adding the contact.");
+                }
+            }
+        }
+
+        private void btn_delete_contact_Click(object sender, EventArgs e)
+        {
+            if (dgv_phonebook.SelectedRows.Count > 0)
+            {
+                // Ask the user to confirm the deletion.
+                var confirmResult = MessageBox.Show("Are you sure you want to delete the selected contacts? This action cannot be undone.",
+                                                    "Confirm Delete",
+                                                    MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // If the user confirmed, delete the contacts.
+                    var contactsToDelete = new List<Contact>();
+                    foreach (DataGridViewRow row in dgv_phonebook.SelectedRows)
+                    {
+                        contactsToDelete.Add((Contact)row.DataBoundItem);
+                    }
+
+                    foreach (var contact in contactsToDelete)
+                    {
+                        phonebook.Delete(contact);
+                    }
+
+                    LoadContacts(); // Refresh the DataGridView
+                    MessageBox.Show("Selected contacts deleted successfully.");
+                }
+                // If the user clicked 'No', do nothing.
+            }
+            else
+            {
+                MessageBox.Show("Please select at least one contact to delete.");
+            }
+        }
+
+        private void dgv_phonebook_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_phonebook.SelectedRows.Count > 0)
+            {
+                var selectedContact = (Contact)dgv_phonebook.SelectedRows[0].DataBoundItem;
+                if (selectedContact != null) // Check if the selected contact is not null
+                {
+                    txt_contact_name.Text = selectedContact.Name;
+                    txt_contact_lastname.Text = selectedContact.LastName;
+                    txt_contact_phone.Text = String.Format("{0:(000) 000 00 00}", Int64.Parse(selectedContact.PhoneNumber));
+                    txt_contact_email.Text = selectedContact.Email;
+                    txt_contact_address.Text = selectedContact.Address;
+                }
+                else
+                {
+                    ClearContactFields(); // Clear the fields if the selected row is empty
+                }
+            }
+            else
+            {
+                ClearContactFields(); // Clear the fields if no row is selected
+            }
+        }
+
+        private void clearSelectionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dgv_phonebook.ClearSelection();
+            ClearContactFields();
+        }
+
+        // Method to extract digits from formatted phone number
+        private string ExtractDigits(string formattedPhoneNumber)
+        {
+            return new String(formattedPhoneNumber.Where(Char.IsDigit).ToArray());
         }
     }
 }

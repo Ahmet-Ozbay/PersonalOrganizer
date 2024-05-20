@@ -12,9 +12,10 @@ namespace FinalProject
     {
         private string _userFilePath = "user_db.csv";
         private string _notesFilePath = "note_db.csv";
+        private string _contactsFilePath = "contacts_db.csv";
         private int _nextUserId;
         private int _nextNoteId;
-        
+        private int _nextContactId;
         public CsvRepository() {
 
             // User DB Access
@@ -45,6 +46,15 @@ namespace FinalProject
                     sw.WriteLine("ID,TITLE,CONTENT");
                 }
                 _nextNoteId = 1;
+            }
+
+            // Contact DB Access
+            if (!File.Exists(_contactsFilePath) || new FileInfo(_contactsFilePath).Length == 0)
+            {
+                using (StreamWriter sw = File.CreateText(_contactsFilePath))
+                {
+                    sw.WriteLine("ID,UserEmail,Name,LastName,PhoneNumber,Email,Address");
+                }
             }
         }
 
@@ -84,6 +94,28 @@ namespace FinalProject
                 var encodedContent = EncodeToBase64(note.Content);
                 var line = $"{note.ID},{note.UserEmail},{EscapeForCsv(note.Title)},{encodedContent}";
                 using (StreamWriter sw = File.AppendText(_notesFilePath))
+                {
+                    sw.WriteLine(line);
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /*
+         * Create new Contact
+         */
+        public bool Add(Contact contact)
+        {
+            try
+            {
+                contact.ID = _nextContactId++;
+                var line = $"{contact.ID},{contact.UserEmail},{EscapeForCsv(contact.Name)},{EscapeForCsv(contact.LastName)}," +
+                           $"{EscapeForCsv(contact.PhoneNumber)},{EscapeForCsv(contact.Email)},{EscapeForCsv(contact.Address)}";
+                using (StreamWriter sw = File.AppendText(_contactsFilePath))
                 {
                     sw.WriteLine(line);
                 }
@@ -142,6 +174,29 @@ namespace FinalProject
         }
 
         /*
+         * Delete Contact
+         */
+        public bool Delete(Contact contact)
+        {
+            try
+            {
+                var contacts = ListContacts(contact.UserEmail);
+                var contactToDelete = contacts.FirstOrDefault(c => c.ID == contact.ID);
+                if (contactToDelete != null)
+                {
+                    contacts.Remove(contactToDelete);
+                    WriteAllContacts(contacts); // Rewrite the updated list to the CSV file
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /*
          * Read Users
          */
         public List<User> List()
@@ -178,6 +233,25 @@ namespace FinalProject
         }
 
         /*
+         * Read Contacts
+         */
+        public List<Contact> ListContacts(string userEmail)
+        {
+            try
+            {
+                return File.ReadAllLines(_contactsFilePath)
+                    .Skip(1)
+                    .Select(line => FromCsvToContact(line))
+                    .Where(contact => contact.UserEmail == userEmail)
+                    .ToList();
+            }
+            catch
+            {
+                return new List<Contact>();
+            }
+        }
+
+        /*
          * Get the user data from the database
          */
         private User FromCsv(string csvLine)
@@ -209,6 +283,24 @@ namespace FinalProject
                 UserEmail = values[1],
                 Title = UnescapeFromCsv(values[2]),
                 Content = DecodeFromBase64(values[3])
+            };
+        }
+
+        /*
+         * Get the contact data from the database
+         */
+        private Contact FromCsvToContact(string csvLine)
+        {
+            var values = csvLine.Split(',');
+            return new Contact
+            {
+                ID = Convert.ToInt32(values[0]),
+                UserEmail = values[1],
+                Name = UnescapeFromCsv(values[2]),
+                LastName = UnescapeFromCsv(values[3]),
+                PhoneNumber = UnescapeFromCsv(values[4]),
+                Email = UnescapeFromCsv(values[5]),
+                Address = UnescapeFromCsv(values[6])
             };
         }
 
@@ -267,6 +359,32 @@ namespace FinalProject
         }
 
         /*
+         * Update contacts
+         */
+        public bool Update(Contact contact)
+        {
+            try
+            {
+                var contacts = ListContacts(contact.UserEmail);
+                var contactToUpdate = contacts.FirstOrDefault(c => c.Email == contact.Email);
+                if (contactToUpdate != null)
+                {
+                    contactToUpdate.Name = contact.Name;
+                    contactToUpdate.LastName = contact.LastName;
+                    contactToUpdate.PhoneNumber = contact.PhoneNumber;
+                    contactToUpdate.Address = contact.Address;
+                    WriteAllContacts(contacts);
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /*
          * Write all users to db
          */
         private void WriteAllUsers(List<User> users)
@@ -300,6 +418,23 @@ namespace FinalProject
             }
         }
 
+        /* 
+         * Write all contacts to db
+         */
+        private void WriteAllContacts(List<Contact> contacts)
+        {
+            using (StreamWriter sw = new StreamWriter(_contactsFilePath, false)) // Overwrite the file
+            {
+                sw.WriteLine("ID,UserEmail,Name,LastName,PhoneNumber,Email,Address"); // Write the header
+                foreach (var contact in contacts)
+                {
+                    var line = $"{contact.ID},{contact.UserEmail},{EscapeForCsv(contact.Name)}," +
+                               $"{EscapeForCsv(contact.LastName)},{EscapeForCsv(contact.PhoneNumber)}," +
+                               $"{EscapeForCsv(contact.Email)},{EscapeForCsv(contact.Address)}";
+                    sw.WriteLine(line);
+                }
+            }
+        }
         // Helper methods for Base64 encoding/decoding and CSV escaping
         private string EncodeToBase64(string input)
         {

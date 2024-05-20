@@ -79,7 +79,29 @@ namespace FinalProject
             this.btn_save_profile = new System.Windows.Forms.Button();
             this.lbl_title_profile = new System.Windows.Forms.Label();
             this.pnl_contacts = new System.Windows.Forms.Panel();
+            this.btn_delete_contact = new System.Windows.Forms.Button();
             this.pnl_contacts_content = new System.Windows.Forms.Panel();
+            this.btn_save_contact = new System.Windows.Forms.Button();
+            this.lbl_contact_address = new System.Windows.Forms.Label();
+            this.lbl_contact_email = new System.Windows.Forms.Label();
+            this.lbl_contact_phone = new System.Windows.Forms.Label();
+            this.lbl_contact_lastname = new System.Windows.Forms.Label();
+            this.lbl_contact_name = new System.Windows.Forms.Label();
+            this.pnl_contact_email = new System.Windows.Forms.Panel();
+            this.txt_contact_email = new System.Windows.Forms.TextBox();
+            this.pnl_contact_phone = new System.Windows.Forms.Panel();
+            this.txt_contact_phone = new System.Windows.Forms.MaskedTextBox();
+            this.txt_contact_phone.Mask = "(000) 000 00 00";
+            this.pnl_contact_lastname = new System.Windows.Forms.Panel();
+            this.txt_contact_lastname = new System.Windows.Forms.TextBox();
+            this.pnl_contact_name = new System.Windows.Forms.Panel();
+            this.txt_contact_name = new System.Windows.Forms.TextBox();
+            this.grp_phonebook = new System.Windows.Forms.GroupBox();
+            this.dgv_phonebook = new System.Windows.Forms.DataGridView();
+            this.context_dgv_phonebook = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.clearSelectionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnl_contact_address = new System.Windows.Forms.Panel();
+            this.txt_contact_address = new System.Windows.Forms.TextBox();
             this.lbl_title_contacts = new System.Windows.Forms.Label();
             this.pnl_notebook = new System.Windows.Forms.Panel();
             this.pnl_notebook_content = new System.Windows.Forms.Panel();
@@ -89,11 +111,16 @@ namespace FinalProject
             this.lbl_note_content = new System.Windows.Forms.Label();
             this.lbl_note_title = new System.Windows.Forms.Label();
             this.pnl_note_content = new System.Windows.Forms.Panel();
+            this.txt_note_content = new System.Windows.Forms.TextBox();
             this.pnl_note_title = new System.Windows.Forms.Panel();
             this.txt_note_title = new System.Windows.Forms.TextBox();
             this.grp_notebook = new System.Windows.Forms.GroupBox();
             this.dgv_notes = new System.Windows.Forms.DataGridView();
-            this.context_dgv = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Column_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.context_dgv_notebook = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.clearSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_title_notebook = new System.Windows.Forms.Label();
             this.pnl_reminder = new System.Windows.Forms.Panel();
@@ -140,11 +167,13 @@ namespace FinalProject
             this.pnl_admin = new System.Windows.Forms.Panel();
             this.pnl_admin_content = new System.Windows.Forms.Panel();
             this.lbl_title_admin = new System.Windows.Forms.Label();
-            this.txt_note_content = new System.Windows.Forms.TextBox();
-            this.Column_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_UserEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_header.SuspendLayout();
             this.pnl_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).BeginInit();
@@ -153,6 +182,15 @@ namespace FinalProject
             this.grp_password.SuspendLayout();
             this.grp_personal_info.SuspendLayout();
             this.pnl_contacts.SuspendLayout();
+            this.pnl_contacts_content.SuspendLayout();
+            this.pnl_contact_email.SuspendLayout();
+            this.pnl_contact_phone.SuspendLayout();
+            this.pnl_contact_lastname.SuspendLayout();
+            this.pnl_contact_name.SuspendLayout();
+            this.grp_phonebook.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phonebook)).BeginInit();
+            this.context_dgv_phonebook.SuspendLayout();
+            this.pnl_contact_address.SuspendLayout();
             this.pnl_notebook.SuspendLayout();
             this.pnl_notebook_content.SuspendLayout();
             this.grp_note.SuspendLayout();
@@ -160,7 +198,7 @@ namespace FinalProject
             this.pnl_note_title.SuspendLayout();
             this.grp_notebook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_notes)).BeginInit();
-            this.context_dgv.SuspendLayout();
+            this.context_dgv_notebook.SuspendLayout();
             this.pnl_reminder.SuspendLayout();
             this.pnl_salary.SuspendLayout();
             this.pnl_salary_content.SuspendLayout();
@@ -592,18 +630,183 @@ namespace FinalProject
             // pnl_contacts
             // 
             this.pnl_contacts.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_contacts.Controls.Add(this.btn_delete_contact);
             this.pnl_contacts.Controls.Add(this.pnl_contacts_content);
             this.pnl_contacts.Controls.Add(this.lbl_title_contacts);
             resources.ApplyResources(this.pnl_contacts, "pnl_contacts");
             this.pnl_contacts.Name = "pnl_contacts";
             this.pnl_contacts.VisibleChanged += new System.EventHandler(this.pnl_contacts_VisibleChanged);
             // 
+            // btn_delete_contact
+            // 
+            this.btn_delete_contact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
+            this.btn_delete_contact.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_delete_contact.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btn_delete_contact, "btn_delete_contact");
+            this.btn_delete_contact.ForeColor = System.Drawing.Color.White;
+            this.btn_delete_contact.Name = "btn_delete_contact";
+            this.btn_delete_contact.UseVisualStyleBackColor = false;
+            this.btn_delete_contact.Click += new System.EventHandler(this.btn_delete_contact_Click);
+            // 
             // pnl_contacts_content
             // 
             this.pnl_contacts_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.pnl_contacts_content.Controls.Add(this.btn_save_contact);
+            this.pnl_contacts_content.Controls.Add(this.lbl_contact_address);
+            this.pnl_contacts_content.Controls.Add(this.lbl_contact_email);
+            this.pnl_contacts_content.Controls.Add(this.lbl_contact_phone);
+            this.pnl_contacts_content.Controls.Add(this.lbl_contact_lastname);
+            this.pnl_contacts_content.Controls.Add(this.lbl_contact_name);
+            this.pnl_contacts_content.Controls.Add(this.pnl_contact_email);
+            this.pnl_contacts_content.Controls.Add(this.pnl_contact_phone);
+            this.pnl_contacts_content.Controls.Add(this.pnl_contact_lastname);
+            this.pnl_contacts_content.Controls.Add(this.pnl_contact_name);
+            this.pnl_contacts_content.Controls.Add(this.grp_phonebook);
+            this.pnl_contacts_content.Controls.Add(this.pnl_contact_address);
             resources.ApplyResources(this.pnl_contacts_content, "pnl_contacts_content");
             this.pnl_contacts_content.ForeColor = System.Drawing.Color.White;
             this.pnl_contacts_content.Name = "pnl_contacts_content";
+            // 
+            // btn_save_contact
+            // 
+            this.btn_save_contact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
+            this.btn_save_contact.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_save_contact.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btn_save_contact, "btn_save_contact");
+            this.btn_save_contact.Name = "btn_save_contact";
+            this.btn_save_contact.UseVisualStyleBackColor = false;
+            this.btn_save_contact.Click += new System.EventHandler(this.btn_save_contact_Click);
+            // 
+            // lbl_contact_address
+            // 
+            resources.ApplyResources(this.lbl_contact_address, "lbl_contact_address");
+            this.lbl_contact_address.Name = "lbl_contact_address";
+            // 
+            // lbl_contact_email
+            // 
+            resources.ApplyResources(this.lbl_contact_email, "lbl_contact_email");
+            this.lbl_contact_email.Name = "lbl_contact_email";
+            // 
+            // lbl_contact_phone
+            // 
+            resources.ApplyResources(this.lbl_contact_phone, "lbl_contact_phone");
+            this.lbl_contact_phone.Name = "lbl_contact_phone";
+            // 
+            // lbl_contact_lastname
+            // 
+            resources.ApplyResources(this.lbl_contact_lastname, "lbl_contact_lastname");
+            this.lbl_contact_lastname.Name = "lbl_contact_lastname";
+            // 
+            // lbl_contact_name
+            // 
+            resources.ApplyResources(this.lbl_contact_name, "lbl_contact_name");
+            this.lbl_contact_name.Name = "lbl_contact_name";
+            // 
+            // pnl_contact_email
+            // 
+            this.pnl_contact_email.BackColor = System.Drawing.Color.White;
+            this.pnl_contact_email.Controls.Add(this.txt_contact_email);
+            resources.ApplyResources(this.pnl_contact_email, "pnl_contact_email");
+            this.pnl_contact_email.Name = "pnl_contact_email";
+            // 
+            // txt_contact_email
+            // 
+            this.txt_contact_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_contact_email, "txt_contact_email");
+            this.txt_contact_email.Name = "txt_contact_email";
+            // 
+            // pnl_contact_phone
+            // 
+            this.pnl_contact_phone.BackColor = System.Drawing.Color.White;
+            this.pnl_contact_phone.Controls.Add(this.txt_contact_phone);
+            resources.ApplyResources(this.pnl_contact_phone, "pnl_contact_phone");
+            this.pnl_contact_phone.Name = "pnl_contact_phone";
+            // 
+            // txt_contact_phone
+            // 
+            this.txt_contact_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_contact_phone, "txt_contact_phone");
+            this.txt_contact_phone.Name = "txt_contact_phone";
+            // 
+            // pnl_contact_lastname
+            // 
+            this.pnl_contact_lastname.BackColor = System.Drawing.Color.White;
+            this.pnl_contact_lastname.Controls.Add(this.txt_contact_lastname);
+            resources.ApplyResources(this.pnl_contact_lastname, "pnl_contact_lastname");
+            this.pnl_contact_lastname.Name = "pnl_contact_lastname";
+            // 
+            // txt_contact_lastname
+            // 
+            this.txt_contact_lastname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_contact_lastname, "txt_contact_lastname");
+            this.txt_contact_lastname.Name = "txt_contact_lastname";
+            // 
+            // pnl_contact_name
+            // 
+            this.pnl_contact_name.BackColor = System.Drawing.Color.White;
+            this.pnl_contact_name.Controls.Add(this.txt_contact_name);
+            resources.ApplyResources(this.pnl_contact_name, "pnl_contact_name");
+            this.pnl_contact_name.Name = "pnl_contact_name";
+            // 
+            // txt_contact_name
+            // 
+            this.txt_contact_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_contact_name, "txt_contact_name");
+            this.txt_contact_name.Name = "txt_contact_name";
+            // 
+            // grp_phonebook
+            // 
+            this.grp_phonebook.Controls.Add(this.dgv_phonebook);
+            this.grp_phonebook.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.grp_phonebook, "grp_phonebook");
+            this.grp_phonebook.Name = "grp_phonebook";
+            this.grp_phonebook.TabStop = false;
+            // 
+            // dgv_phonebook
+            // 
+            this.dgv_phonebook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_phonebook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_phonebook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PhoneBook_ID,
+            this.PhoneBook_UserEmail,
+            this.PhoneBook_Name,
+            this.PhoneBook_LastName,
+            this.PhoneBook_PhoneNumber,
+            this.PhoneBook_Email,
+            this.PhoneBook_Address});
+            this.dgv_phonebook.ContextMenuStrip = this.context_dgv_phonebook;
+            resources.ApplyResources(this.dgv_phonebook, "dgv_phonebook");
+            this.dgv_phonebook.Name = "dgv_phonebook";
+            this.dgv_phonebook.ReadOnly = true;
+            this.dgv_phonebook.RowHeadersVisible = false;
+            this.dgv_phonebook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_phonebook.SelectionChanged += new System.EventHandler(this.dgv_phonebook_SelectionChanged);
+            // 
+            // context_dgv_phonebook
+            // 
+            this.context_dgv_phonebook.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearSelectionToolStripMenuItem1});
+            this.context_dgv_phonebook.Name = "context_dgv_phonebook";
+            resources.ApplyResources(this.context_dgv_phonebook, "context_dgv_phonebook");
+            // 
+            // clearSelectionToolStripMenuItem1
+            // 
+            this.clearSelectionToolStripMenuItem1.Name = "clearSelectionToolStripMenuItem1";
+            resources.ApplyResources(this.clearSelectionToolStripMenuItem1, "clearSelectionToolStripMenuItem1");
+            this.clearSelectionToolStripMenuItem1.Click += new System.EventHandler(this.clearSelectionToolStripMenuItem1_Click);
+            // 
+            // pnl_contact_address
+            // 
+            this.pnl_contact_address.BackColor = System.Drawing.Color.White;
+            this.pnl_contact_address.Controls.Add(this.txt_contact_address);
+            resources.ApplyResources(this.pnl_contact_address, "pnl_contact_address");
+            this.pnl_contact_address.Name = "pnl_contact_address";
+            // 
+            // txt_contact_address
+            // 
+            this.txt_contact_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_contact_address, "txt_contact_address");
+            this.txt_contact_address.Name = "txt_contact_address";
             // 
             // lbl_title_contacts
             // 
@@ -681,6 +884,12 @@ namespace FinalProject
             resources.ApplyResources(this.pnl_note_content, "pnl_note_content");
             this.pnl_note_content.Name = "pnl_note_content";
             // 
+            // txt_note_content
+            // 
+            this.txt_note_content.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_note_content, "txt_note_content");
+            this.txt_note_content.Name = "txt_note_content";
+            // 
             // pnl_note_title
             // 
             this.pnl_note_title.BackColor = System.Drawing.Color.White;
@@ -714,7 +923,7 @@ namespace FinalProject
             this.Column_Email,
             this.Column_Title,
             this.Column_Content});
-            this.dgv_notes.ContextMenuStrip = this.context_dgv;
+            this.dgv_notes.ContextMenuStrip = this.context_dgv_notebook;
             resources.ApplyResources(this.dgv_notes, "dgv_notes");
             this.dgv_notes.Name = "dgv_notes";
             this.dgv_notes.ReadOnly = true;
@@ -723,12 +932,42 @@ namespace FinalProject
             this.dgv_notes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_notes.SelectionChanged += new System.EventHandler(this.dgv_notes_SelectionChanged);
             // 
-            // context_dgv
+            // Column_ID
             // 
-            resources.ApplyResources(this.context_dgv, "context_dgv");
-            this.context_dgv.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Column_ID.DataPropertyName = "ID";
+            resources.ApplyResources(this.Column_ID, "Column_ID");
+            this.Column_ID.Name = "Column_ID";
+            this.Column_ID.ReadOnly = true;
+            // 
+            // Column_Email
+            // 
+            this.Column_Email.DataPropertyName = "UserEmail";
+            resources.ApplyResources(this.Column_Email, "Column_Email");
+            this.Column_Email.Name = "Column_Email";
+            this.Column_Email.ReadOnly = true;
+            // 
+            // Column_Title
+            // 
+            this.Column_Title.DataPropertyName = "Title";
+            this.Column_Title.FillWeight = 188F;
+            resources.ApplyResources(this.Column_Title, "Column_Title");
+            this.Column_Title.Name = "Column_Title";
+            this.Column_Title.ReadOnly = true;
+            // 
+            // Column_Content
+            // 
+            this.Column_Content.DataPropertyName = "Content";
+            this.Column_Content.FillWeight = 400F;
+            resources.ApplyResources(this.Column_Content, "Column_Content");
+            this.Column_Content.Name = "Column_Content";
+            this.Column_Content.ReadOnly = true;
+            // 
+            // context_dgv_notebook
+            // 
+            resources.ApplyResources(this.context_dgv_notebook, "context_dgv_notebook");
+            this.context_dgv_notebook.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clearSelectionToolStripMenuItem});
-            this.context_dgv.Name = "context_dgv";
+            this.context_dgv_notebook.Name = "context_dgv";
             // 
             // clearSelectionToolStripMenuItem
             // 
@@ -1095,51 +1334,64 @@ namespace FinalProject
             this.lbl_title_admin.Image = global::FinalProject.Properties.Resources.icon_admin;
             this.lbl_title_admin.Name = "lbl_title_admin";
             // 
-            // txt_note_content
+            // PhoneBook_ID
             // 
-            this.txt_note_content.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txt_note_content, "txt_note_content");
-            this.txt_note_content.Name = "txt_note_content";
+            this.PhoneBook_ID.DataPropertyName = "ID";
+            resources.ApplyResources(this.PhoneBook_ID, "PhoneBook_ID");
+            this.PhoneBook_ID.Name = "PhoneBook_ID";
+            this.PhoneBook_ID.ReadOnly = true;
             // 
-            // Column_ID
+            // PhoneBook_UserEmail
             // 
-            this.Column_ID.DataPropertyName = "ID";
-            resources.ApplyResources(this.Column_ID, "Column_ID");
-            this.Column_ID.Name = "Column_ID";
-            this.Column_ID.ReadOnly = true;
+            this.PhoneBook_UserEmail.DataPropertyName = "UserEmail";
+            resources.ApplyResources(this.PhoneBook_UserEmail, "PhoneBook_UserEmail");
+            this.PhoneBook_UserEmail.Name = "PhoneBook_UserEmail";
+            this.PhoneBook_UserEmail.ReadOnly = true;
             // 
-            // Column_Email
+            // PhoneBook_Name
             // 
-            this.Column_Email.DataPropertyName = "UserEmail";
-            resources.ApplyResources(this.Column_Email, "Column_Email");
-            this.Column_Email.Name = "Column_Email";
-            this.Column_Email.ReadOnly = true;
+            this.PhoneBook_Name.DataPropertyName = "Name";
+            resources.ApplyResources(this.PhoneBook_Name, "PhoneBook_Name");
+            this.PhoneBook_Name.Name = "PhoneBook_Name";
+            this.PhoneBook_Name.ReadOnly = true;
             // 
-            // Column_Title
+            // PhoneBook_LastName
             // 
-            this.Column_Title.DataPropertyName = "Title";
-            this.Column_Title.FillWeight = 188F;
-            resources.ApplyResources(this.Column_Title, "Column_Title");
-            this.Column_Title.Name = "Column_Title";
-            this.Column_Title.ReadOnly = true;
+            this.PhoneBook_LastName.DataPropertyName = "LastName";
+            resources.ApplyResources(this.PhoneBook_LastName, "PhoneBook_LastName");
+            this.PhoneBook_LastName.Name = "PhoneBook_LastName";
+            this.PhoneBook_LastName.ReadOnly = true;
             // 
-            // Column_Content
+            // PhoneBook_PhoneNumber
             // 
-            this.Column_Content.DataPropertyName = "Content";
-            this.Column_Content.FillWeight = 400F;
-            resources.ApplyResources(this.Column_Content, "Column_Content");
-            this.Column_Content.Name = "Column_Content";
-            this.Column_Content.ReadOnly = true;
+            this.PhoneBook_PhoneNumber.DataPropertyName = "PhoneNumber";
+            resources.ApplyResources(this.PhoneBook_PhoneNumber, "PhoneBook_PhoneNumber");
+            this.PhoneBook_PhoneNumber.Name = "PhoneBook_PhoneNumber";
+            this.PhoneBook_PhoneNumber.ReadOnly = true;
+            // 
+            // PhoneBook_Email
+            // 
+            this.PhoneBook_Email.DataPropertyName = "Email";
+            resources.ApplyResources(this.PhoneBook_Email, "PhoneBook_Email");
+            this.PhoneBook_Email.Name = "PhoneBook_Email";
+            this.PhoneBook_Email.ReadOnly = true;
+            // 
+            // PhoneBook_Address
+            // 
+            this.PhoneBook_Address.DataPropertyName = "Address";
+            resources.ApplyResources(this.PhoneBook_Address, "PhoneBook_Address");
+            this.PhoneBook_Address.Name = "PhoneBook_Address";
+            this.PhoneBook_Address.ReadOnly = true;
             // 
             // Form_LandingPage
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FinalProject.Properties.Resources.bg_gradient_main;
+            this.Controls.Add(this.pnl_contacts);
             this.Controls.Add(this.pnl_notebook);
             this.Controls.Add(this.pnl_profile);
             this.Controls.Add(this.pnl_salary);
-            this.Controls.Add(this.pnl_contacts);
             this.Controls.Add(this.pnl_admin);
             this.Controls.Add(this.pnl_reminder);
             this.Controls.Add(this.pnl_menu);
@@ -1158,6 +1410,21 @@ namespace FinalProject
             this.grp_personal_info.ResumeLayout(false);
             this.grp_personal_info.PerformLayout();
             this.pnl_contacts.ResumeLayout(false);
+            this.pnl_contacts_content.ResumeLayout(false);
+            this.pnl_contacts_content.PerformLayout();
+            this.pnl_contact_email.ResumeLayout(false);
+            this.pnl_contact_email.PerformLayout();
+            this.pnl_contact_phone.ResumeLayout(false);
+            this.pnl_contact_phone.PerformLayout();
+            this.pnl_contact_lastname.ResumeLayout(false);
+            this.pnl_contact_lastname.PerformLayout();
+            this.pnl_contact_name.ResumeLayout(false);
+            this.pnl_contact_name.PerformLayout();
+            this.grp_phonebook.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phonebook)).EndInit();
+            this.context_dgv_phonebook.ResumeLayout(false);
+            this.pnl_contact_address.ResumeLayout(false);
+            this.pnl_contact_address.PerformLayout();
             this.pnl_notebook.ResumeLayout(false);
             this.pnl_notebook_content.ResumeLayout(false);
             this.grp_note.ResumeLayout(false);
@@ -1168,7 +1435,7 @@ namespace FinalProject
             this.pnl_note_title.PerformLayout();
             this.grp_notebook.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_notes)).EndInit();
-            this.context_dgv.ResumeLayout(false);
+            this.context_dgv_notebook.ResumeLayout(false);
             this.pnl_reminder.ResumeLayout(false);
             this.pnl_salary.ResumeLayout(false);
             this.pnl_salary_content.ResumeLayout(false);
@@ -1300,12 +1567,40 @@ namespace FinalProject
         private System.Windows.Forms.Label lbl_note_title;
         private System.Windows.Forms.Button btn_delete_note;
         private System.Windows.Forms.Button btn_save_note;
-        private System.Windows.Forms.ContextMenuStrip context_dgv;
+        private System.Windows.Forms.ContextMenuStrip context_dgv_notebook;
         private System.Windows.Forms.ToolStripMenuItem clearSelectionToolStripMenuItem;
         private System.Windows.Forms.TextBox txt_note_content;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Content;
+        private System.Windows.Forms.GroupBox grp_phonebook;
+        private System.Windows.Forms.DataGridView dgv_phonebook;
+        private System.Windows.Forms.MaskedTextBox txt_contact_phone;
+        private System.Windows.Forms.TextBox txt_contact_name;
+        private System.Windows.Forms.Panel pnl_contact_address;
+        private System.Windows.Forms.TextBox txt_contact_address;
+        private System.Windows.Forms.Panel pnl_contact_email;
+        private System.Windows.Forms.TextBox txt_contact_email;
+        private System.Windows.Forms.Panel pnl_contact_phone;
+        private System.Windows.Forms.Panel pnl_contact_lastname;
+        private System.Windows.Forms.TextBox txt_contact_lastname;
+        private System.Windows.Forms.Panel pnl_contact_name;
+        private System.Windows.Forms.Label lbl_contact_email;
+        private System.Windows.Forms.Label lbl_contact_phone;
+        private System.Windows.Forms.Label lbl_contact_lastname;
+        private System.Windows.Forms.Label lbl_contact_name;
+        private System.Windows.Forms.Label lbl_contact_address;
+        private System.Windows.Forms.Button btn_delete_contact;
+        private System.Windows.Forms.Button btn_save_contact;
+        private System.Windows.Forms.ContextMenuStrip context_dgv_phonebook;
+        private System.Windows.Forms.ToolStripMenuItem clearSelectionToolStripMenuItem1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneBook_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneBook_UserEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneBook_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneBook_LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneBook_PhoneNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneBook_Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneBook_Address;
     }
 }

@@ -9,6 +9,8 @@ namespace FinalProject
 {
     internal class Contact: Person
     {
+        public int ID { get; set; }
+        public string UserEmail { get; set; }
         public Contact() { }
         public Contact(string name, string last_name, string phone_number, string email, string adress)
         {
@@ -16,7 +18,7 @@ namespace FinalProject
             this.LastName = last_name;
             this.PhoneNumber = phone_number;
             this.Email = email;
-            this.Adress = adress;
+            this.Address = adress;
         }
     }
 }
