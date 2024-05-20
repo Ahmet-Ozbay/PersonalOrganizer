@@ -506,6 +506,8 @@ namespace FinalProject
                 // Prevent further processing of the '@' key press
                 e.Handled = true;
             }
+
+            this.AcceptButton = btn_reset_password;
         }
         
         //
@@ -623,6 +625,14 @@ namespace FinalProject
 
         }
 
+        private void txt_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.AcceptButton = btn_signin;
+        }
 
+        private void txt_confirm_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.AcceptButton = btn_signup;
+        }
     }
 }

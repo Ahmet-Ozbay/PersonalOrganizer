@@ -91,13 +91,19 @@ namespace FinalProject
             this.txt_contact_email = new System.Windows.Forms.TextBox();
             this.pnl_contact_phone = new System.Windows.Forms.Panel();
             this.txt_contact_phone = new System.Windows.Forms.MaskedTextBox();
-            this.txt_contact_phone.Mask = "(000) 000 00 00";
             this.pnl_contact_lastname = new System.Windows.Forms.Panel();
             this.txt_contact_lastname = new System.Windows.Forms.TextBox();
             this.pnl_contact_name = new System.Windows.Forms.Panel();
             this.txt_contact_name = new System.Windows.Forms.TextBox();
             this.grp_phonebook = new System.Windows.Forms.GroupBox();
             this.dgv_phonebook = new System.Windows.Forms.DataGridView();
+            this.PhoneBook_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_UserEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneBook_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.context_dgv_phonebook = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.clearSelectionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_contact_address = new System.Windows.Forms.Panel();
@@ -167,13 +173,6 @@ namespace FinalProject
             this.pnl_admin = new System.Windows.Forms.Panel();
             this.pnl_admin_content = new System.Windows.Forms.Panel();
             this.lbl_title_admin = new System.Windows.Forms.Label();
-            this.PhoneBook_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneBook_UserEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneBook_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneBook_LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneBook_PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneBook_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneBook_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_header.SuspendLayout();
             this.pnl_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).BeginInit();
@@ -779,8 +778,58 @@ namespace FinalProject
             this.dgv_phonebook.Name = "dgv_phonebook";
             this.dgv_phonebook.ReadOnly = true;
             this.dgv_phonebook.RowHeadersVisible = false;
+            this.dgv_phonebook.RowTemplate.Height = 30;
             this.dgv_phonebook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_phonebook.SelectionChanged += new System.EventHandler(this.dgv_phonebook_SelectionChanged);
+            // 
+            // PhoneBook_ID
+            // 
+            this.PhoneBook_ID.DataPropertyName = "ID";
+            resources.ApplyResources(this.PhoneBook_ID, "PhoneBook_ID");
+            this.PhoneBook_ID.Name = "PhoneBook_ID";
+            this.PhoneBook_ID.ReadOnly = true;
+            // 
+            // PhoneBook_UserEmail
+            // 
+            this.PhoneBook_UserEmail.DataPropertyName = "UserEmail";
+            resources.ApplyResources(this.PhoneBook_UserEmail, "PhoneBook_UserEmail");
+            this.PhoneBook_UserEmail.Name = "PhoneBook_UserEmail";
+            this.PhoneBook_UserEmail.ReadOnly = true;
+            // 
+            // PhoneBook_Name
+            // 
+            this.PhoneBook_Name.DataPropertyName = "Name";
+            resources.ApplyResources(this.PhoneBook_Name, "PhoneBook_Name");
+            this.PhoneBook_Name.Name = "PhoneBook_Name";
+            this.PhoneBook_Name.ReadOnly = true;
+            // 
+            // PhoneBook_LastName
+            // 
+            this.PhoneBook_LastName.DataPropertyName = "LastName";
+            resources.ApplyResources(this.PhoneBook_LastName, "PhoneBook_LastName");
+            this.PhoneBook_LastName.Name = "PhoneBook_LastName";
+            this.PhoneBook_LastName.ReadOnly = true;
+            // 
+            // PhoneBook_PhoneNumber
+            // 
+            this.PhoneBook_PhoneNumber.DataPropertyName = "PhoneNumber";
+            resources.ApplyResources(this.PhoneBook_PhoneNumber, "PhoneBook_PhoneNumber");
+            this.PhoneBook_PhoneNumber.Name = "PhoneBook_PhoneNumber";
+            this.PhoneBook_PhoneNumber.ReadOnly = true;
+            // 
+            // PhoneBook_Email
+            // 
+            this.PhoneBook_Email.DataPropertyName = "Email";
+            resources.ApplyResources(this.PhoneBook_Email, "PhoneBook_Email");
+            this.PhoneBook_Email.Name = "PhoneBook_Email";
+            this.PhoneBook_Email.ReadOnly = true;
+            // 
+            // PhoneBook_Address
+            // 
+            this.PhoneBook_Address.DataPropertyName = "Address";
+            resources.ApplyResources(this.PhoneBook_Address, "PhoneBook_Address");
+            this.PhoneBook_Address.Name = "PhoneBook_Address";
+            this.PhoneBook_Address.ReadOnly = true;
             // 
             // context_dgv_phonebook
             // 
@@ -1333,55 +1382,6 @@ namespace FinalProject
             this.lbl_title_admin.ForeColor = System.Drawing.Color.White;
             this.lbl_title_admin.Image = global::FinalProject.Properties.Resources.icon_admin;
             this.lbl_title_admin.Name = "lbl_title_admin";
-            // 
-            // PhoneBook_ID
-            // 
-            this.PhoneBook_ID.DataPropertyName = "ID";
-            resources.ApplyResources(this.PhoneBook_ID, "PhoneBook_ID");
-            this.PhoneBook_ID.Name = "PhoneBook_ID";
-            this.PhoneBook_ID.ReadOnly = true;
-            // 
-            // PhoneBook_UserEmail
-            // 
-            this.PhoneBook_UserEmail.DataPropertyName = "UserEmail";
-            resources.ApplyResources(this.PhoneBook_UserEmail, "PhoneBook_UserEmail");
-            this.PhoneBook_UserEmail.Name = "PhoneBook_UserEmail";
-            this.PhoneBook_UserEmail.ReadOnly = true;
-            // 
-            // PhoneBook_Name
-            // 
-            this.PhoneBook_Name.DataPropertyName = "Name";
-            resources.ApplyResources(this.PhoneBook_Name, "PhoneBook_Name");
-            this.PhoneBook_Name.Name = "PhoneBook_Name";
-            this.PhoneBook_Name.ReadOnly = true;
-            // 
-            // PhoneBook_LastName
-            // 
-            this.PhoneBook_LastName.DataPropertyName = "LastName";
-            resources.ApplyResources(this.PhoneBook_LastName, "PhoneBook_LastName");
-            this.PhoneBook_LastName.Name = "PhoneBook_LastName";
-            this.PhoneBook_LastName.ReadOnly = true;
-            // 
-            // PhoneBook_PhoneNumber
-            // 
-            this.PhoneBook_PhoneNumber.DataPropertyName = "PhoneNumber";
-            resources.ApplyResources(this.PhoneBook_PhoneNumber, "PhoneBook_PhoneNumber");
-            this.PhoneBook_PhoneNumber.Name = "PhoneBook_PhoneNumber";
-            this.PhoneBook_PhoneNumber.ReadOnly = true;
-            // 
-            // PhoneBook_Email
-            // 
-            this.PhoneBook_Email.DataPropertyName = "Email";
-            resources.ApplyResources(this.PhoneBook_Email, "PhoneBook_Email");
-            this.PhoneBook_Email.Name = "PhoneBook_Email";
-            this.PhoneBook_Email.ReadOnly = true;
-            // 
-            // PhoneBook_Address
-            // 
-            this.PhoneBook_Address.DataPropertyName = "Address";
-            resources.ApplyResources(this.PhoneBook_Address, "PhoneBook_Address");
-            this.PhoneBook_Address.Name = "PhoneBook_Address";
-            this.PhoneBook_Address.ReadOnly = true;
             // 
             // Form_LandingPage
             // 

@@ -227,6 +227,7 @@ namespace FinalProject
             this.txt_password.ForeColor = System.Drawing.Color.LightGray;
             this.txt_password.Name = "txt_password";
             this.txt_password.Enter += new System.EventHandler(this.txt_password_Enter);
+            this.txt_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_password_KeyPress);
             this.txt_password.Leave += new System.EventHandler(this.txt_password_Leave);
             // 
             // panel_email
@@ -310,6 +311,7 @@ namespace FinalProject
             this.txt_confirm_password.ForeColor = System.Drawing.Color.LightGray;
             this.txt_confirm_password.Name = "txt_confirm_password";
             this.txt_confirm_password.Enter += new System.EventHandler(this.txt_confirm_password_Enter);
+            this.txt_confirm_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_confirm_password_KeyPress);
             this.txt_confirm_password.Leave += new System.EventHandler(this.txt_confirm_password_Leave);
             // 
             // btn_signup

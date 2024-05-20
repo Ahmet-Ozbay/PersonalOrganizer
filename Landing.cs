@@ -303,10 +303,12 @@ namespace FinalProject
             if(pnl_profile.Visible)
             {
                 btn_profile.BackColor = blue;
+                this.AcceptButton = btn_save_profile;
             }
             else
             {
                 btn_profile.BackColor = navy;
+                this.AcceptButton = null;
             }
         }
         private void btn_profile_Click(object sender, EventArgs e)
@@ -380,10 +382,14 @@ namespace FinalProject
             if (pnl_contacts.Visible)
             {
                 btn_phonebook.BackColor = blue;
+                this.AcceptButton = btn_save_contact;
+                dgv_phonebook.ClearSelection();
+                ClearContactFields();
             }
             else
             {
                 btn_phonebook.BackColor = navy;
+                this.AcceptButton = null;
             }
         }
 
@@ -405,10 +411,12 @@ namespace FinalProject
             if (pnl_notebook.Visible)
             {
                 btn_notebook.BackColor = blue;
+                this.AcceptButton = btn_save_note;
             }
             else
             {
                 btn_notebook.BackColor = navy;
+                this.AcceptButton = null;
             }
         }
 
@@ -457,10 +465,12 @@ namespace FinalProject
             if (pnl_salary.Visible)
             {
                 btn_salary.BackColor = blue;
+                this.AcceptButton = btn_calculate;
             }
             else
             {
                 btn_salary.BackColor = navy;
+                this.AcceptButton = null;
             }
         }
         private void btn_salary_Click(object sender, EventArgs e)
