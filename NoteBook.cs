@@ -18,9 +18,10 @@ namespace FinalProject
             Notes = _repository.ListNotes(); // Load notes from the repository.
         }
 
-        public bool Add(Note note)
+        public bool Add(Note note, string user_email)
         {
             // Add the note to the repository.
+            note.UserEmail = user_email;
             var result = _repository.Add(note);
             if (result)
             {
@@ -58,9 +59,10 @@ namespace FinalProject
             return result;
         }
 
-        public List<Note> List()
+        public List<Note> List(string userEmail)
         {
-          return _repository.ListNotes(); // Return the local list of notes.
+            var Notes = _repository.ListNotes();
+            return Notes.Where(note => note.UserEmail == userEmail).ToList(); ; // Return the local list of notes.
         }
     }
 }

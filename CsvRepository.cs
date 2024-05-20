@@ -82,7 +82,7 @@ namespace FinalProject
             {
                 note.ID = _nextNoteId++;
                 var encodedContent = EncodeToBase64(note.Content);
-                var line = $"{note.ID},{EscapeForCsv(note.Title)},{encodedContent}";
+                var line = $"{note.ID},{note.UserEmail},{EscapeForCsv(note.Title)},{encodedContent}";
                 using (StreamWriter sw = File.AppendText(_notesFilePath))
                 {
                     sw.WriteLine(line);
@@ -206,8 +206,9 @@ namespace FinalProject
             return new Note
             {
                 ID = Convert.ToInt32(values[0]),
-                Title = UnescapeFromCsv(values[1]),
-                Content = DecodeFromBase64(values[2])
+                UserEmail = values[1],
+                Title = UnescapeFromCsv(values[2]),
+                Content = DecodeFromBase64(values[3])
             };
         }
 
@@ -289,11 +290,11 @@ namespace FinalProject
         {
             using (StreamWriter sw = File.CreateText(_notesFilePath))
             {
-                sw.WriteLine("ID,TITLE,CONTENT");
+                sw.WriteLine("ID,USEREMAIL,TITLE,CONTENT");
                 foreach (var note in notes)
                 {
                     var encodedContent = EncodeToBase64(note.Content);
-                    var line = $"{note.ID},{EscapeForCsv(note.Title)},{encodedContent}";
+                    var line = $"{note.ID},{note.UserEmail},{EscapeForCsv(note.Title)},{encodedContent}";
                     sw.WriteLine(line);
                 }
             }

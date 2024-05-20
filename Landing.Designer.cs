@@ -93,9 +93,6 @@ namespace FinalProject
             this.txt_note_title = new System.Windows.Forms.TextBox();
             this.grp_notebook = new System.Windows.Forms.GroupBox();
             this.dgv_notes = new System.Windows.Forms.DataGridView();
-            this.Column_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.context_dgv = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.clearSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_title_notebook = new System.Windows.Forms.Label();
@@ -144,6 +141,10 @@ namespace FinalProject
             this.pnl_admin_content = new System.Windows.Forms.Panel();
             this.lbl_title_admin = new System.Windows.Forms.Label();
             this.txt_note_content = new System.Windows.Forms.TextBox();
+            this.Column_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_header.SuspendLayout();
             this.pnl_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).BeginInit();
@@ -710,6 +711,7 @@ namespace FinalProject
             this.dgv_notes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_notes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_ID,
+            this.Column_Email,
             this.Column_Title,
             this.Column_Content});
             this.dgv_notes.ContextMenuStrip = this.context_dgv;
@@ -720,29 +722,6 @@ namespace FinalProject
             this.dgv_notes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgv_notes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_notes.SelectionChanged += new System.EventHandler(this.dgv_notes_SelectionChanged);
-            // 
-            // Column_ID
-            // 
-            this.Column_ID.DataPropertyName = "ID";
-            resources.ApplyResources(this.Column_ID, "Column_ID");
-            this.Column_ID.Name = "Column_ID";
-            this.Column_ID.ReadOnly = true;
-            // 
-            // Column_Title
-            // 
-            this.Column_Title.DataPropertyName = "Title";
-            this.Column_Title.FillWeight = 188F;
-            resources.ApplyResources(this.Column_Title, "Column_Title");
-            this.Column_Title.Name = "Column_Title";
-            this.Column_Title.ReadOnly = true;
-            // 
-            // Column_Content
-            // 
-            this.Column_Content.DataPropertyName = "Content";
-            this.Column_Content.FillWeight = 400F;
-            resources.ApplyResources(this.Column_Content, "Column_Content");
-            this.Column_Content.Name = "Column_Content";
-            this.Column_Content.ReadOnly = true;
             // 
             // context_dgv
             // 
@@ -1122,6 +1101,36 @@ namespace FinalProject
             resources.ApplyResources(this.txt_note_content, "txt_note_content");
             this.txt_note_content.Name = "txt_note_content";
             // 
+            // Column_ID
+            // 
+            this.Column_ID.DataPropertyName = "ID";
+            resources.ApplyResources(this.Column_ID, "Column_ID");
+            this.Column_ID.Name = "Column_ID";
+            this.Column_ID.ReadOnly = true;
+            // 
+            // Column_Email
+            // 
+            this.Column_Email.DataPropertyName = "UserEmail";
+            resources.ApplyResources(this.Column_Email, "Column_Email");
+            this.Column_Email.Name = "Column_Email";
+            this.Column_Email.ReadOnly = true;
+            // 
+            // Column_Title
+            // 
+            this.Column_Title.DataPropertyName = "Title";
+            this.Column_Title.FillWeight = 188F;
+            resources.ApplyResources(this.Column_Title, "Column_Title");
+            this.Column_Title.Name = "Column_Title";
+            this.Column_Title.ReadOnly = true;
+            // 
+            // Column_Content
+            // 
+            this.Column_Content.DataPropertyName = "Content";
+            this.Column_Content.FillWeight = 400F;
+            resources.ApplyResources(this.Column_Content, "Column_Content");
+            this.Column_Content.Name = "Column_Content";
+            this.Column_Content.ReadOnly = true;
+            // 
             // Form_LandingPage
             // 
             resources.ApplyResources(this, "$this");
@@ -1293,9 +1302,10 @@ namespace FinalProject
         private System.Windows.Forms.Button btn_save_note;
         private System.Windows.Forms.ContextMenuStrip context_dgv;
         private System.Windows.Forms.ToolStripMenuItem clearSelectionToolStripMenuItem;
+        private System.Windows.Forms.TextBox txt_note_content;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Content;
-        private System.Windows.Forms.TextBox txt_note_content;
     }
 }

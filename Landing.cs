@@ -151,7 +151,7 @@ namespace FinalProject
          */
         private void LoadNotes()
         {
-            var notes = notebook.List();                            
+            var notes = notebook.List(current_user.Email);                            
             dgv_notes.DataSource = notes;
         }
 
@@ -787,7 +787,7 @@ namespace FinalProject
                     Content = txt_note_content.Text
                 };
 
-                if (notebook.Add(newNote))
+                if (notebook.Add(newNote, current_user.Email))
                 {
                     LoadNotes();
                     ClearNoteFields();
@@ -884,19 +884,6 @@ namespace FinalProject
             else
             {
                 return input;
-            }
-        }
-
-        private void btn_insert_image_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string imagePath = openFileDialog.FileName;
-                Image image = Image.FromFile(imagePath);
-                Clipboard.SetImage(image);
-                txt_note_content.Paste();
             }
         }
     }
