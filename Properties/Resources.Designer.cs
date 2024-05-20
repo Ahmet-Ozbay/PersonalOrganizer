@@ -203,6 +203,16 @@ namespace FinalProject.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_insert_image {
+            get {
+                object obj = ResourceManager.GetObject("icon_insert_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_key {
             get {
                 object obj = ResourceManager.GetObject("icon_key", resourceCulture);

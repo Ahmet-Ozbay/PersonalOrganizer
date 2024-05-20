@@ -31,6 +31,12 @@ namespace FinalProject
             }
         }
 
+        // Color Palette
+        Color blue = Color.FromArgb(165, 84, 154);
+        Color light_blue = Color.FromArgb(0, 113, 205);
+        Color purple = Color.FromArgb(255, 84, 94);
+        Color navy = Color.FromArgb(100, 47, 72, 88);
+
         // Constructor
         public Form_LandingPage()
         {
@@ -42,9 +48,15 @@ namespace FinalProject
          */
         private void Form_LandingPage_Load(object sender, EventArgs e)
         {
+            // User Profile
             Read_user_data();
             lblName.Text = this.current_user.Name + ' ' + this.current_user.LastName;
 
+            // Notebook
+            notebook = new NoteBook(new CsvRepository());
+            LoadNotes();
+
+            // Salary Calculator
             cmb_experience.DataSource = experience.Keys.ToList();
             cmb_city.DataSource = city.Keys.ToList();
             cmb_education.DataSource = education.Keys.ToList();
@@ -54,6 +66,7 @@ namespace FinalProject
 
         private string default_mail_extension = "@gmail.com";
         private User current_user;
+        private NoteBook notebook;
 
         private Dictionary<string, double> experience = new Dictionary<string, double>
         {
@@ -112,6 +125,9 @@ namespace FinalProject
         };
 
 
+        /*
+         * Reads user data from the database to fill the profile page
+         */
         private void Read_user_data()
         {
             CsvRepository reader = new CsvRepository();
@@ -130,11 +146,15 @@ namespace FinalProject
             }
         }
 
-        // Color Palette
-        Color blue = Color.FromArgb(165, 84, 154);
-        Color light_blue = Color.FromArgb(0, 113, 205);
-        Color purple = Color.FromArgb(255, 84, 94);
-        Color navy = Color.FromArgb(100, 47, 72, 88);
+        /*
+         * Loads notes of the current user
+         */
+        private void LoadNotes()
+        {
+            var notes = notebook.List();                            
+            dgv_notes.DataSource = notes;
+        }
+
 
         //
         // Close Button
@@ -387,6 +407,8 @@ namespace FinalProject
             pnl_reminder.Visible = false;
             pnl_salary.Visible = false;
             pnl_admin.Visible = false;
+            dgv_notes.ClearSelection();
+            ClearNoteFields();
         }
 
         //
@@ -729,6 +751,152 @@ namespace FinalProject
 
                 // Prevent further processing of the '@' key press
                 e.Handled = true;
+            }
+        }
+
+        //
+        // Save & Update Notes Button
+        //
+        private void btn_save_note_Click(object sender, EventArgs e)
+        {
+            // If there's exactly one row selected, proceed with the update.
+            if (dgv_notes.SelectedRows.Count == 1)
+            {
+                var selected_note = (Note)dgv_notes.SelectedRows[0].DataBoundItem;
+                selected_note.Title = txt_note_title.Text;
+                selected_note.Content = txt_note_content.Text;
+
+                if (notebook.Update(selected_note))
+                {
+                    LoadNotes();
+                    ClearNoteFields();
+                    MessageBox.Show("Note updated successfully.");
+                    dgv_notes.ClearSelection();
+                }
+                else
+                {
+                    MessageBox.Show("There was an error updating the note.");
+                }
+            }
+            else if (dgv_notes.SelectedRows.Count == 0)
+            {
+                // No note is selected, so create a new note.
+                var newNote = new Note
+                {
+                    Title = txt_note_title.Text,
+                    Content = txt_note_content.Text
+                };
+
+                if (notebook.Add(newNote))
+                {
+                    LoadNotes();
+                    ClearNoteFields();
+                    MessageBox.Show("Note added successfully.");
+                    dgv_notes.ClearSelection();
+                }
+                else
+                {
+                    MessageBox.Show("There was an error adding the note.");
+                }
+            }
+            else
+            {
+                // More than one note is selected, which is not allowed for updating.
+                MessageBox.Show("Please select only one note to update.");
+            }
+        }
+
+        //
+        // Auxillary function to clear note fields
+        //
+        private void ClearNoteFields()
+        {
+            txt_note_title.Clear();
+            txt_note_content.Clear();
+        }
+
+        private void dgv_notes_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_notes.SelectedRows.Count > 0)
+            {
+                var selected_note = (Note)dgv_notes.SelectedRows[0].DataBoundItem;
+                txt_note_title.Text = UnescapeFromCsv(selected_note.Title);
+
+                string decodedContent = selected_note.Content;
+                try
+                {
+                    // Try to set the Rtf property.
+                    txt_note_content.Text = decodedContent;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error displaying note content: " + ex.Message);
+                }
+            }
+        }
+
+        private void btn_delete_note_Click(object sender, EventArgs e)
+        {
+            if (dgv_notes.SelectedRows.Count > 0)
+            {
+                // Ask the user to confirm the deletion.
+                var confirmResult = MessageBox.Show("Are you sure you want to delete the selected notes? This action cannot be undone.",
+                                                    "Confirm Delete",
+                                                    MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    ClearNoteFields();
+                    // If the user confirmed, delete the notes.
+                    var notesToDelete = new List<Note>();
+                    foreach (DataGridViewRow row in dgv_notes.SelectedRows)
+                    {
+                        notesToDelete.Add((Note)row.DataBoundItem);
+                    }
+
+                    foreach (var note in notesToDelete)
+                    {
+                        notebook.Delete(note);
+                    }
+
+                    LoadNotes();
+                    MessageBox.Show("Selected notes deleted successfully.");
+                }
+                // If the user clicked 'No', do nothing.
+            }
+            else
+            {
+                MessageBox.Show("Please select at least one note to delete.");
+            }
+        }
+
+        private void clearSelectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dgv_notes.ClearSelection();
+            ClearNoteFields();
+        }
+        private string UnescapeFromCsv(string input)
+        {
+            if (input.StartsWith("\"") && input.EndsWith("\""))
+            {
+                return input.Substring(1, input.Length - 2).Replace("\"\"", "\"");
+            }
+            else
+            {
+                return input;
+            }
+        }
+
+        private void btn_insert_image_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string imagePath = openFileDialog.FileName;
+                Image image = Image.FromFile(imagePath);
+                Clipboard.SetImage(image);
+                txt_note_content.Paste();
             }
         }
     }

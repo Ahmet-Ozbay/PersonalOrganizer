@@ -235,7 +235,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_header.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblName.Location" type="System.Drawing.Point, System.Drawing">
     <value>30, 185</value>
@@ -538,7 +538,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_menu.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -1396,7 +1396,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_profile.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="pnl_contacts_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
@@ -1477,16 +1477,328 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_contacts.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btn_delete_note.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_delete_note.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_delete_note.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 511</value>
+  </data>
+  <data name="btn_delete_note.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 50</value>
+  </data>
+  <data name="btn_delete_note.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btn_delete_note.Text" xml:space="preserve">
+    <value>Delete Note</value>
+  </data>
+  <data name="&gt;&gt;btn_delete_note.Name" xml:space="preserve">
+    <value>btn_delete_note</value>
+  </data>
+  <data name="&gt;&gt;btn_delete_note.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_delete_note.Parent" xml:space="preserve">
+    <value>grp_note</value>
+  </data>
+  <data name="&gt;&gt;btn_delete_note.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_save_note.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_save_note.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_save_note.Location" type="System.Drawing.Point, System.Drawing">
+    <value>290, 511</value>
+  </data>
+  <data name="btn_save_note.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 50</value>
+  </data>
+  <data name="btn_save_note.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btn_save_note.Text" xml:space="preserve">
+    <value>Save Note</value>
+  </data>
+  <data name="&gt;&gt;btn_save_note.Name" xml:space="preserve">
+    <value>btn_save_note</value>
+  </data>
+  <data name="&gt;&gt;btn_save_note.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_save_note.Parent" xml:space="preserve">
+    <value>grp_note</value>
+  </data>
+  <data name="&gt;&gt;btn_save_note.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbl_note_content.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_note_content.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_note_content.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 170</value>
+  </data>
+  <data name="lbl_note_content.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 27</value>
+  </data>
+  <data name="lbl_note_content.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="lbl_note_content.Text" xml:space="preserve">
+    <value>Content:</value>
+  </data>
+  <data name="&gt;&gt;lbl_note_content.Name" xml:space="preserve">
+    <value>lbl_note_content</value>
+  </data>
+  <data name="&gt;&gt;lbl_note_content.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_note_content.Parent" xml:space="preserve">
+    <value>grp_note</value>
+  </data>
+  <data name="&gt;&gt;lbl_note_content.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbl_note_title.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_note_title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 40</value>
+  </data>
+  <data name="lbl_note_title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 27</value>
+  </data>
+  <data name="lbl_note_title.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lbl_note_title.Text" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="&gt;&gt;lbl_note_title.Name" xml:space="preserve">
+    <value>lbl_note_title</value>
+  </data>
+  <data name="&gt;&gt;lbl_note_title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_note_title.Parent" xml:space="preserve">
+    <value>grp_note</value>
+  </data>
+  <data name="&gt;&gt;lbl_note_title.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txt_note_content.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 20</value>
+  </data>
+  <data name="txt_note_content.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txt_note_content.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 243</value>
+  </data>
+  <data name="txt_note_content.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txt_note_content.Name" xml:space="preserve">
+    <value>txt_note_content</value>
+  </data>
+  <data name="&gt;&gt;txt_note_content.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_note_content.Parent" xml:space="preserve">
+    <value>pnl_note_content</value>
+  </data>
+  <data name="&gt;&gt;txt_note_content.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnl_note_content.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 210</value>
+  </data>
+  <data name="pnl_note_content.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 275</value>
+  </data>
+  <data name="pnl_note_content.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pnl_note_content.Name" xml:space="preserve">
+    <value>pnl_note_content</value>
+  </data>
+  <data name="&gt;&gt;pnl_note_content.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_note_content.Parent" xml:space="preserve">
+    <value>grp_note</value>
+  </data>
+  <data name="&gt;&gt;pnl_note_content.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txt_note_title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 11</value>
+  </data>
+  <data name="txt_note_title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 26</value>
+  </data>
+  <data name="txt_note_title.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txt_note_title.Name" xml:space="preserve">
+    <value>txt_note_title</value>
+  </data>
+  <data name="&gt;&gt;txt_note_title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_note_title.Parent" xml:space="preserve">
+    <value>pnl_note_title</value>
+  </data>
+  <data name="&gt;&gt;txt_note_title.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnl_note_title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 80</value>
+  </data>
+  <data name="pnl_note_title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 50</value>
+  </data>
+  <data name="pnl_note_title.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pnl_note_title.Name" xml:space="preserve">
+    <value>pnl_note_title</value>
+  </data>
+  <data name="&gt;&gt;pnl_note_title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_note_title.Parent" xml:space="preserve">
+    <value>grp_note</value>
+  </data>
+  <data name="&gt;&gt;pnl_note_title.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="grp_note.Location" type="System.Drawing.Point, System.Drawing">
+    <value>538, 20</value>
+  </data>
+  <data name="grp_note.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 580</value>
+  </data>
+  <data name="grp_note.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grp_note.Name" xml:space="preserve">
+    <value>grp_note</value>
+  </data>
+  <data name="&gt;&gt;grp_note.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grp_note.Parent" xml:space="preserve">
+    <value>pnl_notebook_content</value>
+  </data>
+  <data name="&gt;&gt;grp_note.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="Column_ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column_ID.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Column_ID.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="Column_Title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column_Title.HeaderText" xml:space="preserve">
+    <value>TITLE</value>
+  </data>
+  <metadata name="Column_Content.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column_Content.HeaderText" xml:space="preserve">
+    <value>CONTENT</value>
+  </data>
+  <metadata name="context_dgv.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>99, 8</value>
+  </metadata>
+  <data name="context_dgv.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 12pt</value>
+  </data>
+  <data name="clearSelectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 28</value>
+  </data>
+  <data name="clearSelectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clear Selection</value>
+  </data>
+  <data name="context_dgv.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 32</value>
+  </data>
+  <data name="&gt;&gt;context_dgv.Name" xml:space="preserve">
+    <value>context_dgv</value>
+  </data>
+  <data name="&gt;&gt;context_dgv.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dgv_notes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 21</value>
+  </data>
+  <data name="dgv_notes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 551</value>
+  </data>
+  <data name="dgv_notes.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dgv_notes.Name" xml:space="preserve">
+    <value>dgv_notes</value>
+  </data>
+  <data name="&gt;&gt;dgv_notes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgv_notes.Parent" xml:space="preserve">
+    <value>grp_notebook</value>
+  </data>
+  <data name="&gt;&gt;dgv_notes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="grp_notebook.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 9.75pt</value>
+  </data>
+  <data name="grp_notebook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="grp_notebook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 580</value>
+  </data>
+  <data name="grp_notebook.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grp_notebook.Name" xml:space="preserve">
+    <value>grp_notebook</value>
+  </data>
+  <data name="&gt;&gt;grp_notebook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grp_notebook.Parent" xml:space="preserve">
+    <value>pnl_notebook_content</value>
+  </data>
+  <data name="&gt;&gt;grp_notebook.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="pnl_notebook_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
   </data>
   <data name="pnl_notebook_content.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 57</value>
+    <value>10, 57</value>
   </data>
   <data name="pnl_notebook_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1057, 626</value>
+    <value>1058, 626</value>
   </data>
   <data name="pnl_notebook_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1558,7 +1870,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_notebook.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="pnl_reminder_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
@@ -1639,7 +1951,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_reminder.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="lbl_18_plus_clause.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 9.75pt</value>
@@ -2668,7 +2980,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_salary.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="pnl_admin_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
@@ -2749,7 +3061,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_admin.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2774,6 +3086,30 @@
   </data>
   <data name="&gt;&gt;timer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_ID.Name" xml:space="preserve">
+    <value>Column_ID</value>
+  </data>
+  <data name="&gt;&gt;Column_ID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_Title.Name" xml:space="preserve">
+    <value>Column_Title</value>
+  </data>
+  <data name="&gt;&gt;Column_Title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_Content.Name" xml:space="preserve">
+    <value>Column_Content</value>
+  </data>
+  <data name="&gt;&gt;Column_Content.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearSelectionToolStripMenuItem.Name" xml:space="preserve">
+    <value>clearSelectionToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;clearSelectionToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form_LandingPage</value>

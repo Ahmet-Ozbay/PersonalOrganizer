@@ -11,8 +11,12 @@ namespace FinalProject
     internal interface IDataRepository
     {
         bool Add(User user);
+        bool Add(Note note);
         bool Update(User user);
+        bool Update (Note note);
         bool Delete(User user);
+        bool Delete(Note note);
         List<User> List();
+        List<Note> ListNotes();
     }
 }

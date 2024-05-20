@@ -83,6 +83,21 @@ namespace FinalProject
             this.lbl_title_contacts = new System.Windows.Forms.Label();
             this.pnl_notebook = new System.Windows.Forms.Panel();
             this.pnl_notebook_content = new System.Windows.Forms.Panel();
+            this.grp_note = new System.Windows.Forms.GroupBox();
+            this.btn_delete_note = new System.Windows.Forms.Button();
+            this.btn_save_note = new System.Windows.Forms.Button();
+            this.lbl_note_content = new System.Windows.Forms.Label();
+            this.lbl_note_title = new System.Windows.Forms.Label();
+            this.pnl_note_content = new System.Windows.Forms.Panel();
+            this.pnl_note_title = new System.Windows.Forms.Panel();
+            this.txt_note_title = new System.Windows.Forms.TextBox();
+            this.grp_notebook = new System.Windows.Forms.GroupBox();
+            this.dgv_notes = new System.Windows.Forms.DataGridView();
+            this.Column_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.context_dgv = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.clearSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_title_notebook = new System.Windows.Forms.Label();
             this.pnl_reminder = new System.Windows.Forms.Panel();
             this.pnl_reminder_content = new System.Windows.Forms.Panel();
@@ -128,6 +143,7 @@ namespace FinalProject
             this.pnl_admin = new System.Windows.Forms.Panel();
             this.pnl_admin_content = new System.Windows.Forms.Panel();
             this.lbl_title_admin = new System.Windows.Forms.Label();
+            this.txt_note_content = new System.Windows.Forms.TextBox();
             this.pnl_header.SuspendLayout();
             this.pnl_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).BeginInit();
@@ -137,6 +153,13 @@ namespace FinalProject
             this.grp_personal_info.SuspendLayout();
             this.pnl_contacts.SuspendLayout();
             this.pnl_notebook.SuspendLayout();
+            this.pnl_notebook_content.SuspendLayout();
+            this.grp_note.SuspendLayout();
+            this.pnl_note_content.SuspendLayout();
+            this.pnl_note_title.SuspendLayout();
+            this.grp_notebook.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_notes)).BeginInit();
+            this.context_dgv.SuspendLayout();
             this.pnl_reminder.SuspendLayout();
             this.pnl_salary.SuspendLayout();
             this.pnl_salary_content.SuspendLayout();
@@ -600,9 +623,139 @@ namespace FinalProject
             // pnl_notebook_content
             // 
             this.pnl_notebook_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.pnl_notebook_content.Controls.Add(this.grp_note);
+            this.pnl_notebook_content.Controls.Add(this.grp_notebook);
             resources.ApplyResources(this.pnl_notebook_content, "pnl_notebook_content");
             this.pnl_notebook_content.ForeColor = System.Drawing.Color.White;
             this.pnl_notebook_content.Name = "pnl_notebook_content";
+            // 
+            // grp_note
+            // 
+            this.grp_note.Controls.Add(this.btn_delete_note);
+            this.grp_note.Controls.Add(this.btn_save_note);
+            this.grp_note.Controls.Add(this.lbl_note_content);
+            this.grp_note.Controls.Add(this.lbl_note_title);
+            this.grp_note.Controls.Add(this.pnl_note_content);
+            this.grp_note.Controls.Add(this.pnl_note_title);
+            this.grp_note.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.grp_note, "grp_note");
+            this.grp_note.Name = "grp_note";
+            this.grp_note.TabStop = false;
+            // 
+            // btn_delete_note
+            // 
+            this.btn_delete_note.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
+            this.btn_delete_note.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_delete_note.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btn_delete_note, "btn_delete_note");
+            this.btn_delete_note.Name = "btn_delete_note";
+            this.btn_delete_note.UseVisualStyleBackColor = false;
+            this.btn_delete_note.Click += new System.EventHandler(this.btn_delete_note_Click);
+            // 
+            // btn_save_note
+            // 
+            this.btn_save_note.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
+            this.btn_save_note.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_save_note.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btn_save_note, "btn_save_note");
+            this.btn_save_note.Name = "btn_save_note";
+            this.btn_save_note.UseVisualStyleBackColor = false;
+            this.btn_save_note.Click += new System.EventHandler(this.btn_save_note_Click);
+            // 
+            // lbl_note_content
+            // 
+            resources.ApplyResources(this.lbl_note_content, "lbl_note_content");
+            this.lbl_note_content.Name = "lbl_note_content";
+            // 
+            // lbl_note_title
+            // 
+            resources.ApplyResources(this.lbl_note_title, "lbl_note_title");
+            this.lbl_note_title.Name = "lbl_note_title";
+            // 
+            // pnl_note_content
+            // 
+            this.pnl_note_content.BackColor = System.Drawing.Color.White;
+            this.pnl_note_content.Controls.Add(this.txt_note_content);
+            this.pnl_note_content.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.pnl_note_content, "pnl_note_content");
+            this.pnl_note_content.Name = "pnl_note_content";
+            // 
+            // pnl_note_title
+            // 
+            this.pnl_note_title.BackColor = System.Drawing.Color.White;
+            this.pnl_note_title.Controls.Add(this.txt_note_title);
+            this.pnl_note_title.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.pnl_note_title, "pnl_note_title");
+            this.pnl_note_title.Name = "pnl_note_title";
+            // 
+            // txt_note_title
+            // 
+            this.txt_note_title.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_note_title, "txt_note_title");
+            this.txt_note_title.Name = "txt_note_title";
+            // 
+            // grp_notebook
+            // 
+            this.grp_notebook.Controls.Add(this.dgv_notes);
+            resources.ApplyResources(this.grp_notebook, "grp_notebook");
+            this.grp_notebook.ForeColor = System.Drawing.Color.Black;
+            this.grp_notebook.Name = "grp_notebook";
+            this.grp_notebook.TabStop = false;
+            // 
+            // dgv_notes
+            // 
+            this.dgv_notes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_notes.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgv_notes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_notes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_notes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column_ID,
+            this.Column_Title,
+            this.Column_Content});
+            this.dgv_notes.ContextMenuStrip = this.context_dgv;
+            resources.ApplyResources(this.dgv_notes, "dgv_notes");
+            this.dgv_notes.Name = "dgv_notes";
+            this.dgv_notes.ReadOnly = true;
+            this.dgv_notes.RowHeadersVisible = false;
+            this.dgv_notes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgv_notes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_notes.SelectionChanged += new System.EventHandler(this.dgv_notes_SelectionChanged);
+            // 
+            // Column_ID
+            // 
+            this.Column_ID.DataPropertyName = "ID";
+            resources.ApplyResources(this.Column_ID, "Column_ID");
+            this.Column_ID.Name = "Column_ID";
+            this.Column_ID.ReadOnly = true;
+            // 
+            // Column_Title
+            // 
+            this.Column_Title.DataPropertyName = "Title";
+            this.Column_Title.FillWeight = 188F;
+            resources.ApplyResources(this.Column_Title, "Column_Title");
+            this.Column_Title.Name = "Column_Title";
+            this.Column_Title.ReadOnly = true;
+            // 
+            // Column_Content
+            // 
+            this.Column_Content.DataPropertyName = "Content";
+            this.Column_Content.FillWeight = 400F;
+            resources.ApplyResources(this.Column_Content, "Column_Content");
+            this.Column_Content.Name = "Column_Content";
+            this.Column_Content.ReadOnly = true;
+            // 
+            // context_dgv
+            // 
+            resources.ApplyResources(this.context_dgv, "context_dgv");
+            this.context_dgv.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearSelectionToolStripMenuItem});
+            this.context_dgv.Name = "context_dgv";
+            // 
+            // clearSelectionToolStripMenuItem
+            // 
+            this.clearSelectionToolStripMenuItem.Name = "clearSelectionToolStripMenuItem";
+            resources.ApplyResources(this.clearSelectionToolStripMenuItem, "clearSelectionToolStripMenuItem");
+            this.clearSelectionToolStripMenuItem.Click += new System.EventHandler(this.clearSelectionToolStripMenuItem_Click);
             // 
             // lbl_title_notebook
             // 
@@ -963,17 +1116,23 @@ namespace FinalProject
             this.lbl_title_admin.Image = global::FinalProject.Properties.Resources.icon_admin;
             this.lbl_title_admin.Name = "lbl_title_admin";
             // 
+            // txt_note_content
+            // 
+            this.txt_note_content.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_note_content, "txt_note_content");
+            this.txt_note_content.Name = "txt_note_content";
+            // 
             // Form_LandingPage
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FinalProject.Properties.Resources.bg_gradient_main;
-            this.Controls.Add(this.pnl_salary);
+            this.Controls.Add(this.pnl_notebook);
             this.Controls.Add(this.pnl_profile);
+            this.Controls.Add(this.pnl_salary);
             this.Controls.Add(this.pnl_contacts);
             this.Controls.Add(this.pnl_admin);
             this.Controls.Add(this.pnl_reminder);
-            this.Controls.Add(this.pnl_notebook);
             this.Controls.Add(this.pnl_menu);
             this.Controls.Add(this.pnl_header);
             this.DoubleBuffered = true;
@@ -991,6 +1150,16 @@ namespace FinalProject
             this.grp_personal_info.PerformLayout();
             this.pnl_contacts.ResumeLayout(false);
             this.pnl_notebook.ResumeLayout(false);
+            this.pnl_notebook_content.ResumeLayout(false);
+            this.grp_note.ResumeLayout(false);
+            this.grp_note.PerformLayout();
+            this.pnl_note_content.ResumeLayout(false);
+            this.pnl_note_content.PerformLayout();
+            this.pnl_note_title.ResumeLayout(false);
+            this.pnl_note_title.PerformLayout();
+            this.grp_notebook.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_notes)).EndInit();
+            this.context_dgv.ResumeLayout(false);
             this.pnl_reminder.ResumeLayout(false);
             this.pnl_salary.ResumeLayout(false);
             this.pnl_salary_content.ResumeLayout(false);
@@ -1112,5 +1281,21 @@ namespace FinalProject
         private System.Windows.Forms.Label lbl_7_18;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_18_plus_clause;
+        private System.Windows.Forms.GroupBox grp_note;
+        private System.Windows.Forms.GroupBox grp_notebook;
+        private System.Windows.Forms.DataGridView dgv_notes;
+        private System.Windows.Forms.Panel pnl_note_content;
+        private System.Windows.Forms.Panel pnl_note_title;
+        private System.Windows.Forms.TextBox txt_note_title;
+        private System.Windows.Forms.Label lbl_note_content;
+        private System.Windows.Forms.Label lbl_note_title;
+        private System.Windows.Forms.Button btn_delete_note;
+        private System.Windows.Forms.Button btn_save_note;
+        private System.Windows.Forms.ContextMenuStrip context_dgv;
+        private System.Windows.Forms.ToolStripMenuItem clearSelectionToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Content;
+        private System.Windows.Forms.TextBox txt_note_content;
     }
 }
