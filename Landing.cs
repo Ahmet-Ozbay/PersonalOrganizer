@@ -449,6 +449,8 @@ namespace FinalProject
 
         private void btn_reminder_Click(object sender, EventArgs e)
         {
+            DateTime today = DateTime.Today;
+            datePicker2.Value = today.AddDays(1);
             pnl_profile.Visible = false;
             pnl_contacts.Visible = false;
             pnl_notebook.Visible = false;

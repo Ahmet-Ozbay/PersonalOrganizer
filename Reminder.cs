@@ -11,7 +11,8 @@ namespace FinalProject
         public int ID { get; set; }
         public string UserEmail { get; set; }
         public string Title { get; set; }
-        public string Content { get; set; }
+        public string Summary { get; set; }
+        public string Description { get; set; }
         public DateTime ReminderDate { get; set; }
         public TimeSpan ReminderTime { get; set; }
         public Reminder() { }

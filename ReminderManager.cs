@@ -12,6 +12,5 @@ namespace FinalProject
         private List<Reminder> reminders { get; set; }
         private IDataRepository _repository { get; set; }
 
-       
     }
 }

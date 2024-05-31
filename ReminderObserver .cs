@@ -11,7 +11,7 @@ namespace FinalProject
         public void Update(Reminder reminder)
         {
             // Aktif pencerenin başlığını değiştir
-            ChangeActiveWindowTitle(reminder.Content);
+            ChangeActiveWindowTitle(reminder.Description);
 
             // Aktif pencereyi salla
             ShakeActiveWindow();

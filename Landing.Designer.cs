@@ -131,6 +131,19 @@ namespace FinalProject
             this.lbl_title_notebook = new System.Windows.Forms.Label();
             this.pnl_reminder = new System.Windows.Forms.Panel();
             this.pnl_reminder_content = new System.Windows.Forms.Panel();
+            this.btn_reminder_add = new System.Windows.Forms.Button();
+            this.rb_task = new System.Windows.Forms.RadioButton();
+            this.rb_meeting = new System.Windows.Forms.RadioButton();
+            this.lbl_time_end = new System.Windows.Forms.Label();
+            this.lbl_time_start = new System.Windows.Forms.Label();
+            this.datePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.lbl_description = new System.Windows.Forms.Label();
+            this.lbl_summary = new System.Windows.Forms.Label();
+            this.txt_reminder_description = new System.Windows.Forms.TextBox();
+            this.txt_summary = new System.Windows.Forms.TextBox();
+            this.TimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.TimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lbl_title_reminder = new System.Windows.Forms.Label();
             this.pnl_salary = new System.Windows.Forms.Panel();
             this.pnl_salary_content = new System.Windows.Forms.Panel();
@@ -199,6 +212,7 @@ namespace FinalProject
             ((System.ComponentModel.ISupportInitialize)(this.dgv_notes)).BeginInit();
             this.context_dgv_notebook.SuspendLayout();
             this.pnl_reminder.SuspendLayout();
+            this.pnl_reminder_content.SuspendLayout();
             this.pnl_salary.SuspendLayout();
             this.pnl_salary_content.SuspendLayout();
             this.grp_family.SuspendLayout();
@@ -1043,9 +1057,103 @@ namespace FinalProject
             // pnl_reminder_content
             // 
             this.pnl_reminder_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.pnl_reminder_content.Controls.Add(this.btn_reminder_add);
+            this.pnl_reminder_content.Controls.Add(this.rb_task);
+            this.pnl_reminder_content.Controls.Add(this.rb_meeting);
+            this.pnl_reminder_content.Controls.Add(this.lbl_time_end);
+            this.pnl_reminder_content.Controls.Add(this.lbl_time_start);
+            this.pnl_reminder_content.Controls.Add(this.datePicker2);
+            this.pnl_reminder_content.Controls.Add(this.lbl_description);
+            this.pnl_reminder_content.Controls.Add(this.lbl_summary);
+            this.pnl_reminder_content.Controls.Add(this.txt_reminder_description);
+            this.pnl_reminder_content.Controls.Add(this.txt_summary);
+            this.pnl_reminder_content.Controls.Add(this.TimePicker2);
+            this.pnl_reminder_content.Controls.Add(this.TimePicker1);
+            this.pnl_reminder_content.Controls.Add(this.datePicker1);
             resources.ApplyResources(this.pnl_reminder_content, "pnl_reminder_content");
             this.pnl_reminder_content.ForeColor = System.Drawing.Color.White;
             this.pnl_reminder_content.Name = "pnl_reminder_content";
+            // 
+            // btn_reminder_add
+            // 
+            this.btn_reminder_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
+            this.btn_reminder_add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_reminder_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btn_reminder_add, "btn_reminder_add");
+            this.btn_reminder_add.Name = "btn_reminder_add";
+            this.btn_reminder_add.UseVisualStyleBackColor = false;
+            // 
+            // rb_task
+            // 
+            resources.ApplyResources(this.rb_task, "rb_task");
+            this.rb_task.Name = "rb_task";
+            this.rb_task.UseVisualStyleBackColor = true;
+            // 
+            // rb_meeting
+            // 
+            resources.ApplyResources(this.rb_meeting, "rb_meeting");
+            this.rb_meeting.Checked = true;
+            this.rb_meeting.Name = "rb_meeting";
+            this.rb_meeting.TabStop = true;
+            this.rb_meeting.UseVisualStyleBackColor = true;
+            // 
+            // lbl_time_end
+            // 
+            resources.ApplyResources(this.lbl_time_end, "lbl_time_end");
+            this.lbl_time_end.Name = "lbl_time_end";
+            // 
+            // lbl_time_start
+            // 
+            resources.ApplyResources(this.lbl_time_start, "lbl_time_start");
+            this.lbl_time_start.Name = "lbl_time_start";
+            // 
+            // datePicker2
+            // 
+            resources.ApplyResources(this.datePicker2, "datePicker2");
+            this.datePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker2.Name = "datePicker2";
+            this.datePicker2.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            // 
+            // lbl_description
+            // 
+            resources.ApplyResources(this.lbl_description, "lbl_description");
+            this.lbl_description.Name = "lbl_description";
+            // 
+            // lbl_summary
+            // 
+            resources.ApplyResources(this.lbl_summary, "lbl_summary");
+            this.lbl_summary.Name = "lbl_summary";
+            // 
+            // txt_reminder_description
+            // 
+            resources.ApplyResources(this.txt_reminder_description, "txt_reminder_description");
+            this.txt_reminder_description.Name = "txt_reminder_description";
+            // 
+            // txt_summary
+            // 
+            resources.ApplyResources(this.txt_summary, "txt_summary");
+            this.txt_summary.Name = "txt_summary";
+            // 
+            // TimePicker2
+            // 
+            this.TimePicker2.Checked = false;
+            resources.ApplyResources(this.TimePicker2, "TimePicker2");
+            this.TimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TimePicker2.Name = "TimePicker2";
+            this.TimePicker2.ShowUpDown = true;
+            // 
+            // TimePicker1
+            // 
+            resources.ApplyResources(this.TimePicker1, "TimePicker1");
+            this.TimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TimePicker1.Name = "TimePicker1";
+            this.TimePicker1.ShowUpDown = true;
+            // 
+            // datePicker1
+            // 
+            resources.ApplyResources(this.datePicker1, "datePicker1");
+            this.datePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker1.Name = "datePicker1";
             // 
             // lbl_title_reminder
             // 
@@ -1388,12 +1496,12 @@ namespace FinalProject
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FinalProject.Properties.Resources.bg_gradient_main;
+            this.Controls.Add(this.pnl_reminder);
             this.Controls.Add(this.pnl_contacts);
             this.Controls.Add(this.pnl_notebook);
             this.Controls.Add(this.pnl_profile);
             this.Controls.Add(this.pnl_salary);
             this.Controls.Add(this.pnl_admin);
-            this.Controls.Add(this.pnl_reminder);
             this.Controls.Add(this.pnl_menu);
             this.Controls.Add(this.pnl_header);
             this.DoubleBuffered = true;
@@ -1437,6 +1545,8 @@ namespace FinalProject
             ((System.ComponentModel.ISupportInitialize)(this.dgv_notes)).EndInit();
             this.context_dgv_notebook.ResumeLayout(false);
             this.pnl_reminder.ResumeLayout(false);
+            this.pnl_reminder_content.ResumeLayout(false);
+            this.pnl_reminder_content.PerformLayout();
             this.pnl_salary.ResumeLayout(false);
             this.pnl_salary_content.ResumeLayout(false);
             this.pnl_salary_content.PerformLayout();
@@ -1602,5 +1712,18 @@ namespace FinalProject
         private System.Windows.Forms.DataGridViewTextBoxColumn PhoneBook_PhoneNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhoneBook_Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhoneBook_Address;
+        private System.Windows.Forms.DateTimePicker datePicker1;
+        private System.Windows.Forms.DateTimePicker TimePicker1;
+        private System.Windows.Forms.DateTimePicker TimePicker2;
+        private System.Windows.Forms.TextBox txt_reminder_description;
+        private System.Windows.Forms.TextBox txt_summary;
+        private System.Windows.Forms.Label lbl_description;
+        private System.Windows.Forms.Label lbl_summary;
+        private System.Windows.Forms.Label lbl_time_end;
+        private System.Windows.Forms.Label lbl_time_start;
+        private System.Windows.Forms.DateTimePicker datePicker2;
+        private System.Windows.Forms.Button btn_reminder_add;
+        private System.Windows.Forms.RadioButton rb_task;
+        private System.Windows.Forms.RadioButton rb_meeting;
     }
 }
