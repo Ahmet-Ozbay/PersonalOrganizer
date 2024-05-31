@@ -16,9 +16,9 @@ namespace FinalProject
 {
     public partial class Form_LandingPage : Form
     {
-        #pragma warning disable S1104 // Fields should not have public accessibility
+#pragma warning disable S1104 // Fields should not have public accessibility
         public Point mouse_location; // Necessary for dragging the window around
-        #pragma warning restore S1104 // Fields should not have public accessibility
+#pragma warning restore S1104 // Fields should not have public accessibility
 
         // This reduces flickering
         protected override CreateParams CreateParams
@@ -60,6 +60,8 @@ namespace FinalProject
             phonebook = new PhoneBook(new CsvRepository(), current_user);
             LoadContacts();
 
+            // Reminder
+
             // Salary Calculator
             cmb_experience.DataSource = experience.Keys.ToList();
             cmb_city.DataSource = city.Keys.ToList();
@@ -72,6 +74,7 @@ namespace FinalProject
         private User current_user;
         private NoteBook notebook;
         private PhoneBook phonebook;
+        private Reminder reminder;
 
         private Dictionary<string, double> experience = new Dictionary<string, double>
         {
@@ -115,7 +118,7 @@ namespace FinalProject
             {"English Certificate",0.20},
             {"English School Graduation",0.20},
             {"Other Language Certificate(s)",0.05}
-            
+
         };
 
         private Dictionary<string, double> duties = new Dictionary<string, double>
@@ -156,7 +159,7 @@ namespace FinalProject
          */
         private void LoadNotes()
         {
-            var notes = notebook.List(current_user.Email);                            
+            var notes = notebook.List(current_user.Email);
             dgv_notes.DataSource = notes;
         }
 
@@ -165,8 +168,18 @@ namespace FinalProject
          */
         private void LoadContacts()
         {
-            var contacts = phonebook.List(current_user.Email); // Assuming List method accepts a user email parameter
+            var contacts = phonebook.List(current_user.Email);
             dgv_phonebook.DataSource = contacts;
+        }
+
+        /*
+        * Loads contacts of the current user
+        */
+
+        private void LoadReminders()
+        {
+            var reminders = reminder.List(current_user.Email);
+            dgv_reminder.DataSource = reminders;
         }
 
         //
@@ -300,7 +313,7 @@ namespace FinalProject
         //
         private void pnl_profile_VisibleChanged(object sender, EventArgs e)
         {
-            if(pnl_profile.Visible)
+            if (pnl_profile.Visible)
             {
                 btn_profile.BackColor = blue;
                 this.AcceptButton = btn_save_profile;
@@ -313,12 +326,12 @@ namespace FinalProject
         }
         private void btn_profile_Click(object sender, EventArgs e)
         {
-                pnl_profile.Visible = true;
-                pnl_contacts.Visible = false;
-                pnl_notebook.Visible = false;
-                pnl_reminder.Visible = false;
-                pnl_salary.Visible = false;
-                pnl_admin.Visible = false;
+            pnl_profile.Visible = true;
+            pnl_contacts.Visible = false;
+            pnl_notebook.Visible = false;
+            pnl_reminder.Visible = false;
+            pnl_salary.Visible = false;
+            pnl_admin.Visible = false;
         }
         // Save Profile Button
         private void btn_save_profile_MouseEnter(object sender, EventArgs e)
@@ -584,7 +597,7 @@ namespace FinalProject
             string email = txt_email.Text;
             string phone = txt_phone_number.Text;
             string address = txt_adress.Text;
-            
+
             List<User> users = reader.List();
             User current_user = users.FirstOrDefault(u => u.Email == email);
             if (current_user != null)
@@ -653,7 +666,7 @@ namespace FinalProject
                         string message = "Password must contain at least 8 characters, one uppercase letter and one special character.";
                         MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    
+
                 }
                 else
                 {
@@ -689,9 +702,9 @@ namespace FinalProject
             coefficient += duties[cmb_duties.SelectedItem.ToString()];
 
             double family_coefficient = 0;
-            if(rb_married.Checked)
+            if (rb_married.Checked)
             {
-                if(rb_not_working.Checked)
+                if (rb_not_working.Checked)
                 {
                     family_coefficient += 0.20;
                 }
@@ -699,8 +712,8 @@ namespace FinalProject
 
             if (cb_children.Checked)
             {
-                coefficient += CalculateSalaryCoefficient(Convert.ToInt32(nud_0_6.Value), 
-                                                          Convert.ToInt32(nud_7_18.Value), 
+                coefficient += CalculateSalaryCoefficient(Convert.ToInt32(nud_0_6.Value),
+                                                          Convert.ToInt32(nud_7_18.Value),
                                                           Convert.ToInt32(nud_18_plus.Value));
             }
 
@@ -1043,6 +1056,57 @@ namespace FinalProject
         private string ExtractDigits(string formattedPhoneNumber)
         {
             return new String(formattedPhoneNumber.Where(Char.IsDigit).ToArray());
+        }
+
+        private void btn_reminder_add_Click(object sender, EventArgs e)
+        {
+            // Prepare data
+            DateTime start_date = datePicker1.Value;
+            DateTime end_date = datePicker2.Value;
+            DateTime start_time = timePicker1.Value;
+            DateTime end_time = timePicker2.Value;
+
+            string reminder_title;
+            string reminder_summary = txt_reminder_summary.Text;
+            string reminder_description = txt_reminder_description.Text;
+
+            if (rb_meeting.Checked)
+            {
+                reminder_title = rb_meeting.Text;
+            }
+            else
+            {
+                reminder_title = rb_task.Text;
+            }
+
+            // Check if we're updating an existing reminder or adding a new one
+            if (dgv_reminder.SelectedRows.Count == 1)
+            {
+                // Update Existing Reminder
+                var selectedReminder = (Reminder)dgv_reminder.SelectedRows[0].DataBoundItem;
+                selectedReminder.Title = reminder_title;
+                selectedReminder.Summary = txt_reminder_summary.Text;
+                selectedReminder.Description = txt_reminder_description.Text;
+
+
+
+                if (phonebook.Update(selectedContact))
+                {
+                    LoadContacts(); // Refresh the DataGridView
+                    MessageBox.Show("Contact updated successfully.");
+                    dgv_phonebook.ClearSelection();
+                    ClearContactFields();
+                }
+                else
+                {
+                    MessageBox.Show("There was an error updating the contact.");
+                }
+            }
+            else
+            {
+                // Add new contact
+
+            }
         }
     }
 }

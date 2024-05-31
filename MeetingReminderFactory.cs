@@ -8,7 +8,7 @@ namespace FinalProject
 {
     public class MeetingReminderFactory : IReminderFactory
     {
-        public Reminder CreateReminder()
+        public IReminder CreateReminder()
         {
             return new MeetingReminder();
         }

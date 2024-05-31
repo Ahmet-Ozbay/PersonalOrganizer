@@ -8,7 +8,7 @@ namespace FinalProject
 {
     public class TaskReminderFactory : IReminderFactory
     {
-        public Reminder CreateReminder()
+        public IReminder CreateReminder()
         {
             return new TaskReminder();
         }

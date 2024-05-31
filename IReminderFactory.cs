@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal interface IReminderFactory
+    public interface IReminderFactory
     {
-        Reminder CreateReminder();
+         IReminder CreateReminder();
     }
 }

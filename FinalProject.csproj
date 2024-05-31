@@ -70,6 +70,7 @@
     <Compile Include="CsvRepository.cs" />
     <Compile Include="IAuthorityStrategy.cs" />
     <Compile Include="IDataRepository.cs" />
+    <Compile Include="IReminder.cs" />
     <Compile Include="IReminderFactory.cs" />
     <Compile Include="IReminderObserver.cs" />
     <Compile Include="Landing.cs">
@@ -85,7 +86,6 @@
     <Compile Include="PartTimeUserStrategy.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PhoneBook.cs" />
-    <Compile Include="Reminder.cs" />
     <Compile Include="ReminderManager.cs" />
     <Compile Include="ReminderObserver .cs" />
     <Compile Include="SignInService.cs" />

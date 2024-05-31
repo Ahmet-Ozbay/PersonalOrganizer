@@ -3351,35 +3351,131 @@
   <data name="&gt;&gt;lbl_title_notebook.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btn_reminder_add.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btn_delete_reminder.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="btn_reminder_add.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btn_delete_reminder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btn_reminder_add.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 503</value>
+  <data name="btn_delete_reminder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>822, 503</value>
   </data>
-  <data name="btn_reminder_add.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btn_delete_reminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 75</value>
   </data>
-  <data name="btn_reminder_add.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+  <data name="btn_delete_reminder.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
-  <data name="btn_reminder_add.Text" xml:space="preserve">
-    <value>Remind Me</value>
+  <data name="btn_delete_reminder.Text" xml:space="preserve">
+    <value>Delete Reminder</value>
   </data>
-  <data name="&gt;&gt;btn_reminder_add.Name" xml:space="preserve">
-    <value>btn_reminder_add</value>
+  <data name="&gt;&gt;btn_delete_reminder.Name" xml:space="preserve">
+    <value>btn_delete_reminder</value>
   </data>
-  <data name="&gt;&gt;btn_reminder_add.Type" xml:space="preserve">
+  <data name="&gt;&gt;btn_delete_reminder.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btn_reminder_add.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btn_delete_reminder.Parent" xml:space="preserve">
     <value>pnl_reminder_content</value>
   </data>
-  <data name="&gt;&gt;btn_reminder_add.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btn_delete_reminder.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ID.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="ID.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="USEREMAIL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="USEREMAIL.HeaderText" xml:space="preserve">
+    <value>EMAIL</value>
+  </data>
+  <data name="USEREMAIL.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="TITLE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="TITLE.HeaderText" xml:space="preserve">
+    <value>TITLE</value>
+  </data>
+  <data name="TITLE.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="SUMMARY.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SUMMARY.HeaderText" xml:space="preserve">
+    <value>SUMMARY</value>
+  </data>
+  <data name="SUMMARY.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="DESCRIPTION.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DESCRIPTION.HeaderText" xml:space="preserve">
+    <value>DESCRIPTION</value>
+  </data>
+  <data name="DESCRIPTION.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="dgv_reminder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>444, 37</value>
+  </data>
+  <data name="dgv_reminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>587, 409</value>
+  </data>
+  <data name="dgv_reminder.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;dgv_reminder.Name" xml:space="preserve">
+    <value>dgv_reminder</value>
+  </data>
+  <data name="&gt;&gt;dgv_reminder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgv_reminder.Parent" xml:space="preserve">
+    <value>pnl_reminder_content</value>
+  </data>
+  <data name="&gt;&gt;dgv_reminder.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_save_reminder.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_save_reminder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_save_reminder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 503</value>
+  </data>
+  <data name="btn_save_reminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 75</value>
+  </data>
+  <data name="btn_save_reminder.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="btn_save_reminder.Text" xml:space="preserve">
+    <value>Save Reminder</value>
+  </data>
+  <data name="&gt;&gt;btn_save_reminder.Name" xml:space="preserve">
+    <value>btn_save_reminder</value>
+  </data>
+  <data name="&gt;&gt;btn_save_reminder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_save_reminder.Parent" xml:space="preserve">
+    <value>pnl_reminder_content</value>
+  </data>
+  <data name="&gt;&gt;btn_save_reminder.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="rb_task.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3406,7 +3502,7 @@
     <value>pnl_reminder_content</value>
   </data>
   <data name="&gt;&gt;rb_task.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="rb_meeting.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3433,7 +3529,7 @@
     <value>pnl_reminder_content</value>
   </data>
   <data name="&gt;&gt;rb_meeting.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lbl_time_end.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3460,7 +3556,7 @@
     <value>pnl_reminder_content</value>
   </data>
   <data name="&gt;&gt;lbl_time_end.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="lbl_time_start.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3490,7 +3586,7 @@
     <value>pnl_reminder_content</value>
   </data>
   <data name="&gt;&gt;lbl_time_start.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="datePicker2.CustomFormat" xml:space="preserve">
     <value>d MMM yyydddd</value>
@@ -3514,7 +3610,7 @@
     <value>pnl_reminder_content</value>
   </data>
   <data name="&gt;&gt;datePicker2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="lbl_description.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3541,7 +3637,7 @@
     <value>pnl_reminder_content</value>
   </data>
   <data name="&gt;&gt;lbl_description.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="lbl_summary.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3568,7 +3664,7 @@
     <value>pnl_reminder_content</value>
   </data>
   <data name="&gt;&gt;lbl_summary.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="txt_reminder_description.Location" type="System.Drawing.Point, System.Drawing">
     <value>32, 119</value>
@@ -3592,76 +3688,76 @@
     <value>pnl_reminder_content</value>
   </data>
   <data name="&gt;&gt;txt_reminder_description.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="txt_summary.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 57</value>
-  </data>
-  <data name="txt_summary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 33</value>
-  </data>
-  <data name="txt_summary.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txt_summary.Name" xml:space="preserve">
-    <value>txt_summary</value>
-  </data>
-  <data name="&gt;&gt;txt_summary.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_summary.Parent" xml:space="preserve">
-    <value>pnl_reminder_content</value>
-  </data>
-  <data name="&gt;&gt;txt_summary.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="TimePicker2.CustomFormat" xml:space="preserve">
-    <value>H:mm:ss</value>
-  </data>
-  <data name="TimePicker2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 414</value>
-  </data>
-  <data name="TimePicker2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 33</value>
-  </data>
-  <data name="TimePicker2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;TimePicker2.Name" xml:space="preserve">
-    <value>TimePicker2</value>
-  </data>
-  <data name="&gt;&gt;TimePicker2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TimePicker2.Parent" xml:space="preserve">
-    <value>pnl_reminder_content</value>
-  </data>
-  <data name="&gt;&gt;TimePicker2.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="TimePicker1.CustomFormat" xml:space="preserve">
-    <value>H:mm:ss</value>
+  <data name="txt_reminder_summary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 57</value>
   </data>
-  <data name="TimePicker1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 331</value>
+  <data name="txt_reminder_summary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 33</value>
   </data>
-  <data name="TimePicker1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 33</value>
+  <data name="txt_reminder_summary.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="TimePicker1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;txt_reminder_summary.Name" xml:space="preserve">
+    <value>txt_reminder_summary</value>
   </data>
-  <data name="&gt;&gt;TimePicker1.Name" xml:space="preserve">
-    <value>TimePicker1</value>
+  <data name="&gt;&gt;txt_reminder_summary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TimePicker1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TimePicker1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txt_reminder_summary.Parent" xml:space="preserve">
     <value>pnl_reminder_content</value>
   </data>
-  <data name="&gt;&gt;TimePicker1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txt_reminder_summary.ZOrder" xml:space="preserve">
     <value>11</value>
+  </data>
+  <data name="timePicker2.CustomFormat" xml:space="preserve">
+    <value>H:mm:ss</value>
+  </data>
+  <data name="timePicker2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>278, 414</value>
+  </data>
+  <data name="timePicker2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 33</value>
+  </data>
+  <data name="timePicker2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;timePicker2.Name" xml:space="preserve">
+    <value>timePicker2</value>
+  </data>
+  <data name="&gt;&gt;timePicker2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timePicker2.Parent" xml:space="preserve">
+    <value>pnl_reminder_content</value>
+  </data>
+  <data name="&gt;&gt;timePicker2.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="timePicker1.CustomFormat" xml:space="preserve">
+    <value>H:mm:ss</value>
+  </data>
+  <data name="timePicker1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>278, 331</value>
+  </data>
+  <data name="timePicker1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 33</value>
+  </data>
+  <data name="timePicker1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;timePicker1.Name" xml:space="preserve">
+    <value>timePicker1</value>
+  </data>
+  <data name="&gt;&gt;timePicker1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timePicker1.Parent" xml:space="preserve">
+    <value>pnl_reminder_content</value>
+  </data>
+  <data name="&gt;&gt;timePicker1.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="datePicker1.CustomFormat" xml:space="preserve">
     <value>d MMM yyydddd</value>
@@ -3685,7 +3781,7 @@
     <value>pnl_reminder_content</value>
   </data>
   <data name="&gt;&gt;datePicker1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="pnl_reminder_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
@@ -5447,6 +5543,36 @@
   </data>
   <data name="&gt;&gt;clearSelectionToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ID.Name" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="&gt;&gt;ID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;USEREMAIL.Name" xml:space="preserve">
+    <value>USEREMAIL</value>
+  </data>
+  <data name="&gt;&gt;USEREMAIL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TITLE.Name" xml:space="preserve">
+    <value>TITLE</value>
+  </data>
+  <data name="&gt;&gt;TITLE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SUMMARY.Name" xml:space="preserve">
+    <value>SUMMARY</value>
+  </data>
+  <data name="&gt;&gt;SUMMARY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DESCRIPTION.Name" xml:space="preserve">
+    <value>DESCRIPTION</value>
+  </data>
+  <data name="&gt;&gt;DESCRIPTION.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form_LandingPage</value>
