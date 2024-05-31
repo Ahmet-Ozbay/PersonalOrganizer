@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal class Note
+    public class Note
     {
         public int ID { get; set; }
         public string UserEmail { get; set; }

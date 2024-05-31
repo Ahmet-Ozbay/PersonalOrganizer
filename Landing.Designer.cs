@@ -131,8 +131,11 @@ namespace FinalProject
             this.lbl_title_notebook = new System.Windows.Forms.Label();
             this.pnl_reminder = new System.Windows.Forms.Panel();
             this.pnl_reminder_content = new System.Windows.Forms.Panel();
-            this.btn_delete_reminder = new System.Windows.Forms.Button();
+            this.pnl_dgv_reminder = new System.Windows.Forms.Panel();
             this.dgv_reminder = new System.Windows.Forms.DataGridView();
+            this.context_dgv_reminder = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.clearSelectionToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_delete_reminder = new System.Windows.Forms.Button();
             this.btn_save_reminder = new System.Windows.Forms.Button();
             this.rb_task = new System.Windows.Forms.RadioButton();
             this.rb_meeting = new System.Windows.Forms.RadioButton();
@@ -190,9 +193,8 @@ namespace FinalProject
             this.lbl_title_admin = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USEREMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TITLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SUMMARY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESCRIPTION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STARTTIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ENDTIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_header.SuspendLayout();
             this.pnl_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).BeginInit();
@@ -220,7 +222,9 @@ namespace FinalProject
             this.context_dgv_notebook.SuspendLayout();
             this.pnl_reminder.SuspendLayout();
             this.pnl_reminder_content.SuspendLayout();
+            this.pnl_dgv_reminder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reminder)).BeginInit();
+            this.context_dgv_reminder.SuspendLayout();
             this.pnl_salary.SuspendLayout();
             this.pnl_salary_content.SuspendLayout();
             this.grp_family.SuspendLayout();
@@ -1065,8 +1069,8 @@ namespace FinalProject
             // pnl_reminder_content
             // 
             this.pnl_reminder_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.pnl_reminder_content.Controls.Add(this.pnl_dgv_reminder);
             this.pnl_reminder_content.Controls.Add(this.btn_delete_reminder);
-            this.pnl_reminder_content.Controls.Add(this.dgv_reminder);
             this.pnl_reminder_content.Controls.Add(this.btn_save_reminder);
             this.pnl_reminder_content.Controls.Add(this.rb_task);
             this.pnl_reminder_content.Controls.Add(this.rb_meeting);
@@ -1084,6 +1088,40 @@ namespace FinalProject
             this.pnl_reminder_content.ForeColor = System.Drawing.Color.White;
             this.pnl_reminder_content.Name = "pnl_reminder_content";
             // 
+            // pnl_dgv_reminder
+            // 
+            this.pnl_dgv_reminder.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_dgv_reminder.Controls.Add(this.dgv_reminder);
+            resources.ApplyResources(this.pnl_dgv_reminder, "pnl_dgv_reminder");
+            this.pnl_dgv_reminder.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.pnl_dgv_reminder.Name = "pnl_dgv_reminder";
+            // 
+            // dgv_reminder
+            // 
+            this.dgv_reminder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_reminder.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_reminder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_reminder.ContextMenuStrip = this.context_dgv_reminder;
+            resources.ApplyResources(this.dgv_reminder, "dgv_reminder");
+            this.dgv_reminder.Name = "dgv_reminder";
+            this.dgv_reminder.ReadOnly = true;
+            this.dgv_reminder.RowHeadersVisible = false;
+            this.dgv_reminder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_reminder.SelectionChanged += new System.EventHandler(this.dgv_reminder_SelectionChanged);
+            // 
+            // context_dgv_reminder
+            // 
+            this.context_dgv_reminder.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearSelectionToolStripMenuItem2});
+            this.context_dgv_reminder.Name = "context_dgv_reminder";
+            resources.ApplyResources(this.context_dgv_reminder, "context_dgv_reminder");
+            // 
+            // clearSelectionToolStripMenuItem2
+            // 
+            this.clearSelectionToolStripMenuItem2.Name = "clearSelectionToolStripMenuItem2";
+            resources.ApplyResources(this.clearSelectionToolStripMenuItem2, "clearSelectionToolStripMenuItem2");
+            this.clearSelectionToolStripMenuItem2.Click += new System.EventHandler(this.clearSelectionToolStripMenuItem2_Click);
+            // 
             // btn_delete_reminder
             // 
             this.btn_delete_reminder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
@@ -1092,23 +1130,7 @@ namespace FinalProject
             resources.ApplyResources(this.btn_delete_reminder, "btn_delete_reminder");
             this.btn_delete_reminder.Name = "btn_delete_reminder";
             this.btn_delete_reminder.UseVisualStyleBackColor = false;
-            // 
-            // dgv_reminder
-            // 
-            this.dgv_reminder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_reminder.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_reminder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_reminder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.USEREMAIL,
-            this.TITLE,
-            this.SUMMARY,
-            this.DESCRIPTION});
-            resources.ApplyResources(this.dgv_reminder, "dgv_reminder");
-            this.dgv_reminder.Name = "dgv_reminder";
-            this.dgv_reminder.ReadOnly = true;
-            this.dgv_reminder.RowHeadersVisible = false;
-            this.dgv_reminder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.btn_delete_reminder.Click += new System.EventHandler(this.btn_delete_reminder_Click);
             // 
             // btn_save_reminder
             // 
@@ -1118,7 +1140,7 @@ namespace FinalProject
             resources.ApplyResources(this.btn_save_reminder, "btn_save_reminder");
             this.btn_save_reminder.Name = "btn_save_reminder";
             this.btn_save_reminder.UseVisualStyleBackColor = false;
-            this.btn_save_reminder.Click += new System.EventHandler(this.btn_reminder_add_Click);
+            this.btn_save_reminder.Click += new System.EventHandler(this.btn_save_reminder_Click);
             // 
             // rb_task
             // 
@@ -1542,26 +1564,17 @@ namespace FinalProject
             this.USEREMAIL.Name = "USEREMAIL";
             this.USEREMAIL.ReadOnly = true;
             // 
-            // TITLE
+            // STARTTIME
             // 
-            this.TITLE.DataPropertyName = "Title";
-            resources.ApplyResources(this.TITLE, "TITLE");
-            this.TITLE.Name = "TITLE";
-            this.TITLE.ReadOnly = true;
+            resources.ApplyResources(this.STARTTIME, "STARTTIME");
+            this.STARTTIME.Name = "STARTTIME";
+            this.STARTTIME.ReadOnly = true;
             // 
-            // SUMMARY
+            // ENDTIME
             // 
-            this.SUMMARY.DataPropertyName = "Summary";
-            resources.ApplyResources(this.SUMMARY, "SUMMARY");
-            this.SUMMARY.Name = "SUMMARY";
-            this.SUMMARY.ReadOnly = true;
-            // 
-            // DESCRIPTION
-            // 
-            this.DESCRIPTION.DataPropertyName = "Description";
-            resources.ApplyResources(this.DESCRIPTION, "DESCRIPTION");
-            this.DESCRIPTION.Name = "DESCRIPTION";
-            this.DESCRIPTION.ReadOnly = true;
+            resources.ApplyResources(this.ENDTIME, "ENDTIME");
+            this.ENDTIME.Name = "ENDTIME";
+            this.ENDTIME.ReadOnly = true;
             // 
             // Form_LandingPage
             // 
@@ -1619,7 +1632,9 @@ namespace FinalProject
             this.pnl_reminder.ResumeLayout(false);
             this.pnl_reminder_content.ResumeLayout(false);
             this.pnl_reminder_content.PerformLayout();
+            this.pnl_dgv_reminder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reminder)).EndInit();
+            this.context_dgv_reminder.ResumeLayout(false);
             this.pnl_salary.ResumeLayout(false);
             this.pnl_salary_content.ResumeLayout(false);
             this.pnl_salary_content.PerformLayout();
@@ -1798,12 +1813,14 @@ namespace FinalProject
         private System.Windows.Forms.Button btn_save_reminder;
         private System.Windows.Forms.RadioButton rb_task;
         private System.Windows.Forms.RadioButton rb_meeting;
-        private System.Windows.Forms.DataGridView dgv_reminder;
         private System.Windows.Forms.Button btn_delete_reminder;
+        private System.Windows.Forms.DataGridView dgv_reminder;
+        private System.Windows.Forms.Panel pnl_dgv_reminder;
+        private System.Windows.Forms.ContextMenuStrip context_dgv_reminder;
+        private System.Windows.Forms.ToolStripMenuItem clearSelectionToolStripMenuItem2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn USEREMAIL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TITLE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SUMMARY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIPTION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STARTTIME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ENDTIME;
     }
 }

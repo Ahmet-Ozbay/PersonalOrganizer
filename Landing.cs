@@ -41,6 +41,8 @@ namespace FinalProject
         public Form_LandingPage()
         {
             InitializeComponent();
+            InitializeDataGridView();
+            this.Load += Form_LandingPage_Load;
         }
 
         /*
@@ -61,6 +63,9 @@ namespace FinalProject
             LoadContacts();
 
             // Reminder
+            IReminderFactory reminder_factory = new ReminderFactory();
+            reminder_manager = new ReminderManager(new CsvRepository(reminder_factory), reminder_factory);
+            LoadReminders();
 
             // Salary Calculator
             cmb_experience.DataSource = experience.Keys.ToList();
@@ -74,7 +79,8 @@ namespace FinalProject
         private User current_user;
         private NoteBook notebook;
         private PhoneBook phonebook;
-        private Reminder reminder;
+        private ReminderManager reminder_manager;
+        private BindingList<IReminder> reminderBindingList;
 
         private Dictionary<string, double> experience = new Dictionary<string, double>
         {
@@ -141,7 +147,7 @@ namespace FinalProject
             CsvRepository reader = new CsvRepository();
             string email = Form_SignIn_SignUp.e_mail;
             List<User> users = reader.List();
-            User current_user = users.FirstOrDefault(u => u.Email == email);
+            current_user = users.FirstOrDefault(u => u.Email == email);
             if (current_user != null)
             {
                 txt_name.Text = current_user.Name;
@@ -150,7 +156,6 @@ namespace FinalProject
                 txt_phone_number.Text = current_user.PhoneNumber;
                 txt_adress.Text = current_user.Address;
                 txt_salary.Text = current_user.Salary.ToString();
-                this.current_user = current_user;
             }
         }
 
@@ -178,8 +183,9 @@ namespace FinalProject
 
         private void LoadReminders()
         {
-            var reminders = reminder.List(current_user.Email);
-            dgv_reminder.DataSource = reminders;
+            var reminders = reminder_manager.ListReminders(current_user.Email);
+            reminderBindingList = new BindingList<IReminder>(reminders);
+            dgv_reminder.DataSource = reminderBindingList;
         }
 
         //
@@ -453,6 +459,7 @@ namespace FinalProject
             if (pnl_reminder.Visible)
             {
                 btn_reminder.BackColor = blue;
+                this.AcceptButton = btn_save_reminder;
             }
             else
             {
@@ -462,14 +469,17 @@ namespace FinalProject
 
         private void btn_reminder_Click(object sender, EventArgs e)
         {
-            DateTime today = DateTime.Today;
-            datePicker2.Value = today.AddDays(1);
             pnl_profile.Visible = false;
             pnl_contacts.Visible = false;
             pnl_notebook.Visible = false;
             pnl_reminder.Visible = true;
             pnl_salary.Visible = false;
             pnl_admin.Visible = false;
+
+            DateTime today = DateTime.Today;
+            datePicker2.Value = today.AddDays(1);
+            dgv_reminder.ClearSelection();
+            ClearReminderFields();
         }
 
         //
@@ -609,6 +619,7 @@ namespace FinalProject
                 current_user.Address = address;
                 writer.Update(current_user);
                 Read_user_data();
+                lblName.Text = current_user.Name + " " + current_user.LastName;
                 string title = "Success";
                 string message = "Your profile has been updated successfully.";
                 MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -768,6 +779,12 @@ namespace FinalProject
             txt_calculated_salary.Text = "₺" + CalculateSalary().ToString();
             this.current_user.Salary = CalculateSalary();
 
+            if(current_user.Authorisation == Authority.Part_Time_User)
+            {
+                current_user.Salary /= 2;
+                txt_calculated_salary.Text = "₺" + ( CalculateSalary() / 2 ).ToString();
+            }
+
             CsvRepository updater = new CsvRepository();
             updater.Update(this.current_user);
             Read_user_data();
@@ -864,6 +881,18 @@ namespace FinalProject
             txt_contact_email.Clear();
             txt_contact_address.Clear();
         }
+        private void ClearReminderFields()
+        {
+            txt_reminder_summary.Clear();
+            txt_reminder_description.Clear();
+            datePicker1.Value = DateTime.Now;
+            timePicker1.Value = DateTime.Now;
+            datePicker2.Value = DateTime.Now;
+            timePicker2.Value = DateTime.Now;
+            rb_meeting.Checked = true;
+            rb_task.Checked = false;
+        }
+
         private void dgv_notes_SelectionChanged(object sender, EventArgs e)
         {
             if (dgv_notes.SelectedRows.Count > 0)
@@ -1058,55 +1087,170 @@ namespace FinalProject
             return new String(formattedPhoneNumber.Where(Char.IsDigit).ToArray());
         }
 
-        private void btn_reminder_add_Click(object sender, EventArgs e)
+        private void btn_save_reminder_Click(object sender, EventArgs e)
         {
             // Prepare data
-            DateTime start_date = datePicker1.Value;
-            DateTime end_date = datePicker2.Value;
-            DateTime start_time = timePicker1.Value;
-            DateTime end_time = timePicker2.Value;
+            DateTime startDate = datePicker1.Value.Date + timePicker1.Value.TimeOfDay;
+            DateTime endDate = datePicker2.Value.Date + timePicker2.Value.TimeOfDay;
 
-            string reminder_title;
-            string reminder_summary = txt_reminder_summary.Text;
-            string reminder_description = txt_reminder_description.Text;
-
-            if (rb_meeting.Checked)
-            {
-                reminder_title = rb_meeting.Text;
-            }
-            else
-            {
-                reminder_title = rb_task.Text;
-            }
+            string reminderType = rb_meeting.Checked ? "Meeting" : "Task";
+            string reminderSummary = txt_reminder_summary.Text;
+            string reminderDescription = txt_reminder_description.Text;
+            string userEmail = current_user.Email; // Get the user's email
+            string title = reminderType; // Set the title based on the selected radio button
 
             // Check if we're updating an existing reminder or adding a new one
             if (dgv_reminder.SelectedRows.Count == 1)
             {
-                // Update Existing Reminder
-                var selectedReminder = (Reminder)dgv_reminder.SelectedRows[0].DataBoundItem;
-                selectedReminder.Title = reminder_title;
-                selectedReminder.Summary = txt_reminder_summary.Text;
-                selectedReminder.Description = txt_reminder_description.Text;
+                // Update existing reminder
+                var selectedReminder = (IReminder)dgv_reminder.SelectedRows[0].DataBoundItem;
+                selectedReminder.Summary = reminderSummary;
+                selectedReminder.Description = reminderDescription;
+                selectedReminder.StartDate = startDate;
+                selectedReminder.EndDate = endDate;
+                selectedReminder.UserEmail = userEmail;
+                selectedReminder.Title = title;
 
-
-
-                if (phonebook.Update(selectedContact))
+                if (reminder_manager.UpdateReminder(selectedReminder))
                 {
-                    LoadContacts(); // Refresh the DataGridView
-                    MessageBox.Show("Contact updated successfully.");
-                    dgv_phonebook.ClearSelection();
-                    ClearContactFields();
+                    LoadReminders(); // Refresh the DataGridView
+                    MessageBox.Show("Reminder updated successfully.");
+                    dgv_reminder.ClearSelection();
+                    ClearReminderFields();
                 }
                 else
                 {
-                    MessageBox.Show("There was an error updating the contact.");
+                    MessageBox.Show("There was an error updating the reminder.");
                 }
             }
             else
             {
-                // Add new contact
+                // Add new reminder
+                IReminder newReminder = reminder_manager.CreateReminder(reminderType);
+                newReminder.Summary = reminderSummary;
+                newReminder.Description = reminderDescription;
+                newReminder.StartDate = startDate;
+                newReminder.EndDate = endDate;
+                newReminder.UserEmail = userEmail;
+                newReminder.Title = title;
 
+                if (reminder_manager.AddReminder(newReminder))
+                {
+                    LoadReminders(); // Refresh the DataGridView
+                    MessageBox.Show("New reminder added successfully.");
+                    dgv_reminder.ClearSelection();
+                    ClearReminderFields();
+                }
+                else
+                {
+                    MessageBox.Show("There was an error adding the new reminder.");
+                }
             }
+        }
+
+        private void clearSelectionToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            dgv_reminder.ClearSelection();
+        }
+
+        private void dgv_reminder_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_reminder.SelectedRows.Count > 0)
+            {
+                var selectedReminder = (IReminder)dgv_reminder.SelectedRows[0].DataBoundItem;
+                if (selectedReminder != null)
+                {
+                    txt_reminder_summary.Text = selectedReminder.Summary;
+                    txt_reminder_description.Text = selectedReminder.Description;
+                    datePicker1.Value = selectedReminder.StartDate;
+                    timePicker1.Value = selectedReminder.StartDate;
+                    datePicker2.Value = selectedReminder.EndDate;
+                    timePicker2.Value = selectedReminder.EndDate;
+                    rb_meeting.Checked = selectedReminder.Title == "Meeting";
+                    rb_task.Checked = selectedReminder.Title != "Meeting";
+                }
+                else
+                {
+                    ClearReminderFields();
+                }
+            }
+            else
+            {
+                ClearReminderFields();
+            }
+        }
+
+        private void btn_delete_reminder_Click(object sender, EventArgs e)
+        {
+            if (dgv_reminder.SelectedRows.Count > 0)
+            {
+                // Ask the user to confirm the deletion.
+                var confirmResult = MessageBox.Show("Are you sure you want to delete the selected reminders? This action cannot be undone.",
+                                                    "Confirm Delete",
+                                                    MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // If the user confirmed, delete the reminders.
+                    var remindersToDelete = new List<IReminder>();
+                    foreach (DataGridViewRow row in dgv_reminder.SelectedRows)
+                    {
+                        remindersToDelete.Add((IReminder)row.DataBoundItem);
+                    }
+
+                    foreach (var reminder in remindersToDelete)
+                    {
+                        reminder_manager.DeleteReminder(reminder);
+                    }
+
+                    LoadReminders(); // Refresh the DataGridView
+                    MessageBox.Show("Selected reminders deleted successfully.");
+                }
+                // If the user clicked 'No', do nothing.
+            }
+            else
+            {
+                MessageBox.Show("Please select at least one reminder to delete.");
+            }
+        }
+
+
+        private void InitializeDataGridView()
+        {
+            dgv_reminder.AutoGenerateColumns = false;
+
+
+            dgv_reminder.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Title",
+                HeaderText = "Title"
+            });
+
+            dgv_reminder.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Summary",
+                HeaderText = "Summary"
+            });
+
+            dgv_reminder.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Description",
+                HeaderText = "Description"
+            });
+
+            dgv_reminder.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "StartDate",
+                HeaderText = "Start Date"
+            });
+
+            dgv_reminder.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "EndDate",
+                HeaderText = "End Date"
+            });
+
+
         }
     }
 }

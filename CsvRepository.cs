@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace FinalProject
@@ -13,9 +15,13 @@ namespace FinalProject
         private string _userFilePath = "user_db.csv";
         private string _notesFilePath = "note_db.csv";
         private string _contactsFilePath = "contacts_db.csv";
+        private string _remindersFilePath = "reminders_db.csv";
+        private IReminderFactory _reminderFactory;
         private int _nextUserId;
         private int _nextNoteId;
         private int _nextContactId;
+        private int _nextReminderId;
+
         public CsvRepository() {
 
             // User DB Access
@@ -57,6 +63,27 @@ namespace FinalProject
                 }
             }
         }
+
+        public CsvRepository(IReminderFactory reminderFactory)
+        {
+            // Reminder DB Access
+            _reminderFactory = reminderFactory;
+
+            if (File.Exists(_remindersFilePath))
+            {
+                List<IReminder> reminders = ListReminders();
+                _nextReminderId = reminders.Any() ? reminders.Max(r => r.ID) + 1 : 1;
+            }
+            else
+            {
+                using (StreamWriter sw = File.CreateText(_remindersFilePath))
+                {
+                    sw.WriteLine("ID,USEREMAIL,TITLE,SUMMARY,DESCRIPTION,STARTDATE,ENDDATE");
+                }
+                _nextReminderId = 1;
+            }
+        }
+
 
         /*
          * Create new User
@@ -128,6 +155,35 @@ namespace FinalProject
         }
 
         /*
+         * Create new Reminder
+        */
+        public bool Add(IReminder reminder)
+        {
+            try
+            {
+                reminder.ID = _nextReminderId++;
+                var line = new StringBuilder();
+                line.Append(reminder.ID + ",");
+                line.Append(EscapeForCsv(reminder.UserEmail) + ",");
+                line.Append(EscapeForCsv(reminder.Title) + ",");
+                line.Append(EscapeForCsv(reminder.Summary) + ",");
+                line.Append(EscapeForCsv(reminder.Description) + ",");
+                line.Append(EscapeForCsv(reminder.StartDate.ToString("o")) + ",");
+                line.Append(EscapeForCsv(reminder.EndDate.ToString("o")));
+
+                using (StreamWriter sw = File.AppendText(_remindersFilePath))
+                {
+                    sw.WriteLine(line.ToString());
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error adding reminder: {ex.Message}");
+                return false;
+            }
+        }
+        /*
          * Delete user
          */
         public bool Delete(User user)
@@ -194,6 +250,72 @@ namespace FinalProject
             {
                 return false;
             }
+        }
+
+        /*
+         * Delete reminders
+         */
+        public bool Delete(IReminder reminder)
+        {
+            try
+            {
+                var reminders = ListReminders().ToList();
+                var reminderToDelete = reminders.FirstOrDefault(r => r.ID == reminder.ID);
+                if (reminderToDelete != null)
+                {
+                    reminders.Remove(reminderToDelete);
+                    WriteAllReminders(reminders);
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while deleting the reminder: " + ex.Message);
+                return false;
+            }
+        }
+
+
+        public List<IReminder> ListReminders()
+        {
+            var reminders = new List<IReminder>();
+            if (File.Exists(_remindersFilePath))
+            {
+                var lines = File.ReadAllLines(_remindersFilePath).Skip(1); // Skip header line
+                foreach (var line in lines)
+                {
+                    var values = line.Split(',');
+                    IReminder reminder = CreateReminderFromValues(values);
+                    reminders.Add(reminder);
+                }
+            }
+            return reminders;
+        }
+
+        private IReminder CreateReminderFromValues(string[] values)
+        {
+            IReminder reminder;
+            string title = values[2];
+
+            if (title == "Meeting")
+            {
+                reminder = _reminderFactory.CreateMeetingReminder();
+            }
+            else
+            {
+                reminder = _reminderFactory.CreateTaskReminder();
+            }
+
+            reminder.ID = int.Parse(values[0]);
+            reminder.UserEmail = values[1];
+            reminder.Title = values[2];
+            reminder.Summary = values[3];
+            reminder.Description = values[4];
+            reminder.StartDate = DateTime.Parse(values[5]);
+            reminder.EndDate = DateTime.Parse(values[6]);
+
+            return reminder;
         }
 
         /*
@@ -303,6 +425,39 @@ namespace FinalProject
                 Address = UnescapeFromCsv(values[6])
             };
         }
+        /*
+        * Get the reminder data from the database
+        */
+        private IReminder FromCsvToReminder(string csvLine)
+        {
+            var values = csvLine.Split(new char[] { ',' }, StringSplitOptions.None);
+            string reminderType = UnescapeFromCsv(values[2]); 
+
+            IReminder reminder;
+            if (reminderType == "Meeting")
+            {
+                reminder = new MeetingReminder();
+            }
+            else if (reminderType == "Task")
+            {
+                reminder = new TaskReminder();
+            }
+            else
+            {
+                throw new InvalidOperationException("Unknown reminder type.");
+            }
+
+            reminder.ID = Convert.ToInt32(values[0]);
+            reminder.UserEmail = UnescapeFromCsv(values[1]);
+            reminder.Title = reminderType;
+            reminder.Summary = UnescapeFromCsv(values[3]);
+            reminder.Description = UnescapeFromCsv(values[4]);
+            reminder.StartDate = DateTime.ParseExact(UnescapeFromCsv(values[5]), "o", CultureInfo.InvariantCulture);
+            reminder.EndDate = DateTime.ParseExact(UnescapeFromCsv(values[6]), "o", CultureInfo.InvariantCulture);
+
+
+            return reminder;
+        }
 
         /*
          * Update the user
@@ -385,6 +540,29 @@ namespace FinalProject
         }
 
         /*
+        * Update reminders
+        */
+        public bool Update(IReminder reminder)
+        {
+            try
+            {
+                var reminders = ListReminders().ToList();
+                var index = reminders.FindIndex(r => r.ID == reminder.ID);
+                if (index != -1)
+                {
+                    reminders[index] = reminder;
+                    WriteAllReminders(reminders);
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /*
          * Write all users to db
          */
         private void WriteAllUsers(List<User> users)
@@ -435,6 +613,32 @@ namespace FinalProject
                 }
             }
         }
+
+        /* 
+        * Write all contacts to db
+        */
+        private void WriteAllReminders(List<IReminder> reminders)
+        {
+            using (StreamWriter sw = File.CreateText(_remindersFilePath))
+            {
+                sw.WriteLine("ID,USEREMAIL,TITLE,SUMMARY,DESCRIPTION,STARTDATE,ENDDATE");
+                foreach (var reminder in reminders)
+                {
+                    var line = new StringBuilder();
+                    line.Append(reminder.ID + ",");
+                    line.Append(EscapeForCsv(reminder.UserEmail) + ",");
+                    line.Append(EscapeForCsv(reminder.Title) + ",");
+                    line.Append(EscapeForCsv(reminder.Summary) + ",");
+                    line.Append(EscapeForCsv(reminder.Description) + ",");
+                    line.Append(EscapeForCsv(reminder.StartDate.ToString("o")) + ",");
+                    line.Append(EscapeForCsv(reminder.EndDate.ToString("o")));
+                    
+
+                    sw.WriteLine(line.ToString());
+                }
+            }
+        }
+
         // Helper methods for Base64 encoding/decoding and CSV escaping
         private string EncodeToBase64(string input)
         {
@@ -446,15 +650,19 @@ namespace FinalProject
             return Encoding.UTF8.GetString(Convert.FromBase64String(base64Input));
         }
 
-        private string EscapeForCsv(string input)
+        private string EscapeForCsv(object input)
         {
-            if (input.Contains(",") || input.Contains("\""))
+            if (input == null) return "";
+
+            string inputAsString = input is DateTime dateTime ? dateTime.ToString("o") : input.ToString();
+
+            if (inputAsString.Contains(",") || inputAsString.Contains("\""))
             {
-                return $"\"{input.Replace("\"", "\"\"")}\"";
+                return $"\"{inputAsString.Replace("\"", "\"\"")}\"";
             }
             else
             {
-                return input;
+                return inputAsString;
             }
         }
 

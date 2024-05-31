@@ -8,6 +8,7 @@ namespace FinalProject
 {
     public interface IReminderFactory
     {
-         IReminder CreateReminder();
+        IReminder CreateMeetingReminder();
+        IReminder CreateTaskReminder();
     }
 }

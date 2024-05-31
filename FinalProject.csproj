@@ -86,6 +86,7 @@
     <Compile Include="PartTimeUserStrategy.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PhoneBook.cs" />
+    <Compile Include="ReminderFactory.cs" />
     <Compile Include="ReminderManager.cs" />
     <Compile Include="ReminderObserver .cs" />
     <Compile Include="SignInService.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal class UserStrategy : IAuthorityStrategy
+    public class UserStrategy : IAuthorityStrategy
     {
         public bool AddContact(Contact contact)
         {

@@ -8,19 +8,24 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal interface IDataRepository
+    public interface IDataRepository
     {
         bool Add(User user);
         bool Add(Note note);
         bool Add(Contact contact);
+        bool Add(IReminder reminder);
         bool Update(User user);
         bool Update (Note note);
         bool Update(Contact contact);
+        bool Update(IReminder reminder);
         bool Delete(User user);
         bool Delete(Note note);
         bool Delete(Contact contact);
+        bool Delete(IReminder reminder);
         List<User> List();
         List<Note> ListNotes();
         List<Contact> ListContacts(string userEmail);
+        List<IReminder> ListReminders();
+
     }
 }

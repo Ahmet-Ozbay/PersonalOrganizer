@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal interface IAuthorityStrategy
+    public interface IAuthorityStrategy
     {
         // Kullanıcının gerçekleştirebileceği metodları burada tanımla,
         // AdminStrategy, UserStrategy ve PartTimeUserStrategy classlarında implemente et

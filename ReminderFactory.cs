@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    public class TaskReminderFactory : IReminderFactory
+    public class ReminderFactory : IReminderFactory
     {
         public IReminder CreateMeetingReminder()
         {
-            // This factory does not create Meeting Reminders.
-            throw new NotImplementedException();
+            return new MeetingReminder();
         }
 
         public IReminder CreateTaskReminder()

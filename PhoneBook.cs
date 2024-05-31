@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal class PhoneBook
+    public class PhoneBook
     {
         private User Owner {  get; set; }
         private List<Contact> Contacts { get; set; }

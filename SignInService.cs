@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal class SignInService
+    public class SignInService
     {
         private IDataRepository _repository {  get; set; }
         public SignInService(IDataRepository repository) {

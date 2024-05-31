@@ -8,11 +8,14 @@ namespace FinalProject
 {
     public class MeetingReminder : IReminder
     {
-        public DateTime Date { get; set; }
-        public TimeSpan Time { get; set; }
+        public int ID { get; set; }
+        public string UserEmail { get; set; }
+        public string Title { get; set; }
         public string Summary { get; set; }
         public string Description { get; set; }
-        public string Title { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        // Implement methods for list, add, update, delete
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
     }
 }

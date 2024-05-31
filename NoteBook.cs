@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal class NoteBook
+    public class NoteBook
     {
         private User Owner { get; set; }
         private List<Note> Notes { get; set; }

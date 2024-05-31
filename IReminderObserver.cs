@@ -8,6 +8,6 @@ namespace FinalProject
 {
     internal interface IReminderObserver
     {
-        void Update(Reminder reminder);
+        void Update(IReminder reminder);
     }
 }

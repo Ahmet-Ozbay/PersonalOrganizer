@@ -9,14 +9,14 @@ namespace FinalProject
     /*
      * User Authority Levels
      */
-    enum Authority
+    public enum Authority
     {
         Admin,
         User,
         Part_Time_User
     }
 
-    internal class User : Person
+    public class User : Person
     {
         public int ID { get; set; }
         public string Email { get; set; }

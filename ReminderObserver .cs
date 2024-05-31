@@ -8,7 +8,7 @@ namespace FinalProject
 {
     public class ReminderObserver : IReminderObserver
     {
-        public void Update(Reminder reminder)
+        public void Update(IReminder reminder)
         {
             // Aktif pencerenin başlığını değiştir
             ChangeActiveWindowTitle(reminder.Description);

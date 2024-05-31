@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal class Contact: Person
+    public class Contact: Person
     {
         public int ID { get; set; }
         public string UserEmail { get; set; }

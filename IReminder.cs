@@ -8,11 +8,12 @@ namespace FinalProject
 {
     public interface IReminder
     {
-        DateTime Date { get; set; }
-        TimeSpan Time { get; set; }
+        int ID { get; set; }
+        string UserEmail { get; set; }
         string Title { get; set; }
         string Summary { get; set; }
         string Description { get; set; }
-        // Methods for list, add, update, delete
+        DateTime StartDate { get; set; }
+        DateTime EndDate { get; set; }
     }
 }
