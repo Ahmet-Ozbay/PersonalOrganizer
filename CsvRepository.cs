@@ -33,7 +33,7 @@ namespace FinalProject
             {
                 using (StreamWriter sw = File.CreateText(_userFilePath))
                 {
-                    sw.WriteLine("ID,EMAIL,PASSWORD,NAME,LASTNAME,AUTHORITY,PHONENUMBER,ADDRESS,SALARY");
+                    sw.WriteLine("ID,EMAIL,PASSWORD,NAME,LASTNAME,AUTHORITY,PHONENUMBER,ADDRESS,SALARY,AVATAR");
                 }
 
                 _nextUserId = 1;
@@ -95,7 +95,7 @@ namespace FinalProject
                 // Yeni kullanıcı için bir ID atayın.
                 user.ID = _nextUserId++;
                 var line = $"{user.ID},{user.Email},{user.Password},{user.Name},{user.LastName}," +
-                           $"{user.Authorisation},{user.PhoneNumber},{user.Address},{user.Salary}";
+                           $"{user.Authorisation},{user.PhoneNumber},{user.Address},{user.Salary},{user.Avatar}";
 
                 // Kullanıcı bilgilerini dosyaya ekleyin.
                 using (StreamWriter sw = File.AppendText(_userFilePath))
@@ -389,7 +389,8 @@ namespace FinalProject
                 Authorisation = (Authority)Enum.Parse(typeof(Authority), values[5]),
                 PhoneNumber = values.Length > 6 ? values[6] : null,
                 Address = values.Length > 7 ? values[7] : null,
-                Salary = Convert.ToDouble(values[8])
+                Salary = Convert.ToDouble(values[8]),
+                Avatar = values.Length > 9 ? values[9] : null
             };
         }
 
@@ -478,6 +479,7 @@ namespace FinalProject
                     userToUpdate.PhoneNumber = user.PhoneNumber;
                     userToUpdate.Address = user.Address;
                     userToUpdate.Salary = user.Salary;
+                    userToUpdate.Avatar = user.Avatar;
                     WriteAllUsers(users);
                     return true;
                 }
@@ -569,11 +571,11 @@ namespace FinalProject
         {
             using (StreamWriter sw = File.CreateText(_userFilePath))
             {
-                sw.WriteLine("ID,EMAIL,PASSWORD,NAME,LASTNAME,AUTHORITY,PHONENUMBER,ADDRESS,SALARY");
+                sw.WriteLine("ID,EMAIL,PASSWORD,NAME,LASTNAME,AUTHORITY,PHONENUMBER,ADDRESS,SALARY,AVATAR");
                 foreach (var user in users)
                 {
                     var line = $"{user.ID},{user.Email},{user.Password},{user.Name},{user.LastName}," +
-                               $"{user.Authorisation},{user.PhoneNumber},{user.Address},{user.Salary}";
+                               $"{user.Authorisation},{user.PhoneNumber},{user.Address},{user.Salary},{user.Avatar}";
                     sw.WriteLine(line);
                 }
             }

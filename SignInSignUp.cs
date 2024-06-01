@@ -400,6 +400,10 @@ namespace FinalProject
             string password = txt_password_register.Text;
             string password_confirmation = txt_confirm_password.Text;
 
+            string defaultPath = Form_LandingPage.defaultPath;
+            byte[] imageBytes = System.IO.File.ReadAllBytes(defaultPath);
+            string base64String = Convert.ToBase64String(imageBytes);
+
             if (!IsValidEmail(email))
             {
                 string title = "Invalid Email";
@@ -435,7 +439,8 @@ namespace FinalProject
                         LastName = last_name,
                         Email = email,
                         Password = password,
-                        Authorisation = Authority.User
+                        Authorisation = Authority.User,
+                        Avatar = base64String
                     };
 
                     bool success = sign_up_service.SignUp(new_user);

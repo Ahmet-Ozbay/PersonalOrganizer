@@ -73,7 +73,29 @@ namespace FinalProject
             cmb_education.DataSource = education.Keys.ToList();
             cmb_language.DataSource = language.Keys.ToList();
             cmb_duties.DataSource = duties.Keys.ToList();
+
+            // Avatar
+            if (current_user.Avatar != null)
+            {
+                byte[] imageBytes = Convert.FromBase64String(current_user.Avatar);
+                using (var ms = new System.IO.MemoryStream(imageBytes))
+                {
+                    pb_avatar.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                pb_avatar.Image = Image.FromFile(defaultPath);
+            }
+
+            // Admin Panel
+            if (current_user.Authorisation != Authority.Admin)
+            {
+                btn_admin.Visible = false;
+            }
         }
+
+        public static string defaultPath = $"{Application.StartupPath}\\default_avatar.png";
 
         private string default_mail_extension = "@gmail.com";
         private User current_user;
@@ -1250,6 +1272,46 @@ namespace FinalProject
                 HeaderText = "End Date"
             });
 
+
+        }
+
+
+        private void tsm_remove_Click(object sender, EventArgs e)
+        {
+            CsvRepository writer = new CsvRepository();
+            CsvRepository reader = new CsvRepository();
+            List<User> users = reader.List();
+            string email = txt_email.Text;
+            User current_user = users.FirstOrDefault(u => u.Email == email);
+            string defaultPath = $"{Application.StartupPath}\\default_avatar.png";
+            byte[] imageBytes = System.IO.File.ReadAllBytes(defaultPath);
+            string base64String = Convert.ToBase64String(imageBytes);
+            pb_avatar.Image = new Bitmap(defaultPath);
+            current_user.Avatar = base64String;
+            writer.Update(current_user);
+            Read_user_data();
+        }
+
+        private void tsm_change_Click(object sender, EventArgs e)
+        {
+            CsvRepository writer = new CsvRepository();
+            CsvRepository reader = new CsvRepository();
+            List<User> users = reader.List();
+            string email = txt_email.Text;
+            User current_user = users.FirstOrDefault(u => u.Email == email);
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string imagePath = openFileDialog.FileName;
+                byte[] imageBytes = System.IO.File.ReadAllBytes(imagePath);
+                string base64String = Convert.ToBase64String(imageBytes);
+                pb_avatar.Image = new Bitmap(imagePath);
+                current_user.Avatar = base64String;
+                writer.Update(current_user);
+                Read_user_data();
+            }
 
         }
     }

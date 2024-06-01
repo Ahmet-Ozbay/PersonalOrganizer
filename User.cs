@@ -23,7 +23,7 @@ namespace FinalProject
         public string Password {  get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
-        public string Photo {  get; set; }
+        public string Avatar {  get; set; }
         public string PhoneNumber { get; set; } = null;
         public string Address { get; set; } = null;
         public double Salary { get; set; } = 0;

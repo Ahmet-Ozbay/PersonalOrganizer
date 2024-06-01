@@ -44,8 +44,11 @@ namespace FinalProject
             this.btn_notebook = new System.Windows.Forms.Button();
             this.btn_phonebook = new System.Windows.Forms.Button();
             this.btn_profile = new System.Windows.Forms.Button();
-            this.pic_profile = new System.Windows.Forms.PictureBox();
             this.pnl_picture = new System.Windows.Forms.Panel();
+            this.pb_avatar = new System.Windows.Forms.PictureBox();
+            this.context_avatar = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsm_change = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_remove = new System.Windows.Forms.ToolStripMenuItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnl_profile = new System.Windows.Forms.Panel();
             this.pnl_profile_content = new System.Windows.Forms.Panel();
@@ -197,7 +200,9 @@ namespace FinalProject
             this.ENDTIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_header.SuspendLayout();
             this.pnl_menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).BeginInit();
+            this.pnl_picture.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_avatar)).BeginInit();
+            this.context_avatar.SuspendLayout();
             this.pnl_profile.SuspendLayout();
             this.pnl_profile_content.SuspendLayout();
             this.grp_password.SuspendLayout();
@@ -299,7 +304,6 @@ namespace FinalProject
             this.pnl_menu.Controls.Add(this.btn_notebook);
             this.pnl_menu.Controls.Add(this.btn_phonebook);
             this.pnl_menu.Controls.Add(this.btn_profile);
-            this.pnl_menu.Controls.Add(this.pic_profile);
             this.pnl_menu.Controls.Add(this.pnl_picture);
             resources.ApplyResources(this.pnl_menu, "pnl_menu");
             this.pnl_menu.ForeColor = System.Drawing.Color.White;
@@ -395,22 +399,39 @@ namespace FinalProject
             this.btn_profile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_profile_MouseDown);
             this.btn_profile.MouseEnter += new System.EventHandler(this.btn_profile_MouseEnter);
             // 
-            // pic_profile
-            // 
-            resources.ApplyResources(this.pic_profile, "pic_profile");
-            this.pic_profile.BackColor = System.Drawing.Color.Transparent;
-            this.pic_profile.BackgroundImage = global::FinalProject.Properties.Resources.bg_error_picture;
-            this.pic_profile.ErrorImage = global::FinalProject.Properties.Resources.bg_error_picture;
-            this.pic_profile.Image = global::FinalProject.Properties.Resources.pp_test;
-            this.pic_profile.InitialImage = global::FinalProject.Properties.Resources.bg_error_picture;
-            this.pic_profile.Name = "pic_profile";
-            this.pic_profile.TabStop = false;
-            // 
             // pnl_picture
             // 
-            this.pnl_picture.BackColor = System.Drawing.Color.White;
+            this.pnl_picture.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_picture.Controls.Add(this.pb_avatar);
             resources.ApplyResources(this.pnl_picture, "pnl_picture");
             this.pnl_picture.Name = "pnl_picture";
+            // 
+            // pb_avatar
+            // 
+            this.pb_avatar.ContextMenuStrip = this.context_avatar;
+            resources.ApplyResources(this.pb_avatar, "pb_avatar");
+            this.pb_avatar.Name = "pb_avatar";
+            this.pb_avatar.TabStop = false;
+            // 
+            // context_avatar
+            // 
+            this.context_avatar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsm_change,
+            this.tsm_remove});
+            this.context_avatar.Name = "context_avatar";
+            resources.ApplyResources(this.context_avatar, "context_avatar");
+            // 
+            // tsm_change
+            // 
+            this.tsm_change.Name = "tsm_change";
+            resources.ApplyResources(this.tsm_change, "tsm_change");
+            this.tsm_change.Click += new System.EventHandler(this.tsm_change_Click);
+            // 
+            // tsm_remove
+            // 
+            this.tsm_remove.Name = "tsm_remove";
+            resources.ApplyResources(this.tsm_remove, "tsm_remove");
+            this.tsm_remove.Click += new System.EventHandler(this.tsm_remove_Click);
             // 
             // timer
             // 
@@ -1595,7 +1616,9 @@ namespace FinalProject
             this.Load += new System.EventHandler(this.Form_LandingPage_Load);
             this.pnl_header.ResumeLayout(false);
             this.pnl_menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).EndInit();
+            this.pnl_picture.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_avatar)).EndInit();
+            this.context_avatar.ResumeLayout(false);
             this.pnl_profile.ResumeLayout(false);
             this.pnl_profile_content.ResumeLayout(false);
             this.grp_password.ResumeLayout(false);
@@ -1663,7 +1686,6 @@ namespace FinalProject
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Button btn_minimize;
         private System.Windows.Forms.Panel pnl_menu;
-        private System.Windows.Forms.PictureBox pic_profile;
         private System.Windows.Forms.Button btn_profile;
         private System.Windows.Forms.Button btn_phonebook;
         private System.Windows.Forms.Label lbl_header;
@@ -1822,5 +1844,9 @@ namespace FinalProject
         private System.Windows.Forms.DataGridViewTextBoxColumn USEREMAIL;
         private System.Windows.Forms.DataGridViewTextBoxColumn STARTTIME;
         private System.Windows.Forms.DataGridViewTextBoxColumn ENDTIME;
+        private System.Windows.Forms.PictureBox pb_avatar;
+        private System.Windows.Forms.ContextMenuStrip context_avatar;
+        private System.Windows.Forms.ToolStripMenuItem tsm_change;
+        private System.Windows.Forms.ToolStripMenuItem tsm_remove;
     }
 }
