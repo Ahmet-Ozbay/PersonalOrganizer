@@ -197,6 +197,8 @@ namespace FinalProject
             this.btn_change = new System.Windows.Forms.Button();
             this.cmb_roles = new System.Windows.Forms.ComboBox();
             this.dgv_users = new System.Windows.Forms.DataGridView();
+            this.dgv_users.AutoGenerateColumns = false;
+            this.dgv_users.ForeColor = System.Drawing.Color.Black;
             this.USERID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USERROLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1704,8 +1706,8 @@ namespace FinalProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FinalProject.Properties.Resources.bg_gradient_main;
             this.Controls.Add(this.pnl_admin);
-            this.Controls.Add(this.pnl_reminder);
             this.Controls.Add(this.pnl_contacts);
+            this.Controls.Add(this.pnl_reminder);
             this.Controls.Add(this.pnl_notebook);
             this.Controls.Add(this.pnl_profile);
             this.Controls.Add(this.pnl_salary);

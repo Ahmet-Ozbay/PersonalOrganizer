@@ -2361,7 +2361,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_contacts.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="btn_delete_note.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3276,7 +3276,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_reminder.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lbl_18_plus_clause.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 9.75pt</value>
