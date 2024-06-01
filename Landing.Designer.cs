@@ -1608,8 +1608,6 @@ namespace FinalProject
             // 
             this.dgv_users.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_users.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_users.AutoGenerateColumns = false;
-            this.dgv_users.ForeColor = System.Drawing.Color.Black;
             this.dgv_users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_users.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.USERID,

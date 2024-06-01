@@ -302,9 +302,23 @@ namespace FinalProject
         // 
         // Header Clock
         //
+
+        private List<IReminder> activeReminders = new List<IReminder>();
+
         private void timer_Tick(object sender, EventArgs e)
         {
             lbl_header.Text = DateTime.UtcNow.ToLocalTime().ToString("M MMMM dddd | HH:mm:ss");
+            DateTime currentTime = DateTime.UtcNow.ToLocalTime();
+
+            foreach (var reminder in activeReminders.ToList())
+            {
+                if (currentTime >= reminder.EndDate)
+                {
+                    this.ShakeActiveWindow();
+                    activeReminders.Remove(reminder);
+                }
+            }
+
         }
 
         //
@@ -1216,6 +1230,12 @@ namespace FinalProject
                     MessageBox.Show("Reminder updated successfully.");
                     dgv_reminder.ClearSelection();
                     ClearReminderFields();
+
+                    // Update the active reminders list
+                    if (!activeReminders.Contains(selectedReminder))
+                    {
+                        activeReminders.Add(selectedReminder);
+                    }
                 }
                 else
                 {
@@ -1245,6 +1265,9 @@ namespace FinalProject
                     MessageBox.Show("New reminder added successfully.");
                     dgv_reminder.ClearSelection();
                     ClearReminderFields();
+
+                    // Add to active reminders list
+                    activeReminders.Add(newReminder);
                 }
                 else
                 {
@@ -1461,5 +1484,38 @@ namespace FinalProject
                 LoadUsers();
             }
         }
+
+        private void ShakeActiveWindow()
+        {
+            var originalLocation = this.Location;
+            var rnd = new Random();
+
+            const int shakeAmplitude = 10; // Adjust the shaking intensity as needed
+            const int shakeDuration = 2000; // Shake for 2 seconds
+            const int shakeInterval = 20; // Update position every 20 milliseconds
+
+            var startTime = DateTime.Now;
+
+            Timer shakeTimer = new Timer();
+            shakeTimer.Interval = shakeInterval;
+            shakeTimer.Tick += (s, e) =>
+            {
+                if ((DateTime.Now - startTime).TotalMilliseconds < shakeDuration)
+                {
+                    this.Location = new Point(
+                        originalLocation.X + rnd.Next(-shakeAmplitude, shakeAmplitude),
+                        originalLocation.Y + rnd.Next(-shakeAmplitude, shakeAmplitude));
+                }
+                else
+                {
+                    shakeTimer.Stop();
+                    this.Location = originalLocation; // Restore the original position
+                }
+            };
+
+            shakeTimer.Start();
+        }
+
+
     }
 }
