@@ -1204,6 +1204,12 @@ namespace FinalProject
                 selectedReminder.UserEmail = userEmail;
                 selectedReminder.Title = title;
 
+                if (AreRequiredFieldsEmpty(selectedReminder))
+                {
+                    MessageBox.Show("Please fill in both the Summary and Description fields.");
+                    return;
+                }
+
                 if (reminder_manager.UpdateReminder(selectedReminder))
                 {
                     LoadReminders(); // Refresh the DataGridView
@@ -1227,6 +1233,12 @@ namespace FinalProject
                 newReminder.UserEmail = userEmail;
                 newReminder.Title = title;
 
+                if (AreRequiredFieldsEmpty(newReminder))
+                {
+                    MessageBox.Show("Please fill in both the Summary and Description fields.");
+                    return;
+                }
+
                 if (reminder_manager.AddReminder(newReminder))
                 {
                     LoadReminders(); // Refresh the DataGridView
@@ -1239,6 +1251,11 @@ namespace FinalProject
                     MessageBox.Show("There was an error adding the new reminder.");
                 }
             }
+        }
+
+        private bool AreRequiredFieldsEmpty(IReminder reminder)
+        {
+            return string.IsNullOrWhiteSpace(reminder.Summary) || string.IsNullOrWhiteSpace(reminder.Description);
         }
 
         private void clearSelectionToolStripMenuItem2_Click(object sender, EventArgs e)
