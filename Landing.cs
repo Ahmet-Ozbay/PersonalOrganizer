@@ -893,6 +893,12 @@ namespace FinalProject
                     Content = txt_note_content.Text
                 };
 
+                if (AreRequiredFieldsEmpty(newNote))
+                {
+                    MessageBox.Show("Please fill in both the Title and Content fields.");
+                    return;
+                }
+
                 if (notebook.Add(newNote, current_user.Email))
                 {
                     LoadNotes();
@@ -910,6 +916,11 @@ namespace FinalProject
                 // More than one note is selected, which is not allowed for updating.
                 MessageBox.Show("Please select only one note to update.");
             }
+        }
+
+        private bool AreRequiredFieldsEmpty(Note note)
+        {
+            return string.IsNullOrWhiteSpace(note.Title) || string.IsNullOrWhiteSpace(note.Content);
         }
 
         //
