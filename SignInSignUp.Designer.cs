@@ -31,6 +31,7 @@ namespace FinalProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_SignIn_SignUp));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btn_close = new System.Windows.Forms.Button();
@@ -78,6 +79,8 @@ namespace FinalProject
             this.pnl_email_bg_reset_pass = new System.Windows.Forms.Panel();
             this.txt_email_reset_pass = new System.Windows.Forms.TextBox();
             this.lbl_email_reset_pass = new System.Windows.Forms.Label();
+            this.progressBar_mail = new System.Windows.Forms.ProgressBar();
+            this.timerMail = new System.Windows.Forms.Timer(this.components);
             this.pnl_header.SuspendLayout();
             this.pnl_signin.SuspendLayout();
             this.panel_password.SuspendLayout();
@@ -452,6 +455,7 @@ namespace FinalProject
             // pnl_reset_password
             // 
             this.pnl_reset_password.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_reset_password.Controls.Add(this.progressBar_mail);
             this.pnl_reset_password.Controls.Add(this.lbl_reset_pass_title);
             this.pnl_reset_password.Controls.Add(this.btn_reset_password);
             this.pnl_reset_password.Controls.Add(this.lbl_sign_in_reset);
@@ -518,6 +522,17 @@ namespace FinalProject
             resources.ApplyResources(this.lbl_email_reset_pass, "lbl_email_reset_pass");
             this.lbl_email_reset_pass.ForeColor = System.Drawing.Color.White;
             this.lbl_email_reset_pass.Name = "lbl_email_reset_pass";
+            // 
+            // progressBar_mail
+            // 
+            this.progressBar_mail.ForeColor = System.Drawing.Color.Orchid;
+            resources.ApplyResources(this.progressBar_mail, "progressBar_mail");
+            this.progressBar_mail.Name = "progressBar_mail";
+            this.progressBar_mail.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // timerMail
+            // 
+            this.timerMail.Tick += new System.EventHandler(this.timerMail_Tick);
             // 
             // Form_SignIn_SignUp
             // 
@@ -607,6 +622,8 @@ namespace FinalProject
         private System.Windows.Forms.Label lbl_email_reset_pass;
         private System.Windows.Forms.LinkLabel lbl_sign_in_reset;
         private System.Windows.Forms.Button btn_reset_password;
+        private System.Windows.Forms.ProgressBar progressBar_mail;
+        private System.Windows.Forms.Timer timerMail;
     }
 }
 

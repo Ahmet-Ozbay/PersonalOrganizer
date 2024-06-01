@@ -574,6 +574,10 @@ namespace FinalProject
             // Step 4: Send the new password to the user's email using Gmail API
             try
             {
+                progressBar_mail.Visible = true;
+                timerMail.Enabled = true;
+                
+
                 UserCredential credential;
 
                 using (var stream = new FileStream("gmailapi.json", FileMode.Open, FileAccess.Read))
@@ -622,9 +626,13 @@ namespace FinalProject
                 MessageBox.Show("A new password has been sent to your email address.", "Password Reset", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_email.Text = user.Email;
                 txt_email.ForeColor = Color.Black;
+                progressBar_mail.Value = 100;
+                timerMail.Enabled = false;
             }
             catch (Exception ex)
             {
+                progressBar_mail.Visible = false;
+                timerMail.Enabled = false;
                 MessageBox.Show($"Failed to send email. Error: {ex.Message}", "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -638,6 +646,12 @@ namespace FinalProject
         private void txt_confirm_password_KeyPress(object sender, KeyPressEventArgs e)
         {
             this.AcceptButton = btn_signup;
+        }
+
+        private void timerMail_Tick(object sender, EventArgs e)
+        {
+            timerMail.Interval = 2000;
+            progressBar_mail.Increment(5);
         }
     }
 }

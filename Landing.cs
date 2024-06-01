@@ -215,8 +215,15 @@ namespace FinalProject
         //
         private void btn_close_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Form_SignIn_SignUp.form_signIn_signUp.Close();
+            // Show a warning message to ask “really want to exit” on the close button(X) clicked
+            string title = "Exit";
+            string message = "Are you sure you want to exit?";
+            DialogResult result = MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                Form_SignIn_SignUp.form_signIn_signUp.Close();
+            }
         }
         private void btn_close_MouseEnter(object sender, EventArgs e)
         {

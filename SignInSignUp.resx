@@ -699,6 +699,186 @@
   <data name="&gt;&gt;txt_email.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;lbl_confirm_password.Name" xml:space="preserve">
+    <value>lbl_confirm_password</value>
+  </data>
+  <data name="&gt;&gt;lbl_confirm_password.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_confirm_password.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;lbl_confirm_password.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;link_signin.Name" xml:space="preserve">
+    <value>link_signin</value>
+  </data>
+  <data name="&gt;&gt;link_signin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;link_signin.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;link_signin.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pnl_confirm_password.Name" xml:space="preserve">
+    <value>pnl_confirm_password</value>
+  </data>
+  <data name="&gt;&gt;pnl_confirm_password.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_confirm_password.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;pnl_confirm_password.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btn_signup.Name" xml:space="preserve">
+    <value>btn_signup</value>
+  </data>
+  <data name="&gt;&gt;btn_signup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_signup.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;btn_signup.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbl_password_register.Name" xml:space="preserve">
+    <value>lbl_password_register</value>
+  </data>
+  <data name="&gt;&gt;lbl_password_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_password_register.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;lbl_password_register.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;pnl_email_register.Name" xml:space="preserve">
+    <value>pnl_email_register</value>
+  </data>
+  <data name="&gt;&gt;pnl_email_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_email_register.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;pnl_email_register.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pnl_password_register.Name" xml:space="preserve">
+    <value>pnl_password_register</value>
+  </data>
+  <data name="&gt;&gt;pnl_password_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_password_register.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;pnl_password_register.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lbl_email_register.Name" xml:space="preserve">
+    <value>lbl_email_register</value>
+  </data>
+  <data name="&gt;&gt;lbl_email_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_email_register.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;lbl_email_register.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;pnl_lastname.Name" xml:space="preserve">
+    <value>pnl_lastname</value>
+  </data>
+  <data name="&gt;&gt;pnl_lastname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_lastname.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;pnl_lastname.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lbl_lastname.Name" xml:space="preserve">
+    <value>lbl_lastname</value>
+  </data>
+  <data name="&gt;&gt;lbl_lastname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_lastname.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;lbl_lastname.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;pnl_name.Name" xml:space="preserve">
+    <value>pnl_name</value>
+  </data>
+  <data name="&gt;&gt;pnl_name.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_name.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;pnl_name.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lbl_name.Name" xml:space="preserve">
+    <value>lbl_name</value>
+  </data>
+  <data name="&gt;&gt;lbl_name.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_name.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;lbl_name.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;lbl_signup.Name" xml:space="preserve">
+    <value>lbl_signup</value>
+  </data>
+  <data name="&gt;&gt;lbl_signup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_signup.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;lbl_signup.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="pnl_signup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>458, 84</value>
+  </data>
+  <data name="pnl_signup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>450, 600</value>
+  </data>
+  <data name="pnl_signup.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="pnl_signup.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pnl_signup.Name" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;pnl_signup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_signup.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnl_signup.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="lbl_confirm_password.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -762,6 +942,51 @@
   <data name="&gt;&gt;link_signin.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;btn_see_confirmation_register.Name" xml:space="preserve">
+    <value>btn_see_confirmation_register</value>
+  </data>
+  <data name="&gt;&gt;btn_see_confirmation_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_see_confirmation_register.Parent" xml:space="preserve">
+    <value>pnl_confirm_password</value>
+  </data>
+  <data name="&gt;&gt;btn_see_confirmation_register.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txt_confirm_password.Name" xml:space="preserve">
+    <value>txt_confirm_password</value>
+  </data>
+  <data name="&gt;&gt;txt_confirm_password.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_confirm_password.Parent" xml:space="preserve">
+    <value>pnl_confirm_password</value>
+  </data>
+  <data name="&gt;&gt;txt_confirm_password.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnl_confirm_password.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 426</value>
+  </data>
+  <data name="pnl_confirm_password.Size" type="System.Drawing.Size, System.Drawing">
+    <value>450, 50</value>
+  </data>
+  <data name="pnl_confirm_password.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;pnl_confirm_password.Name" xml:space="preserve">
+    <value>pnl_confirm_password</value>
+  </data>
+  <data name="&gt;&gt;pnl_confirm_password.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_confirm_password.Parent" xml:space="preserve">
+    <value>pnl_signup</value>
+  </data>
+  <data name="&gt;&gt;pnl_confirm_password.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="btn_see_confirmation_register.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
@@ -821,27 +1046,6 @@
   </data>
   <data name="&gt;&gt;txt_confirm_password.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="pnl_confirm_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 426</value>
-  </data>
-  <data name="pnl_confirm_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 50</value>
-  </data>
-  <data name="pnl_confirm_password.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;pnl_confirm_password.Name" xml:space="preserve">
-    <value>pnl_confirm_password</value>
-  </data>
-  <data name="&gt;&gt;pnl_confirm_password.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnl_confirm_password.Parent" xml:space="preserve">
-    <value>pnl_signup</value>
-  </data>
-  <data name="&gt;&gt;pnl_confirm_password.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="btn_signup.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -939,6 +1143,39 @@
   <data name="&gt;&gt;pnl_email_register.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="txt_email_register.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txt_email_register.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 14.25pt</value>
+  </data>
+  <data name="txt_email_register.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="txt_email_register.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 26</value>
+  </data>
+  <data name="txt_email_register.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txt_email_register.Text" xml:space="preserve">
+    <value>your_email@domain.com</value>
+  </data>
+  <data name="txt_email_register.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_email_register.Name" xml:space="preserve">
+    <value>txt_email_register</value>
+  </data>
+  <data name="&gt;&gt;txt_email_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_email_register.Parent" xml:space="preserve">
+    <value>pnl_email_register</value>
+  </data>
+  <data name="&gt;&gt;txt_email_register.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;btn_see_password_register.Name" xml:space="preserve">
     <value>btn_see_password_register</value>
   </data>
@@ -986,6 +1223,66 @@
   </data>
   <data name="&gt;&gt;pnl_password_register.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="btn_see_password_register.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="btn_see_password_register.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_see_password_register.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 10</value>
+  </data>
+  <data name="btn_see_password_register.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="btn_see_password_register.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btn_see_password_register.Name" xml:space="preserve">
+    <value>btn_see_password_register</value>
+  </data>
+  <data name="&gt;&gt;btn_see_password_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_see_password_register.Parent" xml:space="preserve">
+    <value>pnl_password_register</value>
+  </data>
+  <data name="&gt;&gt;btn_see_password_register.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txt_password_register.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txt_password_register.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 14.25pt</value>
+  </data>
+  <data name="txt_password_register.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="txt_password_register.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 26</value>
+  </data>
+  <data name="txt_password_register.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="txt_password_register.Text" xml:space="preserve">
+    <value>enter your password</value>
+  </data>
+  <data name="txt_password_register.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_password_register.Name" xml:space="preserve">
+    <value>txt_password_register</value>
+  </data>
+  <data name="&gt;&gt;txt_password_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_password_register.Parent" xml:space="preserve">
+    <value>pnl_password_register</value>
+  </data>
+  <data name="&gt;&gt;txt_password_register.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lbl_email_register.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1053,6 +1350,39 @@
   <data name="&gt;&gt;pnl_lastname.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="txt_lastname_register.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txt_lastname_register.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 14.25pt</value>
+  </data>
+  <data name="txt_lastname_register.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="txt_lastname_register.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 26</value>
+  </data>
+  <data name="txt_lastname_register.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="txt_lastname_register.Text" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="txt_lastname_register.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_lastname_register.Name" xml:space="preserve">
+    <value>txt_lastname_register</value>
+  </data>
+  <data name="&gt;&gt;txt_lastname_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_lastname_register.Parent" xml:space="preserve">
+    <value>pnl_lastname</value>
+  </data>
+  <data name="&gt;&gt;txt_lastname_register.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lbl_lastname.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1118,6 +1448,39 @@
   </data>
   <data name="&gt;&gt;pnl_name.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="txt_name_register.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txt_name_register.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 14.25pt</value>
+  </data>
+  <data name="txt_name_register.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="txt_name_register.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 26</value>
+  </data>
+  <data name="txt_name_register.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txt_name_register.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="txt_name_register.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_name_register.Name" xml:space="preserve">
+    <value>txt_name_register</value>
+  </data>
+  <data name="&gt;&gt;txt_name_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_name_register.Parent" xml:space="preserve">
+    <value>pnl_name</value>
+  </data>
+  <data name="&gt;&gt;txt_name_register.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lbl_name.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1185,189 +1548,6 @@
   <data name="&gt;&gt;lbl_signup.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="pnl_signup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>458, 84</value>
-  </data>
-  <data name="pnl_signup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 600</value>
-  </data>
-  <data name="pnl_signup.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="pnl_signup.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pnl_signup.Name" xml:space="preserve">
-    <value>pnl_signup</value>
-  </data>
-  <data name="&gt;&gt;pnl_signup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnl_signup.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pnl_signup.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="txt_email_register.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txt_email_register.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 14.25pt</value>
-  </data>
-  <data name="txt_email_register.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="txt_email_register.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 26</value>
-  </data>
-  <data name="txt_email_register.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="txt_email_register.Text" xml:space="preserve">
-    <value>your_email@domain.com</value>
-  </data>
-  <data name="txt_email_register.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;txt_email_register.Name" xml:space="preserve">
-    <value>txt_email_register</value>
-  </data>
-  <data name="&gt;&gt;txt_email_register.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_email_register.Parent" xml:space="preserve">
-    <value>pnl_email_register</value>
-  </data>
-  <data name="&gt;&gt;txt_email_register.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btn_see_password_register.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="btn_see_password_register.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btn_see_password_register.Location" type="System.Drawing.Point, System.Drawing">
-    <value>414, 10</value>
-  </data>
-  <data name="btn_see_password_register.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 32</value>
-  </data>
-  <data name="btn_see_password_register.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btn_see_password_register.Name" xml:space="preserve">
-    <value>btn_see_password_register</value>
-  </data>
-  <data name="&gt;&gt;btn_see_password_register.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_see_password_register.Parent" xml:space="preserve">
-    <value>pnl_password_register</value>
-  </data>
-  <data name="&gt;&gt;btn_see_password_register.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txt_password_register.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txt_password_register.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 14.25pt</value>
-  </data>
-  <data name="txt_password_register.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="txt_password_register.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 26</value>
-  </data>
-  <data name="txt_password_register.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="txt_password_register.Text" xml:space="preserve">
-    <value>enter your password</value>
-  </data>
-  <data name="txt_password_register.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;txt_password_register.Name" xml:space="preserve">
-    <value>txt_password_register</value>
-  </data>
-  <data name="&gt;&gt;txt_password_register.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_password_register.Parent" xml:space="preserve">
-    <value>pnl_password_register</value>
-  </data>
-  <data name="&gt;&gt;txt_password_register.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txt_lastname_register.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txt_lastname_register.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 14.25pt</value>
-  </data>
-  <data name="txt_lastname_register.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="txt_lastname_register.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 26</value>
-  </data>
-  <data name="txt_lastname_register.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="txt_lastname_register.Text" xml:space="preserve">
-    <value>Last Name</value>
-  </data>
-  <data name="txt_lastname_register.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;txt_lastname_register.Name" xml:space="preserve">
-    <value>txt_lastname_register</value>
-  </data>
-  <data name="&gt;&gt;txt_lastname_register.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_lastname_register.Parent" xml:space="preserve">
-    <value>pnl_lastname</value>
-  </data>
-  <data name="&gt;&gt;txt_lastname_register.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txt_name_register.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txt_name_register.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 14.25pt</value>
-  </data>
-  <data name="txt_name_register.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="txt_name_register.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 26</value>
-  </data>
-  <data name="txt_name_register.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txt_name_register.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="txt_name_register.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;txt_name_register.Name" xml:space="preserve">
-    <value>txt_name_register</value>
-  </data>
-  <data name="&gt;&gt;txt_name_register.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_name_register.Parent" xml:space="preserve">
-    <value>pnl_name</value>
-  </data>
-  <data name="&gt;&gt;txt_name_register.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="bg_flowers.Location" type="System.Drawing.Point, System.Drawing">
     <value>-12, 25</value>
   </data>
@@ -1389,6 +1569,18 @@
   <data name="&gt;&gt;bg_flowers.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="&gt;&gt;progressBar_mail.Name" xml:space="preserve">
+    <value>progressBar_mail</value>
+  </data>
+  <data name="&gt;&gt;progressBar_mail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;progressBar_mail.Parent" xml:space="preserve">
+    <value>pnl_reset_password</value>
+  </data>
+  <data name="&gt;&gt;progressBar_mail.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;lbl_reset_pass_title.Name" xml:space="preserve">
     <value>lbl_reset_pass_title</value>
   </data>
@@ -1399,7 +1591,7 @@
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;lbl_reset_pass_title.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;btn_reset_password.Name" xml:space="preserve">
     <value>btn_reset_password</value>
@@ -1411,7 +1603,7 @@
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;btn_reset_password.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;lbl_sign_in_reset.Name" xml:space="preserve">
     <value>lbl_sign_in_reset</value>
@@ -1423,7 +1615,7 @@
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;lbl_sign_in_reset.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;lbl_reset_pass_info.Name" xml:space="preserve">
     <value>lbl_reset_pass_info</value>
@@ -1435,7 +1627,7 @@
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;lbl_reset_pass_info.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;pnl_email_bg_reset_pass.Name" xml:space="preserve">
     <value>pnl_email_bg_reset_pass</value>
@@ -1447,7 +1639,7 @@
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;pnl_email_bg_reset_pass.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;lbl_email_reset_pass.Name" xml:space="preserve">
     <value>lbl_email_reset_pass</value>
@@ -1459,7 +1651,7 @@
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;lbl_email_reset_pass.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="pnl_reset_password.Location" type="System.Drawing.Point, System.Drawing">
     <value>427, 161</value>
@@ -1522,7 +1714,7 @@
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;lbl_reset_pass_title.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btn_reset_password.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1555,7 +1747,7 @@
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;btn_reset_password.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lbl_sign_in_reset.Location" type="System.Drawing.Point, System.Drawing">
     <value>186, 375</value>
@@ -1582,7 +1774,7 @@
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;lbl_sign_in_reset.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lbl_reset_pass_info.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans Light, 14.25pt</value>
@@ -1610,7 +1802,7 @@ the email matches with your account.</value>
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;lbl_reset_pass_info.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txt_email_reset_pass.Name" xml:space="preserve">
     <value>txt_email_reset_pass</value>
@@ -1646,7 +1838,7 @@ the email matches with your account.</value>
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;pnl_email_bg_reset_pass.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txt_email_reset_pass.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1712,8 +1904,35 @@ the email matches with your account.</value>
     <value>pnl_reset_password</value>
   </data>
   <data name="&gt;&gt;lbl_email_reset_pass.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
+  <data name="progressBar_mail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 104</value>
+  </data>
+  <data name="progressBar_mail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>411, 23</value>
+  </data>
+  <data name="progressBar_mail.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="progressBar_mail.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;progressBar_mail.Name" xml:space="preserve">
+    <value>progressBar_mail</value>
+  </data>
+  <data name="&gt;&gt;progressBar_mail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;progressBar_mail.Parent" xml:space="preserve">
+    <value>pnl_reset_password</value>
+  </data>
+  <data name="&gt;&gt;progressBar_mail.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="timerMail.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>179, 8</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1740,6 +1959,12 @@ the email matches with your account.</value>
   </data>
   <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timerMail.Name" xml:space="preserve">
+    <value>timerMail</value>
+  </data>
+  <data name="&gt;&gt;timerMail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form_SignIn_SignUp</value>
