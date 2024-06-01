@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System.CodeDom;
+using System.Drawing;
+using System.Runtime.CompilerServices;
 
 namespace FinalProject
 {
@@ -197,8 +199,6 @@ namespace FinalProject
             this.btn_change = new System.Windows.Forms.Button();
             this.cmb_roles = new System.Windows.Forms.ComboBox();
             this.dgv_users = new System.Windows.Forms.DataGridView();
-            this.dgv_users.AutoGenerateColumns = false;
-            this.dgv_users.ForeColor = System.Drawing.Color.Black;
             this.USERID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USERROLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1595,15 +1595,12 @@ namespace FinalProject
             resources.ApplyResources(this.btn_change, "btn_change");
             this.btn_change.Name = "btn_change";
             this.btn_change.UseVisualStyleBackColor = false;
+            this.btn_change.Click += new System.EventHandler(this.btn_change_Click);
             // 
             // cmb_roles
             // 
             this.cmb_roles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_roles.FormattingEnabled = true;
-            this.cmb_roles.Items.AddRange(new object[] {
-            resources.GetString("cmb_roles.Items"),
-            resources.GetString("cmb_roles.Items1"),
-            resources.GetString("cmb_roles.Items2")});
             resources.ApplyResources(this.cmb_roles, "cmb_roles");
             this.cmb_roles.Name = "cmb_roles";
             // 
@@ -1611,6 +1608,8 @@ namespace FinalProject
             // 
             this.dgv_users.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_users.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_users.AutoGenerateColumns = false;
+            this.dgv_users.ForeColor = System.Drawing.Color.Black;
             this.dgv_users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_users.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.USERID,
@@ -1620,10 +1619,12 @@ namespace FinalProject
             this.USERMAIL,
             this.USERSALARY});
             resources.ApplyResources(this.dgv_users, "dgv_users");
+            this.dgv_users.MultiSelect = false;
             this.dgv_users.Name = "dgv_users";
             this.dgv_users.ReadOnly = true;
             this.dgv_users.RowHeadersVisible = false;
             this.dgv_users.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_users.SelectionChanged += new System.EventHandler(this.dgv_users_SelectionChanged);
             // 
             // USERID
             // 

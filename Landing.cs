@@ -94,6 +94,7 @@ namespace FinalProject
                 btn_admin.Visible = true;
                 user_manager = new UserManager(new CsvRepository());
                 LoadUsers();
+                cmb_roles.DataSource = Enum.GetValues(typeof(Authority));
             }
             else
             {
@@ -101,6 +102,7 @@ namespace FinalProject
             }
 
             
+
         }
 
         public static string defaultPath = $"{Application.StartupPath}\\default_avatar.png";
@@ -1340,6 +1342,65 @@ namespace FinalProject
                 Read_user_data();
             }
 
+        }
+
+        private void dgv_users_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_users.SelectedRows.Count == 1)
+            {
+                var selectedUser = (User)dgv_users.SelectedRows[0].DataBoundItem;
+
+                switch (selectedUser.Authorisation.ToString())
+                {
+                    case "Admin":
+                        cmb_roles.SelectedIndex = 0;
+                        break;
+                    case "User":
+                        cmb_roles.SelectedIndex = 1;
+                        break;
+                    case "Part_Time_User":
+                        cmb_roles.SelectedIndex = 2;
+                        break;
+                }
+               
+            }
+        }
+
+
+        private void btn_change_Click(object sender, EventArgs e)
+        {
+            CsvRepository writer = new CsvRepository();
+            CsvRepository reader = new CsvRepository();
+
+            if (dgv_users.SelectedRows.Count < 0)
+            {
+                MessageBox.Show("Please select a user to update.");
+            }
+            else
+            {
+                var selectedUser = (User)dgv_users.SelectedRows[0].DataBoundItem;
+
+
+                switch (cmb_roles.SelectedIndex)
+                {
+                    case 0:
+                        selectedUser.Authorisation = Authority.Admin;
+                        break;
+                    case 1:
+                        selectedUser.Authorisation = Authority.User;
+                        break;
+                    case 2:
+                        selectedUser.Authorisation = Authority.Part_Time_User; ;
+                        break;
+                }
+
+                if (writer.Update(selectedUser))
+                {
+                    MessageBox.Show("User updated successfully.");
+                }
+
+                LoadUsers();
+            }
         }
     }
 }

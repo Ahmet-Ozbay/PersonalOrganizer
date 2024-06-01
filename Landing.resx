@@ -4311,7 +4311,7 @@
     <value>True</value>
   </data>
   <data name="lbl_roles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 478</value>
+    <value>357, 491</value>
   </data>
   <data name="lbl_roles.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 27</value>
@@ -4341,10 +4341,10 @@
     <value>NoControl</value>
   </data>
   <data name="btn_change.Location" type="System.Drawing.Point, System.Drawing">
-    <value>873, 521</value>
+    <value>557, 494</value>
   </data>
   <data name="btn_change.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 57</value>
+    <value>158, 70</value>
   </data>
   <data name="btn_change.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -4364,17 +4364,8 @@
   <data name="&gt;&gt;btn_change.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cmb_roles.Items" xml:space="preserve">
-    <value>Admin</value>
-  </data>
-  <data name="cmb_roles.Items1" xml:space="preserve">
-    <value>User</value>
-  </data>
-  <data name="cmb_roles.Items2" xml:space="preserve">
-    <value>Part Time User</value>
-  </data>
   <data name="cmb_roles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 517</value>
+    <value>328, 529</value>
   </data>
   <data name="cmb_roles.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
