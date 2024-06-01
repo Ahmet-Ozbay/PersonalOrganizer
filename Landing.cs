@@ -1029,6 +1029,22 @@ namespace FinalProject
                 selectedContact.Email = txt_contact_email.Text;
                 selectedContact.Address = txt_contact_address.Text;
 
+                if (AreRequiredFieldsEmpty(selectedContact))
+                {
+                    MessageBox.Show("Please fill in all the required fields.");
+                    return;
+                }
+
+                try
+                {
+                    selectedContact.PhoneNumber = String.Format("{0:(000) 000 00 00}", Int64.Parse(selectedContact.PhoneNumber));
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Invalid phone number format. Please enter a valid phone number.");
+                    return;
+                }
+
                 if (phonebook.Update(selectedContact))
                 {
                     LoadContacts(); // Refresh the DataGridView
@@ -1054,6 +1070,12 @@ namespace FinalProject
                     UserEmail = current_user.Email // Set the UserEmail to the current user's email
                 };
 
+                if (AreRequiredFieldsEmpty(newContact))
+                {
+                    MessageBox.Show("Please fill in all the required fields.");
+                    return;
+                }
+
                 if (phonebook.Add(newContact, current_user.Email))
                 {
                     LoadContacts(); // Refresh the DataGridView
@@ -1066,6 +1088,15 @@ namespace FinalProject
                     MessageBox.Show("There was an error adding the contact.");
                 }
             }
+        }
+
+        private bool AreRequiredFieldsEmpty(Contact contact)
+        {
+            return string.IsNullOrWhiteSpace(contact.Name) ||
+                   string.IsNullOrWhiteSpace(contact.LastName) ||
+                   string.IsNullOrWhiteSpace(contact.PhoneNumber) ||
+                   string.IsNullOrWhiteSpace(contact.Email) ||
+                   string.IsNullOrWhiteSpace(contact.Address);
         }
 
         private void btn_delete_contact_Click(object sender, EventArgs e)
