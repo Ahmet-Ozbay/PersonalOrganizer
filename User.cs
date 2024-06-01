@@ -34,6 +34,7 @@ namespace FinalProject
 
         public User() { }
 
+
         public void SetStrategy(Authority authority)
         {
             switch (authority)

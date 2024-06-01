@@ -89,10 +89,18 @@ namespace FinalProject
             }
 
             // Admin Panel
-            if (current_user.Authorisation != Authority.Admin)
+            if (current_user.Authorisation == Authority.Admin)
+            {
+                btn_admin.Visible = true;
+                user_manager = new UserManager(new CsvRepository());
+                LoadUsers();
+            }
+            else
             {
                 btn_admin.Visible = false;
             }
+
+            
         }
 
         public static string defaultPath = $"{Application.StartupPath}\\default_avatar.png";
@@ -103,6 +111,7 @@ namespace FinalProject
         private PhoneBook phonebook;
         private ReminderManager reminder_manager;
         private BindingList<IReminder> reminderBindingList;
+        private UserManager user_manager;
 
         private Dictionary<string, double> experience = new Dictionary<string, double>
         {
@@ -180,6 +189,17 @@ namespace FinalProject
                 txt_salary.Text = current_user.Salary.ToString();
             }
         }
+
+        /*
+         * Loads users
+         */
+        private void LoadUsers()
+        {
+            CsvRepository reader = new CsvRepository();
+            var users = reader.List();
+            dgv_users.DataSource = users;
+        }
+
 
         /*
          * Loads notes of the current user

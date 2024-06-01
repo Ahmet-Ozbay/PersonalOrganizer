@@ -466,19 +466,19 @@
     <value>575, 8</value>
   </metadata>
   <data name="tsm_change.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="tsm_change.Text" xml:space="preserve">
     <value>Change Avatar</value>
   </data>
   <data name="tsm_remove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="tsm_remove.Text" xml:space="preserve">
     <value>Remove Avatar</value>
   </data>
   <data name="context_avatar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 70</value>
+    <value>155, 48</value>
   </data>
   <data name="&gt;&gt;context_avatar.Name" xml:space="preserve">
     <value>context_avatar</value>
@@ -1725,7 +1725,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_profile.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btn_delete_contact.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2361,7 +2361,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_contacts.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btn_delete_note.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2766,7 +2766,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_notebook.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <metadata name="context_dgv_reminder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>403, 8</value>
@@ -3276,7 +3276,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_reminder.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lbl_18_plus_clause.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 9.75pt</value>
@@ -4305,7 +4305,154 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_salary.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
+  </data>
+  <data name="lbl_roles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_roles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 478</value>
+  </data>
+  <data name="lbl_roles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 27</value>
+  </data>
+  <data name="lbl_roles.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="lbl_roles.Text" xml:space="preserve">
+    <value>User Roles:</value>
+  </data>
+  <data name="&gt;&gt;lbl_roles.Name" xml:space="preserve">
+    <value>lbl_roles</value>
+  </data>
+  <data name="&gt;&gt;lbl_roles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_roles.Parent" xml:space="preserve">
+    <value>pnl_admin_content</value>
+  </data>
+  <data name="&gt;&gt;lbl_roles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_change.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_change.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_change.Location" type="System.Drawing.Point, System.Drawing">
+    <value>873, 521</value>
+  </data>
+  <data name="btn_change.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 57</value>
+  </data>
+  <data name="btn_change.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="btn_change.Text" xml:space="preserve">
+    <value>Change Role</value>
+  </data>
+  <data name="&gt;&gt;btn_change.Name" xml:space="preserve">
+    <value>btn_change</value>
+  </data>
+  <data name="&gt;&gt;btn_change.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_change.Parent" xml:space="preserve">
+    <value>pnl_admin_content</value>
+  </data>
+  <data name="&gt;&gt;btn_change.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cmb_roles.Items" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="cmb_roles.Items1" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="cmb_roles.Items2" xml:space="preserve">
+    <value>Part Time User</value>
+  </data>
+  <data name="cmb_roles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 517</value>
+  </data>
+  <data name="cmb_roles.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="cmb_roles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 35</value>
+  </data>
+  <data name="cmb_roles.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cmb_roles.Name" xml:space="preserve">
+    <value>cmb_roles</value>
+  </data>
+  <data name="&gt;&gt;cmb_roles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmb_roles.Parent" xml:space="preserve">
+    <value>pnl_admin_content</value>
+  </data>
+  <data name="&gt;&gt;cmb_roles.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="USERID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="USERID.HeaderText" xml:space="preserve">
+    <value>USERID</value>
+  </data>
+  <metadata name="USERROLE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="USERROLE.HeaderText" xml:space="preserve">
+    <value>USERROLE</value>
+  </data>
+  <metadata name="USERNAME.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="USERNAME.HeaderText" xml:space="preserve">
+    <value>USERNAME</value>
+  </data>
+  <metadata name="USERLASTNAME.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="USERLASTNAME.HeaderText" xml:space="preserve">
+    <value>USERLASTNAME</value>
+  </data>
+  <metadata name="USERMAIL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="USERMAIL.HeaderText" xml:space="preserve">
+    <value>USERMAIL</value>
+  </data>
+  <metadata name="USERSALARY.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="USERSALARY.HeaderText" xml:space="preserve">
+    <value>USERSALARY</value>
+  </data>
+  <data name="dgv_users.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 9</value>
+  </data>
+  <data name="dgv_users.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1038, 456</value>
+  </data>
+  <data name="dgv_users.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dgv_users.Name" xml:space="preserve">
+    <value>dgv_users</value>
+  </data>
+  <data name="&gt;&gt;dgv_users.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgv_users.Parent" xml:space="preserve">
+    <value>pnl_admin_content</value>
+  </data>
+  <data name="&gt;&gt;dgv_users.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="pnl_admin_content.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans, 14.25pt</value>
@@ -4386,7 +4533,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnl_admin.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>4</value>
   </data>
   <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -4543,6 +4690,42 @@
   </data>
   <data name="&gt;&gt;clearSelectionToolStripMenuItem2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;USERID.Name" xml:space="preserve">
+    <value>USERID</value>
+  </data>
+  <data name="&gt;&gt;USERID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;USERROLE.Name" xml:space="preserve">
+    <value>USERROLE</value>
+  </data>
+  <data name="&gt;&gt;USERROLE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;USERNAME.Name" xml:space="preserve">
+    <value>USERNAME</value>
+  </data>
+  <data name="&gt;&gt;USERNAME.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;USERLASTNAME.Name" xml:space="preserve">
+    <value>USERLASTNAME</value>
+  </data>
+  <data name="&gt;&gt;USERLASTNAME.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;USERMAIL.Name" xml:space="preserve">
+    <value>USERMAIL</value>
+  </data>
+  <data name="&gt;&gt;USERMAIL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;USERSALARY.Name" xml:space="preserve">
+    <value>USERSALARY</value>
+  </data>
+  <data name="&gt;&gt;USERSALARY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ID.Name" xml:space="preserve">
     <value>ID</value>

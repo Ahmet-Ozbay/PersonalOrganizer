@@ -193,6 +193,16 @@ namespace FinalProject
             this.lbl_title_salary = new System.Windows.Forms.Label();
             this.pnl_admin = new System.Windows.Forms.Panel();
             this.pnl_admin_content = new System.Windows.Forms.Panel();
+            this.lbl_roles = new System.Windows.Forms.Label();
+            this.btn_change = new System.Windows.Forms.Button();
+            this.cmb_roles = new System.Windows.Forms.ComboBox();
+            this.dgv_users = new System.Windows.Forms.DataGridView();
+            this.USERID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USERROLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USERLASTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USERMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USERSALARY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_title_admin = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USEREMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -242,6 +252,8 @@ namespace FinalProject
             this.pnl_screen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_langauge_count)).BeginInit();
             this.pnl_admin.SuspendLayout();
+            this.pnl_admin_content.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_users)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_header
@@ -1560,9 +1572,98 @@ namespace FinalProject
             // pnl_admin_content
             // 
             this.pnl_admin_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.pnl_admin_content.Controls.Add(this.lbl_roles);
+            this.pnl_admin_content.Controls.Add(this.btn_change);
+            this.pnl_admin_content.Controls.Add(this.cmb_roles);
+            this.pnl_admin_content.Controls.Add(this.dgv_users);
             resources.ApplyResources(this.pnl_admin_content, "pnl_admin_content");
             this.pnl_admin_content.ForeColor = System.Drawing.Color.White;
             this.pnl_admin_content.Name = "pnl_admin_content";
+            // 
+            // lbl_roles
+            // 
+            resources.ApplyResources(this.lbl_roles, "lbl_roles");
+            this.lbl_roles.Name = "lbl_roles";
+            // 
+            // btn_change
+            // 
+            this.btn_change.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))));
+            this.btn_change.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_change.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btn_change, "btn_change");
+            this.btn_change.Name = "btn_change";
+            this.btn_change.UseVisualStyleBackColor = false;
+            // 
+            // cmb_roles
+            // 
+            this.cmb_roles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_roles.FormattingEnabled = true;
+            this.cmb_roles.Items.AddRange(new object[] {
+            resources.GetString("cmb_roles.Items"),
+            resources.GetString("cmb_roles.Items1"),
+            resources.GetString("cmb_roles.Items2")});
+            resources.ApplyResources(this.cmb_roles, "cmb_roles");
+            this.cmb_roles.Name = "cmb_roles";
+            // 
+            // dgv_users
+            // 
+            this.dgv_users.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_users.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_users.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.USERID,
+            this.USERROLE,
+            this.USERNAME,
+            this.USERLASTNAME,
+            this.USERMAIL,
+            this.USERSALARY});
+            resources.ApplyResources(this.dgv_users, "dgv_users");
+            this.dgv_users.Name = "dgv_users";
+            this.dgv_users.ReadOnly = true;
+            this.dgv_users.RowHeadersVisible = false;
+            this.dgv_users.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // USERID
+            // 
+            this.USERID.DataPropertyName = "ID";
+            resources.ApplyResources(this.USERID, "USERID");
+            this.USERID.Name = "USERID";
+            this.USERID.ReadOnly = true;
+            // 
+            // USERROLE
+            // 
+            this.USERROLE.DataPropertyName = "Authorisation";
+            resources.ApplyResources(this.USERROLE, "USERROLE");
+            this.USERROLE.Name = "USERROLE";
+            this.USERROLE.ReadOnly = true;
+            // 
+            // USERNAME
+            // 
+            this.USERNAME.DataPropertyName = "Name";
+            resources.ApplyResources(this.USERNAME, "USERNAME");
+            this.USERNAME.Name = "USERNAME";
+            this.USERNAME.ReadOnly = true;
+            // 
+            // USERLASTNAME
+            // 
+            this.USERLASTNAME.DataPropertyName = "LastName";
+            resources.ApplyResources(this.USERLASTNAME, "USERLASTNAME");
+            this.USERLASTNAME.Name = "USERLASTNAME";
+            this.USERLASTNAME.ReadOnly = true;
+            // 
+            // USERMAIL
+            // 
+            this.USERMAIL.DataPropertyName = "Email";
+            resources.ApplyResources(this.USERMAIL, "USERMAIL");
+            this.USERMAIL.Name = "USERMAIL";
+            this.USERMAIL.ReadOnly = true;
+            // 
+            // USERSALARY
+            // 
+            this.USERSALARY.DataPropertyName = "Salary";
+            resources.ApplyResources(this.USERSALARY, "USERSALARY");
+            this.USERSALARY.Name = "USERSALARY";
+            this.USERSALARY.ReadOnly = true;
             // 
             // lbl_title_admin
             // 
@@ -1602,12 +1703,12 @@ namespace FinalProject
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FinalProject.Properties.Resources.bg_gradient_main;
+            this.Controls.Add(this.pnl_admin);
             this.Controls.Add(this.pnl_reminder);
             this.Controls.Add(this.pnl_contacts);
             this.Controls.Add(this.pnl_notebook);
             this.Controls.Add(this.pnl_profile);
             this.Controls.Add(this.pnl_salary);
-            this.Controls.Add(this.pnl_admin);
             this.Controls.Add(this.pnl_menu);
             this.Controls.Add(this.pnl_header);
             this.DoubleBuffered = true;
@@ -1676,6 +1777,9 @@ namespace FinalProject
             this.pnl_screen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_langauge_count)).EndInit();
             this.pnl_admin.ResumeLayout(false);
+            this.pnl_admin_content.ResumeLayout(false);
+            this.pnl_admin_content.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_users)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1848,5 +1952,15 @@ namespace FinalProject
         private System.Windows.Forms.ContextMenuStrip context_avatar;
         private System.Windows.Forms.ToolStripMenuItem tsm_change;
         private System.Windows.Forms.ToolStripMenuItem tsm_remove;
+        private System.Windows.Forms.DataGridView dgv_users;
+        private System.Windows.Forms.DataGridViewTextBoxColumn USERID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn USERROLE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn USERNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn USERLASTNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn USERMAIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn USERSALARY;
+        private System.Windows.Forms.ComboBox cmb_roles;
+        private System.Windows.Forms.Button btn_change;
+        private System.Windows.Forms.Label lbl_roles;
     }
 }

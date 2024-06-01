@@ -374,6 +374,25 @@ namespace FinalProject
         }
 
         /*
+         * Read Users
+         */
+
+        public List<User> ListUsers()
+        {
+            try
+            {
+                return File.ReadAllLines(_userFilePath)
+                    .Skip(1) // Skip the header line.
+                    .Select(line => FromCsv(line))
+                    .ToList();
+            }
+            catch
+            {
+                return new List<User>();
+            }
+        }
+
+        /*
          * Get the user data from the database
          */
         private User FromCsv(string csvLine)

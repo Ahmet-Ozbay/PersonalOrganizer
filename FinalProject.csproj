@@ -102,6 +102,7 @@
     <Compile Include="TaskReminder.cs" />
     <Compile Include="TaskReminderFactory.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserManager.cs" />
     <Compile Include="UserStrategy.cs" />
     <EmbeddedResource Include="Landing.en-US.resx">
       <DependentUpon>Landing.cs</DependentUpon>

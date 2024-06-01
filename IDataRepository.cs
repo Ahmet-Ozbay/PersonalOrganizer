@@ -27,5 +27,7 @@ namespace FinalProject
         List<Contact> ListContacts(string userEmail);
         List<IReminder> ListReminders();
 
+        List<User> ListUsers();
+
     }
 }
